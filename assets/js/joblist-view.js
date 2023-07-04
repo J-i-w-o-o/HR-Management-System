@@ -116,3 +116,5 @@
     locationElement.textContent = location;
     additionalInfoElement.textContent = additionalInfo;
   }
+
+  

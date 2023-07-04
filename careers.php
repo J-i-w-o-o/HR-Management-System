@@ -50,12 +50,17 @@ include './templates/header.php';
         <div class="row">
           <div class="col-12">
             <h4>Additional Information</h4>
-            <span id="additionalInfo" class="form-control" rows="3" disabled></span>
-            <!-- Forms for HR Manager-->
-            <form>
-            <h4>Fill Up:</h4>
+            <p>Fill Up the form below to proceed your application.</p>
+
+            <!-- Forms for application -->
+            <form id="applicationform">
+            <h5>Fill Up:</h5>
             <div class="form-group my-2 mt-3">
                     <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter Full Name" required>
+                </div>
+
+                <div class="form-group mb-2">
+                    <input type="text" id="address" name="address" class="form-control" placeholder="Enter Address" required>
                 </div>
                 
                 <div class="form-group mb-2">
@@ -63,16 +68,14 @@ include './templates/header.php';
                 </div>
 
                 <div class="form-group mb-2">
-                    <input type="email" id="email" name="email" pattern="@gmail.com" class="form-control" placeholder="Enter Email" required>
+                    <input type="email" id="email" name="email" pattern="[^ @]*@[^ @]*" title="Invalid email address" class="form-control" placeholder="Enter Email" required>
                 </div>
 
                 <div class="form-group mt-3">
-                <h5>Upload your resume/cv:</h5>
+                <h5>Attach resume/cv:</h5>
                 <input type="file" name="fileToUpload" id="fileToUpload">
                 </div>
-                <button type="submit" class="btn btn-primary mt-2">Apply</button>
-
-                
+           
             </form>
             
           </div>
@@ -80,7 +83,8 @@ include './templates/header.php';
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal">Close</button>
+        <button type="submit" id="btnappsubmit" class="btn " form="applicationform" >Apply</button>
         
 
       </div>
@@ -88,7 +92,6 @@ include './templates/header.php';
   </div>
 </div>
 <script src="./assets/js/joblist-view.js"></script>
-asdd
 <?php
 include './templates/footer.php';
 ?>
