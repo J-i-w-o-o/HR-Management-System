@@ -341,18 +341,18 @@ a[href*="#works"]::before {
        <div class="sidebar-header">  
        <div class="sidebar-brand">  
          <a href="#"> <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40"> </a> </div> </div>  
-       <li><a href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD">Dashboard</a></li>    
+       <li><a href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom">Dashboard</a></li>    
        <li><a href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"> Job Listing</a> </li>  
        <li class="dropdown">  
        <a href="#works" class="dropdown-toggle?" data-toggle="dropdown"> Works </a>  
-     <ul class="dropdown-menu animated fadeInLeft" role="menu">  
+     <!-- <ul class="dropdown-menu animated fadeInLeft" role="menu">  
       <div class="dropdown-header">Dropdown heading</div>  
       <li><a href="#pictures">Pictures</a></li>  
       <li><a href="#videos">Videeos</a></li>  
       <li><a href="#books">Books</a></li>  
       <li><a href="#art">Art</a></li>  
       <li><a href="#awards">Awards</a></li>  
-      </ul>  
+      </ul>   -->
       </li>  
       <li><a href="#settings">Settings</a></li>  
       
