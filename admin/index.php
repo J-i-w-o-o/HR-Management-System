@@ -13,8 +13,6 @@ if ($page === 'dashboard' || $_SERVER['QUERY_STRING'] === 'dashboard') {
 } else {    
     echo "  no page"; 
 }
-?>
-<a href="?logout">Logout</a>
-<?php
+
 include './templates/footer.php';
 ?>
