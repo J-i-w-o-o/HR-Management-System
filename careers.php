@@ -51,18 +51,45 @@ include './templates/header.php';
           <div class="col-12">
             <h4>Additional Information</h4>
             <span id="additionalInfo" class="form-control" rows="3" disabled></span>
+            <!-- Forms for HR Manager-->
+            <form>
+            <h4>Fill Up:</h4>
+            <div class="form-group my-2 mt-3">
+                    <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter Full Name" required>
+                </div>
+                
+                <div class="form-group mb-2">
+                    <input type="tel" id="mobile" name="mobile" maxlength="11" class="form-control" placeholder="Enter Mobile Number" required>
+                </div>
+
+                <div class="form-group mb-2">
+                    <input type="email" id="email" name="email" pattern="@gmail.com" class="form-control" placeholder="Enter Email" required>
+                </div>
+
+                <div class="form-group mt-3">
+                <h5>Upload your resume/cv:</h5>
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Apply</button>
+
+                
+            </form>
+            
           </div>
         </div>
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Apply</button>
+        
+
       </div>
     </div>
   </div>
 </div>
 <script src="./assets/js/joblist-view.js"></script>
+asdd
 <?php
 include './templates/footer.php';
 ?>
+<form action=""></form>
