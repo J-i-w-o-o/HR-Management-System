@@ -1,0 +1,29 @@
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+  @media only screen and (max-width: 350px) {
+    #searchInput {
+      display: none;
+    }
+  } 
+  @media only screen and (max-width: 400px) {
+    #searchIcon {
+      display: none;
+    }
+  } 

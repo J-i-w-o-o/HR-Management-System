@@ -1,0 +1,21 @@
+# RewriteEngine On
+
+# # Redirect to HTTPS
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# # Remove .php file extension
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}.php -f
+# RewriteRule ^(.*)$ $1.php [L]
+
+# # Remove .html file extension
+# RewriteCond %{REQUEST_FILENAME} !-d 
+# RewriteCond %{REQUEST_FILENAME}.html -f
+# RewriteRule ^(.*)$ $1.html [NC,L]
+
+# # Set default page to index.php
+# DirectoryIndex index.php
+
+# # Prevent directory browsing
+# Options -Indexes
