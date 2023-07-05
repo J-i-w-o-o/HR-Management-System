@@ -67,4 +67,4 @@
     </div>
   </div>
 </div>
-<script src="../assets/js//joblist-view.js"></script>
+<script src="joblist-view.js"></script>
