@@ -23,19 +23,7 @@
 
 <div id="tableres">
   <table>
-    <div>
-    <tr>
-      <th>No.</th>
-      <th>Position</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phonenumber</th>
-      <th>Date</th>
-      <th>Submitted by</th>
-      <th>Status</th>
-      
-    </tr>
-    </div>
+    
     <tr>
      
       

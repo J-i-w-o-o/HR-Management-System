@@ -72,10 +72,6 @@
                     <input type="tel" id="mobile" name="mobile" maxlength="11" class="form-control" placeholder="Enter Mobile Number" required>
                 </div>
 
-                <div class="form-group mb-2">
-                    <input type="email" id="email" name="email" pattern="[^ @]*@[^ @]*" title="Invalid email address" class="form-control" placeholder="Enter Email" required>
-                </div>
-
                 <div class="form-group mt-3">
                 <h5>Attach resume/cv:</h5>
                 <input type="file" name="fileToUpload" id="fileToUpload">
