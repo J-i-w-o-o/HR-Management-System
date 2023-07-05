@@ -64,11 +64,11 @@ include './templates/header.php';
                 </div>
                 
                 <div class="form-group mb-2">
-                    <input type="tel" id="mobile" name="mobile" maxlength="11" class="form-control" placeholder="Enter Mobile Number" required>
+                    <input type="num" id="mobile" name="mobile" maxlength="11"  pattern="[0-9]*" title="Please enter only numeric digits." inputmode="numeric" class="form-control" placeholder="Enter Mobile Number" required>
                 </div>
 
                 <div class="form-group mb-2">
-                    <input type="email" id="email" name="email" pattern="[^ @]*@[^ @]*" title="Invalid email address" class="form-control" placeholder="Enter Email" required>
+                    <input type="email" id="email" name="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Invalid email address" class="form-control" placeholder="Enter Email" required>
                 </div>
 
                 <div class="form-group mt-3">
