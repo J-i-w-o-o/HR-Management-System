@@ -15,7 +15,7 @@ if ($page === 'dashboard' || $_SERVER['QUERY_STRING'] === 'dashboard') {
 }  
 
 else {    
-    echo "  no page"; 
+    include '../admin/dashboard.php';  
 }
 ?>
 
