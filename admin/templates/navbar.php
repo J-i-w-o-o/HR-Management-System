@@ -1,4 +1,153 @@
-<html lang = "en">  
+<div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+            <a href="../admin/dashboard.php" class="site_title"><i class="fa fa-paw"></i> <span></span></a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!-- menu profile quick info -->
+        <div class="profile clearfix">
+            <div class="profile_pic">
+                <img src="../../resource/images/img.png" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>Sandwitch Group</h2>
+            </div>
+        </div>
+        <!-- /menu profile quick info -->
+
+        <br />
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                    <li>
+                        <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="../admin/dashboard.php">Dashboard</a></li>
+                            <!--<li><a href="../admin/dashboard2.php">Dashboard2</a></li>-->
+                            <!--<li><a href="../admin/dashboard3.php">Dashboard3</a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-edit"></i> Admin <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="../employee/createEmployee.php">Create Employee</a></li>
+                            <li><a href="../admin/liveEventHistory.php">Employee History</a></li>
+
+                            <li><a href="../admin/sendLiveEvent.php">Live Event</a></li>
+                            <li><a href="../admin/liveEventHistory.php">Live Event History</a></li>
+                            <li><a href="../admin/sendNotice.php">Notice</a></li>
+                            <li><a href="../admin/noticeHistory.php">Notice History</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a><i class="fa fa-clone"></i>Notice <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="../noticeBoard/noticeBoard.php">Notice Board</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu_section">
+                <h3>Live On</h3>
+                <ul class="nav side-menu">
+                    <li>
+                        <a><i class="fa fa-laptop"></i> Live Event <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="../liveEvent/liveEvent.php">View Live Event</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /sidebar menu -->
+
+        <!-- /menu footer buttons -->
+        <div class="sidebar-footer hidden-small">
+            <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="../../src/store/Logout.php">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+            </a>
+        </div>
+        <!-- /menu footer buttons -->
+    </div>
+</div>
+
+<!-- top navigation -->
+<div class="top_nav">
+    <div class="nav_menu">
+        <nav>
+            <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <img src="../../resource/images/img.png" alt="">Sandwitch Group
+                        <span class=" fa fa-angle-down"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                        <li><a href="javascript:;"> Profile</a></li>
+                        <li><a href="../../src/store/Logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-calendar"></i>
+                        <span class="badge bg-green"><?=$_SESSION["event"]?></span>
+                    </a>
+                    <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+
+                        <?php
+                           foreach ($_SESSION["events"] as $event){
+                        ?>
+                        <li>
+                            <a>
+                                <span class="image"><img src="../../resource/images/img.png" alt="Profile Image" /></span>
+                                <span>
+                                  <span>Sandwitch Group</span>
+                                  <span class="time"><?=$event['event_time']?></span>
+                                </span>
+                                <span class="message">
+                                  <?=$event['subject']?>
+                               </span>
+                            </a>
+                        </li>
+                        <?php
+                           }
+                        ?>
+                        <li>
+                            <div class="text-center">
+                                <a href="../liveEvent/liveEvent.php">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- /top navigation -->
+<!-- <html lang = "en">  
    <head>  
       <meta charset = "utf-8">  
       <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">  
@@ -35,7 +184,7 @@ html { height: 100%;}
     margin-left: -220px;  
     overflow-y: auto;  
     overflow-x: hidden;  
-    background: transparent;  
+    background: transparent;
     -webkit-transition: all 0.5s ease;  
     -moz-transition: all 0.5s ease;  
     -o-transition: all 0.5s ease;  
@@ -345,31 +494,18 @@ a[href*="#works"]::before {
        <li><a href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"> Job Listing</a> </li>  
        <li class="dropdown">  
        <a href="#works" class="dropdown-toggle?" data-toggle="dropdown"> Works </a>  
-     <!-- <ul class="dropdown-menu animated fadeInLeft" role="menu">  
-      <div class="dropdown-header">Dropdown heading</div>  
-      <li><a href="#pictures">Pictures</a></li>  
-      <li><a href="#videos">Videeos</a></li>  
-      <li><a href="#books">Books</a></li>  
-      <li><a href="#art">Art</a></li>  
-      <li><a href="#awards">Awards</a></li>  
-      </ul>   -->
       </li>  
       <li><a href="#settings">Settings</a></li>  
       
       </ul>  
   </nav>  
          
-        <div id="page-content-wrapper">  
+        
             <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">  
                 <span class="hamb-top"></span>  
                 <span class="hamb-middle"></span>  
                 <span class="hamb-bottom"></span>  
-            </button>  
-            <!-- <div class="container">  
-                <div class="row">  
-                    <div class="col-lg-8 col-lg-offset-2">  
-                        <h1> Bootstrap4 Sidebar Navigation Example </h1>  
-                     </div>   -->
+            </button> 
                 </div>  
             </div>  
         </div>    
@@ -403,7 +539,7 @@ a[href*="#works"]::before {
     </script> 
     </body>  
 </html>  
- <!-- <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
         <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
@@ -426,8 +562,8 @@ a[href*="#works"]::before {
         </form>
         </div>
     </div>
-    </nav> --> 
+    </nav> 
 
 
 
-
+ -->
