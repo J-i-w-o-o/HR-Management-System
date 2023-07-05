@@ -79,8 +79,6 @@
     <a href="index.php?job-application" data-toggle="tooltip" data-placement="bottom" title="JOB APPLICATION"><i class="fa fa-user mx-2"> </i>JOB APPLICATION</a>
     <div class="sidenav-footer">
         <a href="index.php?logout" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
-    <div class="sidenav-footer ">
-      <a class="border-bottom border-white border-2" href="index.php?logout" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
   </div>
   </div>
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
