@@ -53,7 +53,7 @@ include './templates/header.php';
             <p>Fill Up the form below to proceed your application.</p>
             <span id="additionalInfo" class="form-control" rows="3" disabled></span>
             <!-- Forms for application -->
-            <form id="applicationform">
+            <form  action="./includes/job-applyconf.php" method="post" enctype="multipart/form-data" id="applicationform">
             <h5>Fill Up:</h5>
             <div class="form-group my-2 mt-3">
                     <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter Full Name" required>
