@@ -1,5 +1,5 @@
 
-  fetch('../assets/data/careers.json')
+  fetch('./assets/data/careers.json')
     .then(response => response.json())
     .then(jobsData => {
       const jobsContainer = document.getElementById('jobsContainer');

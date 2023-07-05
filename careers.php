@@ -51,7 +51,7 @@ include './templates/header.php';
           <div class="col-12">
             <h4>Additional Information</h4>
             <p>Fill Up the form below to proceed your application.</p>
-
+            <span id="additionalInfo" class="form-control" rows="3" disabled></span>
             <!-- Forms for application -->
             <form id="applicationform">
             <h5>Fill Up:</h5>
@@ -85,14 +85,11 @@ include './templates/header.php';
       <div class="modal-footer">
         <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal">Close</button>
         <button type="submit" id="btnappsubmit" class="btn " form="applicationform" >Apply</button>
-        
-
       </div>
     </div>
   </div>
 </div>
-<script src="./assets/js/joblist-view.js"></script>
+<script src="joblist-view.js"></script>
 <?php
 include './templates/footer.php';
 ?>
-<form action=""></form>
