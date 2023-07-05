@@ -1,16 +1,30 @@
 <title>Job Listings</title>
+
+<div class="container-fluid" id="main">
 <div class="text-center">
-  <h1 class="mb-3">Job Listings</h1>
+
 </div>
-<div class="container-fluid">
   <div class="d-flex justify-content-between align-items-center mx-2">
+    <div> 
     <h4 class="text-center lead"><span id="jobCount"></span> Jobs Found</h4>
-    <form class="d-flex forms">
+</div>
+
+    
+  
+      <div class="d-flex ">
+        <div class="mx-2 my-3">
+        <button type="button" class="btn btn-success">
+  <i class="fas fa-plus"></i></button>
+  
+        </div>
+  <form class="d-flex forms my-3"> 
+    
       <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
       <button type="submit" class="btn btn-sm" id="searchIcon">
         <i class="fas fa-search"></i>
       </button>
     </form>
+    </div>
   </div>
   <div id="jobsContainer" class="row"></div>
   <nav aria-label="Jobs Pagination">
@@ -34,6 +48,7 @@
           <div class="col-6">
             <h4>Job type</h4>
             <p class="fs-6 px-1" id="jobType"></p>
+            
           </div>
           <div class="col-6">
             <h4>No. of vacancies</h4>
@@ -56,40 +71,14 @@
           <div class="col-12">
             <h4>Additional Information</h4>
             <p>Fill Up the form below to proceed your application.</p>
-            <span id="additionalInfo" class="form-control" rows="3" disabled></span>
+            <span id="additionalInfo" class="form-control my-3" rows="3" disabled></span>
             <!-- Forms for application -->
             <form id="applicationform">
-            <h5>Fill Up:</h5>
-            <div class="form-group my-2 mt-3">
-                    <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter Full Name" required>
-                </div>
-
-                <div class="form-group mb-2">
-                    <input type="text" id="address" name="address" class="form-control" placeholder="Enter Address" required>
-                </div>
-                
-                <div class="form-group mb-2">
-                    <input type="tel" id="mobile" name="mobile" maxlength="11" class="form-control" placeholder="Enter Mobile Number" required>
-                </div>
-
-                <div class="form-group mb-2">
-                    <input type="email" id="email" name="email" pattern="[^ @]*@[^ @]*" title="Invalid email address" class="form-control" placeholder="Enter Email" required>
-                </div>
-
-                <div class="form-group mt-3">
-                <h5>Attach resume/cv:</h5>
-                <input type="file" name="fileToUpload" id="fileToUpload">
-                </div>
-           
-            </form>
             
-          </div>
-        </div>
-      </div>
 
       <div class="modal-footer">
-        <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal">Close</button>
-        <button type="submit" id="btnappsubmit" class="btn " form="applicationform" >Apply</button>
+      <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+      <button type="edit-button" class="btn btn-success"><i class="fas fa-edit"></i></button>
       </div>
     </div>
   </div>
