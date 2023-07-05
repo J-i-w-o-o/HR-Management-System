@@ -50,7 +50,6 @@ include './templates/header.php';
         <div class="row">
           <div class="col-12">
             <h4>Additional Information</h4>
-            <p>Fill Up the form below to proceed your application.</p>
             <span id="additionalInfo" class="form-control" rows="3" disabled></span>
             <!-- Forms for application -->
             <form  action="./includes/job-applyconf.php" method="post" enctype="multipart/form-data" id="applicationform">
@@ -90,6 +89,23 @@ include './templates/header.php';
   </div>
 </div>
 <script src="joblist-view.js"></script>
+<script>
+  // Add an event listener to handle form submission
+  document.getElementById("btnappsubmit").addEventListener("click", function() {
+    // Trigger the form submission
+    document.getElementById("applicationform").submit();
+
+    // Show SweetAlert pop-up after form submission
+    Swal.fire({
+      icon: 'success',
+      title: 'Application Submitted!',
+      text: 'Your application has been submitted successfully.',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'OK',
+    });
+  });
+</script>
+
 <?php
 include './templates/footer.php';
 ?>
