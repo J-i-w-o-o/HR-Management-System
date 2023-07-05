@@ -8,10 +8,5 @@
   <link rel="stylesheet" href="../assets/css/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/css/node_modules/mdb-ui-kit/css/mdb.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
-
-
-
 </head>
-
 <body style="background-color: #FFF4F4;">

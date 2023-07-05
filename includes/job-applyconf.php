@@ -1,5 +1,5 @@
 <?php
-// Assuming you have already established    
+// Assuming you have already established
 $host = 'localhost';
 $username = 'root';
 $password = '';
@@ -12,19 +12,40 @@ $connection = new mysqli($host, $username, $password, $database);
 if ($connection->connect_error) {
     die('Connection failed: ' . $connection->connect_error);
 }
-// Retrieve form data
+
+// Form validation
 $firstname = $_POST['firstname'];
 $address = $_POST['address'];
 $mobile = $_POST['mobile'];
 $email = $_POST['email'];
+
+if (empty($firstname) || empty($address) || empty($mobile) || empty($email)) {
+    die("Please fill in all the required fields.");
+}
 
 // File upload handling (optional)
 $targetDirectory = "C:/xampp/htdocs/HR-Management-System/uploads/";
 $targetFile = $targetDirectory . basename($_FILES['fileToUpload']['name']);
 $uploadSuccess = move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $targetFile);
 
-
 // Prepare and execute the database query
+$query = "SELECT * FROM job_applications WHERE email = ?";
+$stmt = $connection->prepare($query);
+
+if (!$stmt) {
+    die('Error: ' . $connection->error);
+}
+
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows > 0) {
+    die("An application with the provided email already exists.");
+}
+
+$stmt->close();
+
 $query = "INSERT INTO job_applications (firstname, address, mobile, email, file_path) VALUES (?, ?, ?, ?, ?)";
 $stmt = $connection->prepare($query);
 
