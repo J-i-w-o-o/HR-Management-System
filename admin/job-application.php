@@ -1,24 +1,39 @@
 
-    <title>Job Application</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
+<title>Job Application</title>
+<style>
+
+table {
+  border-color: red;
+  border-collapse: collapse;
+  width: 100%;
+
+  
+}
+
+#tableres{
+    overflow-x:scroll;
+    margin-top: 10px;
+
+   
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
 
     
 <!-- Your existing HTML code -->
    
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
-
-
-<span style="font-size:30px;cursor:pointer;color:#ec5b33" onclick="openNav()">&#9776; </span>
 
 
 
-<div id="container">
+
+<div class="container-fluid" id="main">
   <div id="tableres">
     <table>
       <div>
@@ -61,7 +76,7 @@
           echo "<td>".$row['mobile']."</td>";
           echo "<td>".$row['email']."</td>";
           echo "<td></td>";
-          echo "<td> <button type='button' id='btnclose' class='btn'>Close</button> <button type='button' id='btnclose' class='btn'>Close</button> </td>";
+          echo "<td> <button type='button' id='btnclose' class='btn'><i class='fa-solid fa-square-check' style='color: #149016;'></i></button><button type='button' class='btn no-border'> <i class='fa-solid fa-square-xmark' style='color: #a61111;'></i></button></td>";
           echo "</tr>";
         }
       } else {

@@ -9,7 +9,12 @@
   <link rel="stylesheet" href="../assets/css/node_modules/mdb-ui-kit/css/mdb.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.css" />
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="../assets/js/node_modules/sweetalert2/dist/sweetalert2.min.css">
 
+  <link rel="stylesheet" href="../assets/css/header.css">
+
+
+
+  
+  
     
-</head>
-<body style="background-color: #FFF4F4;">

@@ -35,6 +35,7 @@
           colDiv.className = 'col-md-4 mb-3 d-flex';
 
           const card = document.createElement('div');
+          
           card.className = 'card';
 
           const cardContent = document.createElement('div');
@@ -51,7 +52,7 @@
 
           cardFooter.innerHTML = `
               <div>${job.postedAgo}</div>
-              <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#jobModal" onclick="showJobDetails('${job.title}','${job.overview}', '${job.jobType}', '${job.vacancies}', '${job.experience}', '${job.jobLevel}', '${job.location }','${job.additionalInfo}')">Apply now</button>
+              <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#jobModal" onclick="showJobDetails('${job.title}','${job.overview}', '${job.jobType}', '${job.vacancies}', '${job.experience}', '${job.jobLevel}', '${job.location }','${job.additionalInfo}')">EDIT</button>
             `;
 
           card.appendChild(cardContent);
