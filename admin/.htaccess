@@ -14,8 +14,8 @@
 # RewriteCond %{REQUEST_FILENAME}.html -f
 # RewriteRule ^(.*)$ $1.html [NC,L]
 
-# # Set default page to index.php
-# DirectoryIndex index.php
+# Set default page to index.php
+DirectoryIndex index.php
 
 # # Prevent directory browsing
 # Options -Indexes
