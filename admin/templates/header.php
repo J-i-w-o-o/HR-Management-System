@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="../assets/css/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/css/node_modules/mdb-ui-kit/css/mdb.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.css" />
-  <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>
+  <link rel="stylesheet" href="../assets/css/header.css">
+
+
+
+  
+  
     
-</head>
-<body style="background-color: #FFF4F4;">
