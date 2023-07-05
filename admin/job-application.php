@@ -1,6 +1,30 @@
 
-    <title>Job Application</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
+<title>Job Application</title>
+<style>
+
+table {
+  border-color: red;
+  border-collapse: collapse;
+  width: 100%;
+
+  
+}
+
+#tableres{
+    overflow-x:scroll;
+    margin-top: 10px;
+
+   
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
 
     
 <!-- Your existing HTML code -->
@@ -9,7 +33,7 @@
 
 
 
-<div id="container">
+<div class="container-fluid" id="main">
   <div id="tableres">
     <table>
       <div>
