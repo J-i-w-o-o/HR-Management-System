@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `job_applications` (
   `id` int(11) NOT NULL,
+  `position` varchar(200) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `mobile` varchar(11) NOT NULL,
@@ -40,7 +41,7 @@ CREATE TABLE `job_applications` (
 -- Dumping data for table `job_applications`
 --
 
-INSERT INTO `job_applications` (`id`, `firstname`, `address`, `mobile`, `email`, `file_path`) VALUES
+INSERT INTO `job_applications` (`id`, `position`,`firstname`, `address`, `mobile`, `email`, `file_path`) VALUES
 (19, 'Jean Patrice', '151 9TH AVENUE WEST GRACE PARK CALOOCAN CITY', '09237423422', 'patsokyut@gmail.com', 'C:/xampp/htdocs/HR-Management-System/uploads/Authorization Letter.docx');
 
 --

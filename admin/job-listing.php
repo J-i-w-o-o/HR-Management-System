@@ -74,6 +74,25 @@
             <span id="additionalInfo" class="form-control my-3" rows="3" disabled></span>
             <!-- Forms for application -->
             <form id="applicationform">
+            <h5>Fill Up:</h5>
+            <div class="form-group my-2 mt-3">
+                    <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter Full Name" required>
+                </div>
+
+                <div class="form-group mb-2">
+                    <input type="text" id="address" name="address" class="form-control" placeholder="Enter Address" required>
+                </div>
+                
+                <div class="form-group mb-2">
+                    <input type="tel" id="mobile" name="mobile" maxlength="11" class="form-control" placeholder="Enter Mobile Number" required>
+                </div>
+
+                <div class="form-group mt-3">
+                <h5>Attach resume/cv:</h5>
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+           
+            </form>
             
 
       <div class="modal-footer">
