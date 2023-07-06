@@ -10,7 +10,6 @@
       overflow-x: hidden;
       padding-top: 60px;
       transition: 0.5s;
-      width: 0;
       opacity: 85%;
     }
 
@@ -65,34 +64,43 @@
       color: #12294a;
       padding: 8px 16px;
     }
+    
 
   </style>
     
 </head>
 <body style="background-color: #FFF4F4;">
 
-  <div id="mySidenav" class="sidenav">
-
+<div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a class="border-bottom border-white border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-home mx-2"> </i>DASHBOARD</a>
-    <a class="border-bottom border-white border-2 mx-2" href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"><i class="fa fa-user mx-2"> </i>JOB LISTING</a>
-    <a href="index.php?job-application" data-toggle="tooltip" data-placement="bottom" title="JOB APPLICATION"><i class="fa fa-user mx-2"> </i>JOB APPLICATION</a>
+    <a class="border-bottom border-white border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-home mx-2"></i>DASHBOARD</a>
+    <a class="border-bottom border-white border-2 mx-2" href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"><i class="fa fa-user mx-2"></i>JOB LISTING</a>
+    <a href="index.php?job-application" data-toggle="tooltip" data-placement="bottom" title="JOB APPLICATION"><i class="fa fa-user mx-2"></i>JOB APPLICATION</a>
     <div class="sidenav-footer">
-        <a class="border-bottom border-white border-2" href="index.php?logout" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
+      <a class="border-bottom border-white border-2" href="index.php?logout" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
+    </div>
   </div>
-  </div>
+
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
     <div class="container-fluid">
       <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()">&#9776;</span>
-      <a class="navbar-brand" href="index.php?dashboard">
-        <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40" >
+      <a class="navbar-brand mx-3" href="index.php?dashboard">
+        <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        
       </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <!-- Add your navbar links here -->
+      </div>
+    </div>
   </nav>
-  </div>
+
   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Close the sidebar by default
+    closeNav();
+  });
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
       document.getElementById("main").style.marginLeft = "250px";
@@ -107,3 +115,6 @@
       document.body.style.backgroundColor = "white";
     }
   </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

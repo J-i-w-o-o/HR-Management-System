@@ -72,7 +72,7 @@
             <h4>Additional Information</h4>
             <p>Fill Up the form below to proceed your application.</p>
             <span id="additionalInfo" class="form-control my-3" rows="3" disabled></span>
-            <!-- Forms for application -->
+            <!-- Forms for application
             <form id="applicationform">
             <h5>Fill Up:</h5>
             <div class="form-group my-2 mt-3">
@@ -92,7 +92,7 @@
                 <input type="file" name="fileToUpload" id="fileToUpload">
                 </div>
            
-            </form>
+            </form> -->
             
 
       <div class="modal-footer">
