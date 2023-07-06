@@ -1,17 +1,5 @@
 <?php
-// Assuming you have already established
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'hrms';
-
-// Create a connection
-$connection = new mysqli($host, $username, $password, $database);
-
-// Check the connection
-if ($connection->connect_error) {
-    die('Connection failed: ' . $connection->connect_error);
-}
+include '../includes/db.php';
 // Form validation
 $firstname = $_POST['firstname'];
 $address = $_POST['address'];
@@ -23,23 +11,20 @@ if (empty($firstname) || empty($address) || empty($mobile) || empty($email)) {
 }
 
 // Prepare and execute the database query
-$query = "SELECT * FROM job_applications WHERE email = ?";
+$query = "SELECT * FROM job_applications WHERE email = ? AND mobile = ?";
 $stmt = $connection->prepare($query);
 
 if (!$stmt) {
     die('Error: ' . $connection->error);
 }
 
-$stmt->bind_param("s", $email);
+$stmt->bind_param("ss", $email, $mobile);
 $stmt->execute();
 $stmt->store_result();
 
 if ($stmt->num_rows > 0) {
-    $alertMessage = urlencode('Form Already Exist!');
-    $redirectUrl = $_SERVER['HTTP_REFERER'] . '?alert=' . $alertMessage;
-
-    // Redirect back to the previous page with the alert message
-    header("Location: $redirectUrl");
+    echo '<script>alert(" Email already exists.");</script>';
+    echo '<script>window.location.href = "../careers.php";</script>';
     exit();
 }
 
@@ -60,7 +45,9 @@ $stmt->bind_param("sssss", $firstname, $address, $mobile, $email, $targetFile);
 $result = $stmt->execute();
 
 if ($result) {
-    echo "Data inserted successfully!";
+    echo '<script>alert("Data inserted successfully");</script>';
+    echo '<script>window.location.href = "../careers.php";</script>';
+    exit();
 } else {
     echo "Error: " . $stmt->error;
 }

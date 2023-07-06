@@ -1,4 +1,3 @@
-
   fetch('../assets/data/careers.json')
     .then(response => response.json())
     .then(jobsData => {
@@ -35,7 +34,7 @@
           colDiv.className = 'col-md-4 mb-3 d-flex';
 
           const card = document.createElement('div');
-          
+
           card.className = 'card';
 
           const cardContent = document.createElement('div');
@@ -52,7 +51,7 @@
 
           cardFooter.innerHTML = `
               <div>${job.postedAgo}</div>
-              <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#jobModal" onclick="showJobDetails('${job.title}','${job.overview}', '${job.jobType}', '${job.vacancies}', '${job.experience}', '${job.jobLevel}', '${job.location }','${job.additionalInfo}')">EDIT</button>
+              <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#jobModal" onclick="showJobDetails('${job.title}','${job.overview}', '${job.jobType}', '${job.vacancies}', '${job.experience}', '${job.jobLevel}', '${job.location }','${job.additionalInfo}','${job.description}')">EDIT</button>
             `;
 
           card.appendChild(cardContent);
@@ -98,8 +97,9 @@
       console.log('Error fetching careers data:', error);
     });
 
-  function showJobDetails(title, overview, jobType, vacancies, experience, jobLevel,location,additionalInfo) {
-    const modalTitle = document.getElementById('jobLabel');
+  function showJobDetails(title, overview, jobType, vacancies, experience, jobLevel, location, additionalInfo, description) {
+    const modalTitle = document.getElementById('title');
+    const modallabel = document.getElementById('jobLabel');
     const overviewElement = document.getElementById('overview');
     const jobTypeElement = document.getElementById('jobType');
     const vacanciesElement = document.getElementById('vacancies');
@@ -107,14 +107,17 @@
     const jobLevelElement = document.getElementById('jobLevel');
     const locationElement = document.getElementById('location');
     const additionalInfoElement = document.getElementById('additionalInfo');
+    const descriptionElement = document.getElementById('description');
 
-    modalTitle.textContent = 'Job details - ' + title;
-    overviewElement.textContent = overview;
-    jobTypeElement.textContent = jobType;
-    vacanciesElement.textContent = vacancies;
-    experienceElement.textContent = experience;
-    jobLevelElement.textContent = jobLevel;
-    locationElement.textContent = location;
-    additionalInfoElement.textContent = additionalInfo;
+    modalTitle.value = title;
+    modallabel.textContent = title;
+    overviewElement.value = overview;
+    jobTypeElement.value = jobType;
+    vacanciesElement.value = vacancies;
+    experienceElement.value = experience;
+    jobLevelElement.value = jobLevel;
+    locationElement.value = location;
+    additionalInfoElement.value = additionalInfo;
+    descriptionElement.value = description;
+
   }
-  
