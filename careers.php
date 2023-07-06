@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +24,7 @@
     </div>
   </nav>
 </header>
+
 <body style="margin-top: 70px;">
  <?php
   // Check if the 'alert' parameter is present in the URL
@@ -87,36 +89,37 @@
                 <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter Full Name" required>
               </div>
 
-              <div class="form-group mb-2">
-                <input type="text" id="address" name="address" class="form-control" placeholder="Enter Address" required>
-              </div>
+                <div class="form-group mb-2">
+                  <input type="text" id="address" name="address" class="form-control" placeholder="Enter Address" required>
+                </div>
 
-              <div class="form-group mb-2">
-                <input type="num" id="mobile" name="mobile" maxlength="11" pattern="[0-9]*" title="Please enter only numeric digits." inputmode="numeric" class="form-control" placeholder="Enter Mobile Number" required>
-              </div>
+                <div class="form-group mb-2">
+                  <input type="num" id="mobile" name="mobile" maxlength="11" pattern="[0-9]*" title="Please enter only numeric digits." inputmode="numeric" class="form-control" placeholder="Enter Mobile Number" required>
+                </div>
 
-              <div class="form-group mb-2">
-                <input type="email" id="email" name="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Invalid email address" class="form-control" placeholder="Enter Email" required>
-              </div>
+                <div class="form-group mb-2">
+                  <input type="email" id="email" name="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Invalid email address" class="form-control" placeholder="Enter Email" required>
+                </div>
 
-              <div class="form-group mt-3">
-                <h5>Attach resume/cv:</h5>
-                <input type="file" name="fileToUpload" id="fileToUpload" required>
-              </div>
-            </form>
+                <div class="form-group mt-3">
+                  <h5>Attach resume/cv:</h5>
+                  <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal">Close</button>
-        <button type="submit" id="btnappsubmit" class="btn " form="applicationform">Apply</button>
+        <div class="modal-footer">
+          <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal">Close</button>
+          <button type="submit" id="btnappsubmit" class="btn " form="applicationform">Apply</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script src="./includes/joblist-view-careers.js"></script>
+  <script src="./includes/joblist-view-careers.js"></script>
 </body>
 <script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./assets/js/node_modules/jquery/dist/jquery.min.js"></script>
+
 </html>
