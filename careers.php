@@ -79,7 +79,6 @@
         <div class="row">
           <div class="col-12">
             <h4>Additional Information</h4>
-            <p>Fill Up the form below to proceed your application.</p>
             <span id="additionalInfo" class="form-control" rows="3" disabled></span>
             <!-- Forms for application -->
             <form action="./includes/job-applyconf.php" method="post" enctype="multipart/form-data" id="applicationform">
