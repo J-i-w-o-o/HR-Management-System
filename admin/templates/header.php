@@ -11,9 +11,3 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/job-application.css">
-
-
-
-  
-  
-    
