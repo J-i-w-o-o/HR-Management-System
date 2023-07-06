@@ -1,5 +1,5 @@
-<?php include '../admin/modals/job-listing-modal.php' ?> 
-<title>Job Listings</title>
+<?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css';?>
+<div id="main">
 <div class="container-fluid" id="main">
   <div class="text-center">
   </div>
@@ -26,3 +26,7 @@
   </nav>
 </div>
  <script src="../includes/joblist-view-admin.js"></script>
+
+
+          
+       
