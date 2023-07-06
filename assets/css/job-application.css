@@ -1,4 +1,5 @@
 <style>
+
 .table-scroll {
 	position:relative;
 	max-width:100%;
@@ -20,11 +21,10 @@
 }
 
 .table-wrap {
-	width:100%;
+	width: auto;
 	overflow:auto;
   
 }
-
 .table-scroll table {
 	width:100%;
 	margin:auto;
@@ -42,3 +42,4 @@
 	background:#f9f9f9;
 }
 </style>
+
