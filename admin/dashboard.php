@@ -1,12 +1,4 @@
-<style>
-    .card-header {
-        background: #ec5b33;
-    }
-
-    .row {
-        padding-top: 50px;
-    }
-</style>
+<link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
 <div class="container-fluid px-4" id=main>
     <div class="row">
         <div class="col-xl-3 col-md-6">
@@ -31,8 +23,17 @@
             </div>
         </div>
 
+        <div class="col-xl-3 col-md-6">
+        <body onLoad="initClock()">
 
-
+<div id="timedate">
+  <a id="mon">January</a>
+  <a id="d">1</a>,
+  <a id="y">0</a><br />
+  <a id="h">12</a> :
+  <a id="m">00</a>
+</div>
+        </div>
 
 
     </div>
@@ -40,3 +41,41 @@
 
 </div>
 </div>
+
+<script>
+  // START CLOCK SCRIPT
+
+  Number.prototype.pad = function(n) {
+    for (var r = this.toString(); r.length < n; r = 0 + r);
+    return r;
+  };
+
+  function updateClock() {
+    var now = new Date();
+    var milli = now.getMilliseconds(),
+      sec = now.getSeconds(),
+      min = now.getMinutes(),
+      hou = now.getHours(),
+      mo = now.getMonth(),
+      dy = now.getDate(),
+      yr = now.getFullYear();
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var tags = ["mon", "d", "y", "h", "m", "s", "mi"],
+      corr = [months[mo], dy, yr, (hou % 12 || 12).pad(2), min.pad(2), sec.pad(2), milli];
+    for (var i = 0; i < tags.length; i++)
+      document.getElementById(tags[i]).firstChild.nodeValue = corr[i];
+
+    // Determine the period (AM or PM)
+    var period = hou >= 12 ? "PM" : "AM";
+    document.getElementById("period").textContent = period;
+  }
+
+  function initClock() {
+    updateClock();
+    window.setInterval("updateClock()", 1);
+  }
+
+  initClock();
+</script>
+
+</script>
