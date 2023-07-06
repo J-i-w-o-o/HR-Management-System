@@ -6,6 +6,10 @@
 	margin:auto;
 	overflow:hidden;
 	border:1px solid #000;
+	margin-left: 10px;
+	margin-right: 10px;
+
+
 }
 
 ::-webkit-scrollbar-thumb {

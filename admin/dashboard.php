@@ -1,3 +1,6 @@
+<title>Job Application</title>
+<?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css';?>
+<div id="main">
 <link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
 <div class="container-fluid px-4" id=main>
     <div class="row">
@@ -79,3 +82,7 @@
 </script>
 
 </script>
+
+
+          
+       
