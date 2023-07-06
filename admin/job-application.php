@@ -11,9 +11,8 @@ table {
 }
 
 #tableres{
-    overflow-x:scroll;
     margin-top: 10px;
-
+    
    
 }
 
@@ -23,18 +22,17 @@ th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+
 </style>
 
 
     
-<!-- Your existing HTML code -->
-   
+<!-- Table start here -->
 
+<div class="container-fluid" id="main" >
+<h2 class="mt-2">JOB APPLICATION</h2>
 
-
-
-<div class="container-fluid" id="main">
-  <div id="tableres">
+  <div id="tableres" style="overflow-x:auto;">
     <table>
       <div>
         <tr>
@@ -76,7 +74,7 @@ th, td {
           echo "<td>".$row['mobile']."</td>";
           echo "<td>".$row['email']."</td>";
           echo "<td></td>";
-          echo "<td> <button type='button' id='btnclose' class='btn'><i class='fa-solid fa-square-check' style='color: #149016;'></i></button><button type='button' class='btn no-border'> <i class='fa-solid fa-square-xmark' style='color: #a61111;'></i></button></td>";
+          echo "<td><button type='button' class='btn btn-success'>Review</button><button type='button' class='btn btn-danger ms-2'>Reject</button></td>";
           echo "</tr>";
         }
       } else {
@@ -90,19 +88,15 @@ th, td {
     </table>
   </div>
 </div>
-
-
 <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
-  document.body.style.backgroundColor = "white";
 }
 </script>
 
