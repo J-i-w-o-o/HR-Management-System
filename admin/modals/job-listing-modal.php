@@ -32,10 +32,10 @@
                 <p class="fs-6 px-1" id="location"></p>
                 <div class="row">
                     <div class="col-12">
-                        <h4>Additional Information</h4>
+                        <!-- <h4>Additional Information</h4>
                         <p>Fill Up the form below to proceed your application.</p>
-                        <span id="additionalInfo" class="form-control my-3" rows="3" disabled></span>
-                        <!-- Forms for application -->
+                        <span id="additionalInfo" class="form-control my-3" rows="3" disabled></span> -->
+                        <!-- Forms for application
                         <form id="applicationform">
                             <h5>Fill Up:</h5>
                             <div class="form-group my-2 mt-3">
@@ -54,7 +54,7 @@
                                 <h5>Attach resume/cv:</h5>
                                 <input type="file" name="fileToUpload" id="fileToUpload">
                             </div>
-                        </form>
+                        </form> -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                             <button type="edit-button" class="btn btn-success"><i class="fas fa-edit"></i></button>
