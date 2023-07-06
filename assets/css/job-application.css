@@ -1,0 +1,24 @@
+<style>
+  table {
+    border-color: red;
+    border-collapse: collapse;
+    width: 100%;
+
+
+  }
+
+  #tableres {
+    overflow-x: scroll;
+    margin-top: 10px;
+
+
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>

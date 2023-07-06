@@ -23,7 +23,7 @@ include './templates/header.php';
                 <div class="form-group mb-2">
                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
-                
+
                 <!-- Submit button -->
                 <button type="submit" name="submit" class="btn text-light btn-block" style="background-color: #ff5100;">Register</button>
             </form>
