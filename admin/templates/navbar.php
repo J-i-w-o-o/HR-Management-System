@@ -1,73 +1,4 @@
-  <style>
-    .sidenav {
-      width: 250px;
-      background-color: #12294a;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      z-index: 1;
-      overflow-x: hidden;
-      padding-top: 60px;
-      transition: 0.5s;
-      opacity: 85%;
-    }
-
-    .sidenav a {
-      padding: 8px 8px 8px 16px;
-      text-decoration: none;
-      font-size: 18px;
-      color: #ec5b33;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .sidenav a:hover {
-      color: white;
-    }
-
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-      transition: 0.3s;
-    }
-    .sidenav-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: #12294a;
-}
-.sidenav-footer a {
-    color: #ec5b33;
-    display: block;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-.sidenav-footer a:hover {
-    color: white;
-}
-
-    .navbar {
-      background-color: transparent;
-
-    }
-
-    .navbar-toggler-icon {
-      color: #12294a;
-    }
-
-    .collapse.navbar-collapse .navbar-nav .nav-item .nav-link {
-      color: #12294a;
-      padding: 8px 16px;
-    }
-    
-
-  </style>
-    
+<link rel="stylesheet" href="../assets/css/navbar.css">
 </head>
 <body style="background-color: #FFF4F4;">
 
@@ -95,12 +26,8 @@
       </div>
     </div>
   </nav>
-
+  </div>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    // Close the sidebar by default
-    closeNav();
-  });
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
       document.getElementById("main").style.marginLeft = "250px";
@@ -115,6 +42,3 @@
       document.body.style.backgroundColor = "white";
     }
   </script>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
