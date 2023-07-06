@@ -1,5 +1,7 @@
-
 <title>Job Application</title>
+<?php require 'C:\xampp\htdocs\PHP-Structure\assets\css\job-application.css' ?>
+<div class="container-fluid" id="main">
+  <div id="tableres">
 <style>
 
 table {
@@ -43,7 +45,6 @@ th, td {
           <th>Email</th>
           <th>Resume</th>
           <th>Action</th>
-          
         </tr>
       </div>
       
@@ -74,7 +75,7 @@ th, td {
           echo "<td>".$row['mobile']."</td>";
           echo "<td>".$row['email']."</td>";
           echo "<td></td>";
-          echo "<td><button type='button' class='btn btn-success'>Review</button><button type='button' class='btn btn-danger ms-2'>Reject</button></td>";
+          echo "<td> <button type='button' id='btnclose' class='btn'><i class='fa-solid fa-square-check' style='color: #149016;'></i></button><button type='button' class='btn no-border'> <i class='fa-solid fa-square-xmark' style='color: #a61111;'></i></button></td>";
           echo "</tr>";
         }
       } else {
@@ -88,15 +89,19 @@ th, td {
     </table>
   </div>
 </div>
+
+
 <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
 }
 </script>
 

@@ -1,4 +1,5 @@
 <?php
+ session_start();
 // Initialize the alert message variable
 $alertMessage = "";
 
