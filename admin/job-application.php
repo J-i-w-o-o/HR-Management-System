@@ -14,7 +14,7 @@
             <tr>
               <th>Name</th>
               <th>Address</th>
-              <th>mobile</th>
+              <th>Mobile</th>
               <th>Email</th>
               <th>Resume</th>
               <th>Action</th>

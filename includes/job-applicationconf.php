@@ -18,7 +18,6 @@ $result = mysqli_query($connection, $sql);
 if (mysqli_num_rows($result) > 0) {
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>" . $row['id'] . "</td>";
     echo "<td>" . $row['firstname'] . "</td>";
     echo "<td>" . $row['address'] . "</td>";
     echo "<td>" . $row['mobile'] . "</td>";
@@ -28,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
     
 
             <form method='POST'>
-            <button type='button' class='btn btn-success'>Accept</button><button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger ms-2'>Reject</button>
+              <button type='button' class='btn btn-success'>Approve</button><button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger ms-2'>Decline</button>
             </form>
           </td>";
     echo "</tr>";
