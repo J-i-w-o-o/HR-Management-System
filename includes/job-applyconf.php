@@ -53,7 +53,7 @@ if (!$stmt) {
 }
 
 // File upload handling (optional)
-$targetDirectory = "C:/xampp/htdocs/PHP-Structure/uploads/";
+$targetDirectory = "C:/xampp/htdocs/HR-Management-System/uploads/";
 $targetFile = $targetDirectory . basename($_FILES['fileToUpload']['name']);
 $uploadSuccess = move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $targetFile);
 $stmt->bind_param("sssss", $firstname, $address, $mobile, $email, $targetFile);
