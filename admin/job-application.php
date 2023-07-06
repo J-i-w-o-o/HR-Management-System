@@ -1,15 +1,17 @@
 <title>Job Application</title>
 <?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css';?>
 <div class="container-fluid" id="main">
+      <h2 class="mt-2 ms-3">JOB APPLICATION</h2>
+
+      <div id="table-scroll" class="table-scroll">
+  <div class="table-wrap">
+    <table class="main-table">
   <div id="tableres">
-    <div class="container-fluid" id="main">
-      <h2 class="mt-2">JOB APPLICATION</h2>
 
       <div id="tableres" style="overflow-x:auto;">
         <table>
           <div>
             <tr>
-              <th>No.</th>
               <th>Name</th>
               <th>Address</th>
               <th>mobile</th>
@@ -23,3 +25,7 @@
         </table>
       </div>
     </div>
+
+
+          
+       
