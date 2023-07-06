@@ -15,6 +15,7 @@ $query = "SELECT * FROM job_applications WHERE email = ? AND mobile = ?";
 $stmt = $connection->prepare($query);
 
 if (!$stmt) {
+    
     die('Error: ' . $connection->error);
 }
 
