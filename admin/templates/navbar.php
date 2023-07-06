@@ -2,7 +2,6 @@
 </head>
 
 <body style="background-color: #FFF4F4;">
-
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a class="border-bottom border-white border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-home mx-2"> </i>DASHBOARD</a>
@@ -11,6 +10,7 @@
     <div class="sidenav-footer">
         <a class="border-bottom border-white border-2" href="index.php?logout" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
   </div>
+  
   </div>
 
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
