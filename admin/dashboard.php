@@ -25,63 +25,85 @@
                 </div>
             </div>
         </div>
-
         <div class="col-xl-3 col-md-6">
-        <body onLoad="initClock()">
-
-<div id="timedate">
-  <a id="mon">January</a>
-  <a id="d">1</a>,
-  <a id="y">0</a><br />
-  <a id="h">12</a> :
-  <a id="m">00</a>
-</div>
-        </div>
-
-
+        <div class="container">
+      <div class="display-date">
+        <span id="day">day</span>,
+        <span id="daynum">00</span>
+        <span id="month">month</span>
+        <span id="year">0000</span>
+      </div>
+      <div class="display-time"></div>
     </div>
-
+        </div>
 
 </div>
 </div>
 
 <script>
-  // START CLOCK SCRIPT
+  const displayTime = document.querySelector(".display-time");
 
-  Number.prototype.pad = function(n) {
-    for (var r = this.toString(); r.length < n; r = 0 + r);
-    return r;
-  };
-
-  function updateClock() {
-    var now = new Date();
-    var milli = now.getMilliseconds(),
-      sec = now.getSeconds(),
-      min = now.getMinutes(),
-      hou = now.getHours(),
-      mo = now.getMonth(),
-      dy = now.getDate(),
-      yr = now.getFullYear();
-    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var tags = ["mon", "d", "y", "h", "m", "s", "mi"],
-      corr = [months[mo], dy, yr, (hou % 12 || 12).pad(2), min.pad(2), sec.pad(2), milli];
-    for (var i = 0; i < tags.length; i++)
-      document.getElementById(tags[i]).firstChild.nodeValue = corr[i];
-
-    // Determine the period (AM or PM)
-    var period = hou >= 12 ? "PM" : "AM";
-    document.getElementById("period").textContent = period;
+  // Time
+  function showTime() {
+    let time = new Date();
+    let hours = time.getHours();
+    let period = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12;
+    let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
+    displayTime.innerText = `${hours}:${minutes
+      .toString()
+      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")} ${period}`;
+    setTimeout(showTime, 1000);
   }
 
-  function initClock() {
-    updateClock();
-    window.setInterval("updateClock()", 1);
+  showTime();
+
+  // Date
+  function updateDate() {
+    let today = new Date();
+
+    // return number
+    let dayName = today.getDay(),
+      dayNum = today.getDate(),
+      month = today.getMonth(),
+      year = today.getFullYear();
+
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const dayWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    // value -> ID of the html element
+    const IDCollection = ["day", "daynum", "month", "year"];
+    // return value array with number as a index
+    const val = [dayWeek[dayName], dayNum, months[month], year];
+    for (let i = 0; i < IDCollection.length; i++) {
+      document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+    }
   }
 
-  initClock();
+  updateDate();
 </script>
 
-</script>
 
 
           
