@@ -1,6 +1,5 @@
 </body>
 <script>
-<<<<<<< HEAD
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
       document.getElementById("main").style.marginLeft = "250px";
@@ -8,14 +7,6 @@
       document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
       
     }
-=======
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.getElementById("container").style.transform = "translateX(-250px)";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-  }
->>>>>>> f4eaa4bb3e3209bac70846766312cc9e63163921
 
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
