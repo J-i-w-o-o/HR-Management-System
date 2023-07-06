@@ -12,7 +12,6 @@ $connection = new mysqli($host, $username, $password, $database);
 if ($connection->connect_error) {
     die('Connection failed: ' . $connection->connect_error);
 }
-
 // Form validation
 $firstname = $_POST['firstname'];
 $address = $_POST['address'];
@@ -22,11 +21,6 @@ $email = $_POST['email'];
 if (empty($firstname) || empty($address) || empty($mobile) || empty($email)) {
     die("Please fill in all the required fields.");
 }
-
-// File upload handling (optional)
-$targetDirectory = "C:/xampp/htdocs/HR-Management-System/uploads/";
-$targetFile = $targetDirectory . basename($_FILES['fileToUpload']['name']);
-$uploadSuccess = move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $targetFile);
 
 // Prepare and execute the database query
 $query = "SELECT * FROM job_applications WHERE email = ?";
@@ -41,7 +35,12 @@ $stmt->execute();
 $stmt->store_result();
 
 if ($stmt->num_rows > 0) {
-    die("An application with the provided email already exists.");
+    $alertMessage = urlencode('Form Already Exist!');
+    $redirectUrl = $_SERVER['HTTP_REFERER'] . '?alert=' . $alertMessage;
+
+    // Redirect back to the previous page with the alert message
+    header("Location: $redirectUrl");
+    exit();
 }
 
 $stmt->close();
@@ -53,6 +52,10 @@ if (!$stmt) {
     die('Error: ' . $connection->error);
 }
 
+// File upload handling (optional)
+$targetDirectory = "C:/xampp/htdocs/PHP-Structure/uploads/";
+$targetFile = $targetDirectory . basename($_FILES['fileToUpload']['name']);
+$uploadSuccess = move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $targetFile);
 $stmt->bind_param("sssss", $firstname, $address, $mobile, $email, $targetFile);
 $result = $stmt->execute();
 
@@ -64,4 +67,3 @@ if ($result) {
 
 $stmt->close();
 $connection->close();
-?>
