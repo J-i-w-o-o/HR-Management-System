@@ -10,6 +10,26 @@ if (isset($_POST['delete'])) {
   mysqli_query($connection, $deleteSql);
 }
 
+// Check if the approve button is clicked
+if (isset($_POST['approve'])) {
+  $id = $_POST['approve'];
+
+  // Perform the necessary actions to approve the job application
+  // For example, you can update a column in the "job_application" table to mark it as approved
+
+  // You can add your logic here to perform the approval action
+
+  // Retrieve the approved name from the database
+  $selectSql = "SELECT firstname FROM job_applications WHERE id = $id";
+  $result = mysqli_query($connection, $selectSql);
+  $row = mysqli_fetch_assoc($result);
+  $approvedName = $row['firstname'];
+
+  // Redirect to another page after approval
+  header("Location: ../includes/accepted.php?name=" . urlencode($approvedName));
+  exit();
+}
+
 // Fetch data from the "job_application" table
 $sql = "SELECT * FROM job_applications";
 $result = mysqli_query($connection, $sql);
@@ -24,10 +44,9 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td>" . $row['email'] . "</td>";
     echo "<td></td>";
     echo "<td>
-    
-
             <form method='POST'>
-              <button type='button' class='btn btn-success'>Approve</button><button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger ms-2'>Decline</button>
+              <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'>Approve</button>
+              <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger ms-2'>Decline</button>
             </form>
           </td>";
     echo "</tr>";

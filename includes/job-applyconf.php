@@ -27,6 +27,7 @@ $query = "SELECT * FROM job_applications WHERE email = ?";
 $stmt = $connection->prepare($query);
 
 if (!$stmt) {
+    
     die('Error: ' . $connection->error);
 }
 
