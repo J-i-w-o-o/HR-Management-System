@@ -1,5 +1,5 @@
 <title>Job Application</title>
-<?php require 'C:\xampp\htdocs\PHP-Structure\assets\css\job-application.css' ?>
+<?php require 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css' ?>
 <div class="container-fluid" id="main">
   <div id="tableres">
     <table>
