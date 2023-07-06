@@ -1,6 +1,7 @@
 <title>Job Application</title>
 <?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css';?>
-<div id="main">
+
+<div  id="main">
       <h2 class="mt-2 ms-3">JOB APPLICATION</h2>
 
       <div id="table-scroll" class="table-scroll">
@@ -24,7 +25,10 @@
           include 'C:\xampp\htdocs\HR-Management-System\includes\job-applicationconf.php';?>
         </table>
       </div>
-    </div>
+      
+
+
+
 
 
           
