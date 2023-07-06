@@ -7,7 +7,8 @@
 
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-home mx-2"> </i>DASHBOARD</a>
-    <a href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" ><i class="fa fa-list mx-2"> </i>JOB LISTING</a>
+    <a  
+    href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" ><i class="fa fa-user mx-2"> </i>JOB LISTING</a>
     <a href="index.php?job-application" data-toggle="tooltip" data-placement="bottom" ><i class="fa fa-file mx-2"> </i>JOB APPLICATION</a>
     <a href="index.php?job-application" data-toggle="tooltip" data-placement="bottom" ><i class="fa fa-id-card-clip mx-2"> </i>EMPLOYEES PROFILE</a>
 
