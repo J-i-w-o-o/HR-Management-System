@@ -1,4 +1,4 @@
-<?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css';?>
+<?php include '../admin/modals/job-listing-modal.php'?>
 <div id="main">
 <div class="container-fluid" id="main">
   <div class="text-center"></div>
