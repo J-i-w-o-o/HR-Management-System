@@ -52,7 +52,7 @@ if (in_array($uploadedExtension, $allowedExtensions)) {
 
 if ($uploadSuccess) {
     // File uploaded successfully, proceed with database operations
-    $stmt->bind_param("sssss", $firstname, $address, $mobile, $email, $targetFile , $position);
+    $stmt->bind_param("ssssss", $firstname, $address, $mobile, $email, $targetFile , $position);
     $result = $stmt->execute();
 
     if ($result) {
