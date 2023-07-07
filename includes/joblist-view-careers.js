@@ -97,22 +97,24 @@ fetch('./assets/data/careers.json')
   console.log('Error fetching careers data:', error);
 });
 
-function showJobDetails(title, overview, jobType, vacancies, experience, jobLevel,location,additionalInfo) {
-const modalTitle = document.getElementById('jobLabel');
-const overviewElement = document.getElementById('overview');
-const jobTypeElement = document.getElementById('jobType');
-const vacanciesElement = document.getElementById('vacancies');
-const experienceElement = document.getElementById('experience');
-const jobLevelElement = document.getElementById('jobLevel');
-const locationElement = document.getElementById('location');
-const additionalInfoElement = document.getElementById('additionalInfo');
+function showJobDetails(title, overview, jobType, vacancies, experience, jobLevel, location, additionalInfo) {
+  const modalTitle = document.getElementById('jobLabel');
+  const overviewElement = document.getElementById('overview');
+  const jobTypeElement = document.getElementById('jobType');
+  const vacanciesElement = document.getElementById('vacancies');
+  const experienceElement = document.getElementById('experience');
+  const jobLevelElement = document.getElementById('jobLevel');
+  const locationElement = document.getElementById('location');
+  const additionalInfoElement = document.getElementById('additionalInfo');
+  const titleElement = document.getElementById('titleInput');
 
-modalTitle.textContent = 'Job details - ' + title;
-overviewElement.textContent = overview;
-jobTypeElement.textContent = jobType;
-vacanciesElement.textContent = vacancies;
-experienceElement.textContent = experience;
-jobLevelElement.textContent = jobLevel;
-locationElement.textContent = location;
-additionalInfoElement.textContent = additionalInfo;
+  modalTitle.textContent = 'Job details - ' + title;
+  overviewElement.textContent = overview;
+  jobTypeElement.textContent = jobType;
+  vacanciesElement.textContent = vacancies;
+  experienceElement.textContent = experience;
+  jobLevelElement.textContent = jobLevel;
+  locationElement.textContent = location;
+  additionalInfoElement.textContent = additionalInfo;
+  titleElement.value = title;
 }

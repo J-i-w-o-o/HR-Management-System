@@ -86,6 +86,7 @@
             <form action="./includes/job-applyconf.php" method="post" enctype="multipart/form-data" id="applicationform">
               <h5>Fill Up:</h5>
               <div class="form-group my-2 mt-3">
+              <input type="text" id="titleInput" name="position" class="form-control" required hidden>
                 <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter Full Name" required>
               </div>
 
@@ -103,8 +104,9 @@
 
                 <div class="form-group mt-3">
                   <h5>Attach resume/cv:</h5>
-                  <input type="file" name="fileToUpload" id="fileToUpload">
+                  <input type="file" name="fileToUpload" id="fileToUpload" required>
                 </div>
+                
               </form>
             </div>
           </div>

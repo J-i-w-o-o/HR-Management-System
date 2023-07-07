@@ -42,14 +42,25 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td>" . $row['address'] . "</td>";
     echo "<td>" . $row['mobile'] . "</td>";
     echo "<td>" . $row['email'] . "</td>";
-    echo "<td></td>";
-    echo "<td>
+    $file_path = $row['file_path'];
+    $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
+    echo '<td>
+    <a href="' .$modified_file_path. '" download="' . basename($row['file_path']) . '">
+      ' . basename($row['file_path']) . '
+    </a>
+  </td>';
+    echo "<td class='text-center'>
             <form method='POST'>
-              <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'>Approve</button>
-              <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger ms-2'>Decline</button>
+              <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+              
+              <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
             </form>
           </td>";
+    echo "<td>" . $row['status'] . "</td>";
+
     echo "</tr>";
+
+    
   }
 } else {
   echo "<tr><td colspan='7'>No job applications found.</td></tr>";
@@ -57,4 +68,3 @@ if (mysqli_num_rows($result) > 0) {
 
 // Close the database connection
 mysqli_close($connection);
-?>
