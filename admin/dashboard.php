@@ -23,7 +23,7 @@
 
         <div class="col-xl-3 col-md-6">
             <div class="card border-dark mb-3" style="max-width: 18rem;">
-                <div class="card-header bg-#ec5b33 text-white"> No. of Job Applicants </div>
+                <div class="card-header bg-#ec5b33 text-white"> No. of Pending Applicants </div>
                 <div class="card-body text-dark" style="font-size: 2rem;"> 10000 </div>
                 <div class="card-footer border-dark d-flex align-items-center justify-content-between">
                     <a class="small text-dark stretched-link" href="index.php?job-application">View Details</a>
