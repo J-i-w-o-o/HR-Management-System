@@ -2,7 +2,7 @@
 <?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css';?>
 
 <div  id="main">
-      <h2 class="mt-2 ms-3">JOB APPLICATION</h2>
+      <h2 class="mt-2 ms-3">PENDING APPLICATION</h2>
 
       <div id="table-scroll" class="table-scroll">
   <div class="table-wrap">
