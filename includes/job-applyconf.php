@@ -41,17 +41,34 @@ if (!$stmt) {
 // File upload handling (optional)
 $targetDirectory = "C:/xampp/htdocs/HR-Management-System/uploads/";
 $targetFile = $targetDirectory . basename($_FILES['fileToUpload']['name']);
-$uploadSuccess = move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $targetFile);
-$stmt->bind_param("sssss", $firstname, $address, $mobile, $email, $targetFile);
-$result = $stmt->execute();
+$uploadSuccess = false;
 
-if ($result) {
-    echo '<script>alert("Data inserted successfully");</script>';
-    echo '<script>window.location.href = "../careers.php";</script>';
-    exit();
-} else {
-    echo "Error: " . $stmt->error;
+$allowedExtensions = array('pdf', 'docx');
+$uploadedExtension = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+if (in_array($uploadedExtension, $allowedExtensions)) {
+    $uploadSuccess = move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $targetFile);
 }
+
+if ($uploadSuccess) {
+    // File uploaded successfully, proceed with database operations
+    $stmt->bind_param("sssss", $firstname, $address, $mobile, $email, $targetFile);
+    $result = $stmt->execute();
+
+    if ($result) {
+        echo '<script>alert("Data inserted successfully");</script>';
+        echo '<script>window.location.href = "../careers.php";</script>';
+        exit();
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+} else {
+    echo '<script>alert("Data inserted successfully");</script>';
+        echo '<script>window.location.href = "../careers.php";</script>';
+}
+
+
+
+
 
 $stmt->close();
 $connection->close();

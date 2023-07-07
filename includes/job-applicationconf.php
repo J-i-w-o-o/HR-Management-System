@@ -42,7 +42,13 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td>" . $row['address'] . "</td>";
     echo "<td>" . $row['mobile'] . "</td>";
     echo "<td>" . $row['email'] . "</td>";
-    echo "<td></td>";
+    $file_path = $row['file_path'];
+    $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
+    echo '<td>
+    <a href="' .$modified_file_path. '" download="' . basename($row['file_path']) . '">
+      ' . basename($row['file_path']) . '
+    </a>
+  </td>';
     echo "<td>
             <form method='POST'>
               <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'>Approve</button>
@@ -57,4 +63,3 @@ if (mysqli_num_rows($result) > 0) {
 
 // Close the database connection
 mysqli_close($connection);
-?>

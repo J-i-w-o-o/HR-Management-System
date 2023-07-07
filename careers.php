@@ -103,8 +103,9 @@
 
                 <div class="form-group mt-3">
                   <h5>Attach resume/cv:</h5>
-                  <input type="file" name="fileToUpload" id="fileToUpload">
+                  <input type="file" name="fileToUpload" id="fileToUpload" required>
                 </div>
+                
               </form>
             </div>
           </div>
