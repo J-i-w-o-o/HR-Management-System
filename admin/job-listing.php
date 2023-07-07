@@ -1,4 +1,6 @@
+
 <?php include '../admin/modals/job-listing-modal.php'?>
+<section id="hero" class="pt-5 mt-8 align-items-center">
 <div id="main">
 <div class="container-fluid" id="main">
   <div class="text-center"></div>
