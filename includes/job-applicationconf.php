@@ -6,7 +6,7 @@ if (isset($_POST['delete'])) {
   $id = $_POST['delete'];
 
   // Delete the corresponding row from the "job_application" table
-  $deleteSql = "DELETE FROM job_applications WHERE id = $id";
+  $deleteSql = "UPDATE `job_applications` SET `status`='declined' WHERE id = $id";
   mysqli_query($connection, $deleteSql);
 }
 
@@ -14,19 +14,20 @@ if (isset($_POST['delete'])) {
 if (isset($_POST['approve'])) {
   $id = $_POST['approve'];
 
+  $approveSql = "UPDATE `job_applications` SET `status`='accepted' WHERE id = $id";
+  mysqli_query($connection, $approveSql);
+
+
+
   // Perform the necessary actions to approve the job application
   // For example, you can update a column in the "job_application" table to mark it as approved
 
   // You can add your logic here to perform the approval action
 
   // Retrieve the approved name from the database
-  $selectSql = "SELECT firstname FROM job_applications WHERE id = $id";
-  $result = mysqli_query($connection, $selectSql);
-  $row = mysqli_fetch_assoc($result);
-  $approvedName = $row['firstname'];
 
   // Redirect to another page after approval
-  header("Location: ../includes/accepted.php?name=" . urlencode($approvedName));
+  header("Location: ../admin/index.php?job-application");
   exit();
 }
 
@@ -38,6 +39,7 @@ $result = mysqli_query($connection, $sql);
 if (mysqli_num_rows($result) > 0) {
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
+    echo "<td>" . $row['position'] . "</td>";
     echo "<td>" . $row['firstname'] . "</td>";
     echo "<td>" . $row['address'] . "</td>";
     echo "<td>" . $row['mobile'] . "</td>";
@@ -52,7 +54,6 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td class='text-center'>
             <form method='POST'>
               <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-              
               <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
             </form>
           </td>";
