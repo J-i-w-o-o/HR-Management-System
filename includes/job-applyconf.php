@@ -55,6 +55,7 @@ if ($uploadSuccess) {
     $result = $stmt->execute();
 
     if ($result) {
+        
         echo '<script>alert("Data inserted successfully");</script>';
         echo '<script>window.location.href = "../careers.php";</script>';
         exit();

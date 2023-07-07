@@ -19,6 +19,8 @@
               <th>Email</th>
               <th>Resume</th>
               <th>Action</th>
+              <th>Status</th>
+
             </tr>
           </div>
           <?php 
