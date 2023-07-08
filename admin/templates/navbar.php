@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="../assets/css/navbar.css">
 </head>
 
+<body style="background-color: #FFF4F4;">
+
+<div id="mySidenav" class="sidenav">
 <body>
 <div id="mySidenav" class="sidenav shadow rounded">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -22,7 +25,7 @@
   
   </div>
 
-  <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg" data-bs-theme="dark" >
     <div class="container-fluid">
       <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()">&#9776;</span>
       <a class="navbar-brand" href="index.php?dashboard">
