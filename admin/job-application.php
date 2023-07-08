@@ -1,8 +1,10 @@
 <title>Job Application</title>
 <?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css';?>
 
-<div  id="main">
-      <h2 class="mt-2 ms-3">PENDING APPLICATION</h2>
+<div id="main">
+<section id="hero" class="pt-5 mt-8 align-items-center">
+      <h2 class="mt-2 ms-3"> PENDING APPLICATION</h2>
+      
 
       <div id="table-scroll" class="table-scroll">
   <div class="table-wrap">

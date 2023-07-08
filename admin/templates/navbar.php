@@ -9,7 +9,7 @@
     <a class="border-bottom border-black border-2 mx-2" href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"><i class="fa fa-list mx-2"> </i>JOB LISTING</a>
     <div class="dropdown">
   <a href="#" class="dropdown-toggle" onclick="toggleDropdown()"> <i class="fa fa-file mx-2"> </i> JOB APPLICATION</a>
-  <div class="dropdown-content">
+  <div class="dropdown-content" >
     <a href="index.php?job-application">Pending Application</a>
     <a href="approved.php">Approved Application</a>
     <a href="#">Declined Application</a>
