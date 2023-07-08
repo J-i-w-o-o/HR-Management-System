@@ -17,7 +17,6 @@
     <a href="index.php?job-application-interview"><i class="fa fa-user mx-2"> </i>For Interview</a>
 
   </div>
-  <a class="border-bottom border-black border-2 mx-2" href="interview.php" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clipboard mx-2"> </i>INTERVIEW</a>
 
 </div>
     
