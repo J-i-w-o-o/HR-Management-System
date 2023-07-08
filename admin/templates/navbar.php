@@ -6,18 +6,17 @@
 <div id="mySidenav" class="sidenav shadow rounded">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-    <a class="border-bottom border-black border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-home mx-2"> </i>DASHBOARD</a>
-    <a class="border-bottom border-black border-2 mx-2" href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"><i class="fa fa-list mx-2"> </i>JOB LISTING</a>
+    <a class="border-bottom border-black border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-tachometer mx-2"> </i>Dashboard</a>
+    <a class="border-bottom border-black border-2 mx-2" href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"><i class="fa fa-list mx-2"> </i>Job Listing</a>
     <div class="dropdown">
-  <a href="#" class="dropdown-toggle" onclick="toggleDropdown()"> <i class="fa fa-file mx-2"> </i> JOB APPLICATION</a>
+  <a href="#" class="dropdown-toggle" onclick="toggleDropdown()"> <i class="fa fa-file mx-2"> </i> Job Application</a>
   <div class="dropdown-content" >
     <a href="index.php?job-application"><i class="fa fa-clock mx-2"> </i>Pending Application</a>
-    <a href="index.php?job-application-accepted"><i class="fa fa-user-plus mx-2"> </i>Approved Application</a>
-    <a href="index.php?job-application-declined"><i class="fa fa-user-times mx-2"> </i>Declined Application</a>
+    <a href="index.php?job-application-accepted"><i class="fa fa-user-plus mx-2"></i>Approved Application</a>
+    <a href="index.php?job-application-declined"><i class="fa fa-user-times mx-2"></i>Declined Application</a>
   </div>
-  <a class="border-bottom border-black border-2 mx-2" href="interview.php" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clipboard mx-2"> </i>INTERVIEW</a>
-
-</div>
+ </div>
+<a class="border-bottom border-black border-2 mx-2" href="interview.php" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clipboard mx-2"> </i>Interview</a>
     
     <div class="sidenav-footer">
         <a class="border-bottom border-black border-2" href="index.php?logout" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
