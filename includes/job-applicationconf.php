@@ -1,5 +1,14 @@
 <?php
 include '../includes/db.php';
+$status = 'pending'; // Default status is 'pending'
+if (isset($_GET['job-application'])) {
+  // If the URL parameter is present, set the status accordingly
+  $status = 'pending';
+} elseif (isset($_GET['job-application-accepted'])) {
+  $status = 'accepted';
+} elseif (isset($_GET['job-application-declined'])) {
+  $status = 'declined';
+}
 
 // Check if the delete button is clicked
 if (isset($_POST['delete'])) {
@@ -18,21 +27,10 @@ if (isset($_POST['approve'])) {
   mysqli_query($connection, $approveSql);
 
 
-
-  // Perform the necessary actions to approve the job application
-  // For example, you can update a column in the "job_application" table to mark it as approved
-
-  // You can add your logic here to perform the approval action
-
-  // Retrieve the approved name from the database
-
-  // Redirect to another page after approval
-  header("Location: ../admin/index.php?job-application");
-  exit();
 }
 
-// Fetch data from the "job_application" table
-$sql = "SELECT * FROM job_applications";
+// Update the SQL query to use the $status variable
+$sql = "SELECT * FROM job_applications WHERE status = '$status'";
 $result = mysqli_query($connection, $sql);
 
 // Display the data in table rows
@@ -47,7 +45,7 @@ if (mysqli_num_rows($result) > 0) {
     $file_path = $row['file_path'];
     $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
     echo '<td>
-    <a href="' .$modified_file_path. '" download="' . basename($row['file_path']) . '">
+    <a href="' . $modified_file_path . '" download="' . basename($row['file_path']) . '">
       ' . basename($row['file_path']) . '
     </a>
   </td>';
@@ -60,11 +58,9 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td>" . $row['status'] . "</td>";
 
     echo "</tr>";
-
-    
   }
 } else {
-  echo "<tr><td colspan='7'>No job applications found.</td></tr>";
+  echo "<tr class='text-center'><td colspan='8'>No job applications found.</td></tr>";
 }
 
 // Close the database connection

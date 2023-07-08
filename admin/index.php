@@ -12,7 +12,11 @@ if ($page === 'dashboard' || $_SERVER['QUERY_STRING'] === 'dashboard') {
     include '../admin/job-listing.php'; 
 } else if ($page === 'job-application' || $_SERVER['QUERY_STRING'] === 'job-application') { 
     include '../admin/job-application.php'; 
-}  
+}  else if ($page === 'job-application-accepted' || $_SERVER['QUERY_STRING'] === 'job-application-accepted') { 
+    include '../admin/job-application-accepted.php'; 
+}  else if ($page === 'job-application-declined' || $_SERVER['QUERY_STRING'] === 'job-application-declined') { 
+    include '../admin/job-application-declined.php'; 
+}
 
 else {    
     include '../admin/dashboard.php';  

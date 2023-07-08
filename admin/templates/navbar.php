@@ -11,8 +11,8 @@
   <a href="#" class="dropdown-toggle" onclick="toggleDropdown()"> <i class="fa fa-file mx-2"> </i> JOB APPLICATION</a>
   <div class="dropdown-content" >
     <a href="index.php?job-application">Pending Application</a>
-    <a href="#">Approved Application</a>
-    <a href="#">Declined Application</a>
+    <a href="index.php?job-application-accepted">Approved Application</a>
+    <a href="index.php?job-application-declined">Declined Application</a>
   </div>
 </div>
     
