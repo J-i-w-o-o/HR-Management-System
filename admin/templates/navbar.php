@@ -15,6 +15,8 @@
     <a href="index.php?job-application-accepted">Approved Application</a>
     <a href="index.php?job-application-declined">Declined Application</a>
   </div>
+  <a class="border-bottom border-black border-2 mx-2" href="interview.php" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clipboard mx-2"> </i>INTERVIEW</a>
+
 </div>
     
     <div class="sidenav-footer">
