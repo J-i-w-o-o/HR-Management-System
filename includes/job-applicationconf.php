@@ -8,6 +8,8 @@ if (isset($_GET['job-application'])) {
   $status = 'accepted';
 } elseif (isset($_GET['job-application-declined'])) {
   $status = 'declined';
+} elseif (isset($_GET['job-application-interview'])) {
+  $status = 'for-interview';
 }
 
 // Check if the delete button is clicked
@@ -27,6 +29,13 @@ if (isset($_POST['approve'])) {
   mysqli_query($connection, $approveSql);
 }
 
+if (isset($_POST['interview'])) {
+  $id = $_POST['interview'];
+
+  $approveSql = "UPDATE `job_applications` SET `status`='for-interview' WHERE id = $id";
+  mysqli_query($connection, $approveSql);
+}
+
 // Update the SQL query to use the $status variable
 $sql = "SELECT * FROM job_applications WHERE status = '$status'";
 $result = mysqli_query($connection, $sql);
@@ -35,24 +44,64 @@ $result = mysqli_query($connection, $sql);
 if (mysqli_num_rows($result) > 0) {
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>" . $row['position'] . "</td>";
-    echo "<td>" . $row['firstname'] . "</td>";
-    echo "<td>" . $row['address'] . "</td>";
-    echo "<td>" . $row['mobile'] . "</td>";
-    echo "<td>" . $row['email'] . "</td>";
+    echo "<td style='padding-top: 10px'>" . $row['position'] . "</td>";
+    echo "<td style='padding-top: 10px'>" . $row['firstname'] . "</td>";
+    echo "<td style='padding-top: 10px'
+    >" . $row['address'] . "</td>";
+    echo "<td style='padding-top: 10px'>" . $row['mobile'] . "</td>";
+    echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
     $file_path = $row['file_path'];
     $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
-    echo '<td>
+    echo '<td style="padding-top: 10px;">
     <a href="' . $modified_file_path . '" target="_blank">
     ' . basename($row['file_path']) . '
     </a>
-    </td>';    
+    </td>';   
+
+    switch ($row['status']) {
+      case 'pending':
+        
     echo "<td class='text-center'>
-            <form method='POST'>
-              <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-              <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
-            </form>
-          </td>";
+    <form method='POST'>
+    
+      <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+      <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+    </form>
+  </td>";
+        break;
+      case 'accepted':
+       
+    echo "<td class='text-center'>
+    <form method='POST'>
+    
+      <button type='submit' name='interview' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+      <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+    </form>
+  </td>";
+        break;
+      case 'declined':
+       
+    echo "<td class='text-center'>
+    <form method='POST'>
+    
+      <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+      <button type='submit' name='archive' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+    </form>
+  </td>";
+        break;
+      case 'for-interview':
+       
+    echo "<td class='text-center'>
+    <form method='POST'>
+    
+      <button type='submit' name='hired' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+      <button type='submit' name='declined' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+    </form>
+  </td>";
+        break;
+      }
+
+
   
     // Set color and background based on status
     $statusColor = '';
@@ -71,13 +120,17 @@ if (mysqli_num_rows($result) > 0) {
         $statusColor = 'white'; // Change to the desired color for declined status
         $statusBackgroundColor = '#DC4C64'; // Change to the desired background color for declined status
         break;
+      case 'for-interview':
+        $statusColor = 'white'; // Default color if status doesn't match any of the cases
+        $statusBackgroundColor = '#ec5b33'; // Default background color if status doesn't match any of the cases
+        break;
       default:
         $statusColor = ''; // Default color if status doesn't match any of the cases
         $statusBackgroundColor = ''; // Default background color if status doesn't match any of the cases
         break;
     }
 
-    echo "<td class='text-center' style='color: $statusColor; background-color: $statusBackgroundColor;'>" . $row['status'] . "</td>";
+    echo "<td class='text-center text-uppercase'  style='color: $statusColor; background-color: $statusBackgroundColor; padding-top: 10px;'>" . $row['status'] . "</td>";
 
     echo "</tr>";
   }
@@ -87,4 +140,3 @@ if (mysqli_num_rows($result) > 0) {
 
 // Close the database connection
 mysqli_close($connection);
-?>
