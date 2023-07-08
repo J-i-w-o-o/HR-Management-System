@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="../assets/css/navbar.css">
 </head>
 
-<body style="background-color: #FFF4F4;">
+<body>
 
-<div id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav shadow rounded">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
     <a class="border-bottom border-black border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-home mx-2"> </i>DASHBOARD</a>
@@ -15,6 +15,8 @@
     <a href="index.php?job-application-accepted"><i class="fa fa-user-plus mx-2"> </i>Approved Application</a>
     <a href="index.php?job-application-declined"><i class="fa fa-user-times mx-2"> </i>Declined Application</a>
   </div>
+  <a class="border-bottom border-black border-2 mx-2" href="interview.php" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clipboard mx-2"> </i>INTERVIEW</a>
+
 </div>
     
     <div class="sidenav-footer">

@@ -5,11 +5,8 @@
 	max-width:100%;
 	margin:auto;
 	overflow:hidden;
-	border:1px solid #000;
 	margin-left: 10px;
 	margin-right: 10px;
-
-
 }
 
 ::-webkit-scrollbar-thumb {
@@ -23,21 +20,34 @@
 .table-wrap {
 	width: auto;
 	overflow:auto;
-  
+	
+
 }
 .table-scroll table {
 	width:100%;
 	margin:auto;
 	border-collapse:separate;
 	border-spacing:0;
+	
 }
-.table-scroll th, .table-scroll td {
+.table-scroll th {
 	padding:5px 10px;
-	border:1px solid #000;
+	border:1px solid #12294a;
+	background:  #12294a;
+	color: white;
+	white-space:nowrap;
+	vertical-align:top;
+	text-align: center;
+}
+
+.table-scroll td {
+	padding:5px 10px;
+	border:1px solid #12294a;
 	background:transparent;
 	white-space:nowrap;
 	vertical-align:top;
 }
+
 .table-scroll thead, .table-scroll tfoot {
 	background:#f9f9f9;
 }
