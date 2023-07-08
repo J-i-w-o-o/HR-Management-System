@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="../assets/css/navbar.css">
 </head>
 
-<body style="background-color: #FFF4F4;">
-<div id="mySidenav" class="sidenav">
+<body>
+<div id="mySidenav" class="sidenav shadow rounded">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
     <a class="border-bottom border-black border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-home mx-2"> </i>DASHBOARD</a>

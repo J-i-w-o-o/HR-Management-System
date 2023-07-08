@@ -55,6 +55,9 @@ if (mysqli_num_rows($result) > 0) {
               <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
             </form>
           </td>";
+
+          
+          
     echo "<td>" . $row['status'] . "</td>";
 
     echo "</tr>";
