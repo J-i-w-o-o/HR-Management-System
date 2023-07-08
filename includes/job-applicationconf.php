@@ -25,8 +25,6 @@ if (isset($_POST['approve'])) {
 
   $approveSql = "UPDATE `job_applications` SET `status`='accepted' WHERE id = $id";
   mysqli_query($connection, $approveSql);
-
-
 }
 
 // Update the SQL query to use the $status variable
@@ -55,10 +53,31 @@ if (mysqli_num_rows($result) > 0) {
               <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
             </form>
           </td>";
+  
+    // Set color and background based on status
+    $statusColor = '';
+    $statusBackgroundColor = '';
+    
+    switch ($row['status']) {
+      case 'pending':
+        $statusColor = 'white'; // Change to the desired color for pending status
+        $statusBackgroundColor = '#cb9c01'; // Change to the desired background color for pending status
+        break;
+      case 'accepted':
+        $statusColor = 'white'; // Change to the desired color for accepted status
+        $statusBackgroundColor = '#14A44D'; // Change to the desired background color for accepted status
+        break;
+      case 'declined':
+        $statusColor = 'white'; // Change to the desired color for declined status
+        $statusBackgroundColor = '#DC4C64'; // Change to the desired background color for declined status
+        break;
+      default:
+        $statusColor = ''; // Default color if status doesn't match any of the cases
+        $statusBackgroundColor = ''; // Default background color if status doesn't match any of the cases
+        break;
+    }
 
-          
-          
-    echo "<td>" . $row['status'] . "</td>";
+    echo "<td class='text-center' style='color: $statusColor; background-color: $statusBackgroundColor;'>" . $row['status'] . "</td>";
 
     echo "</tr>";
   }
