@@ -45,10 +45,10 @@ if (mysqli_num_rows($result) > 0) {
     $file_path = $row['file_path'];
     $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
     echo '<td>
-    <a href="' . $modified_file_path . '" download="' . basename($row['file_path']) . '">
-      ' . basename($row['file_path']) . '
+    <a href="' . $modified_file_path . '" target="_blank">
+    ' . basename($row['file_path']) . '
     </a>
-  </td>';
+    </td>';    
     echo "<td class='text-center'>
             <form method='POST'>
               <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
