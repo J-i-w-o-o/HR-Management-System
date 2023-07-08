@@ -12,10 +12,11 @@
   <a href="#" class="dropdown-toggle" onclick="toggleDropdown()"> <i class="fa fa-file mx-2"> </i> JOB APPLICATION</a>
   <div class="dropdown-content" >
     <a href="index.php?job-application"><i class="fa fa-clock mx-2"> </i>Pending Application</a>
-    <a href="index.php?job-application-accepted"><i class="fa fa-user-plus mx-2"> </i>Approved Application</a>
-    <a href="index.php?job-application-declined"><i class="fa fa-user-times mx-2"> </i>Declined Application</a>
+    <a href="index.php?job-application-accepted"><i class="fa fa-user-plus mx-2"> </i>Approved Applicants</a>
+    <a href="index.php?job-application-declined"><i class="fa fa-user-times mx-2"> </i>Declined Applicants</a>
+    <a href="index.php?job-application-interview"><i class="fa fa-user mx-2"> </i>For Interview</a>
+
   </div>
-  <a class="border-bottom border-black border-2 mx-2" href="interview.php" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clipboard mx-2"> </i>INTERVIEW</a>
 
 </div>
     

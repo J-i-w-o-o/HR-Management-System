@@ -15,6 +15,8 @@ if ($page === 'dashboard' || $_SERVER['QUERY_STRING'] === 'dashboard') {
     include '../admin/job-application-accepted.php'; 
 }  else if ($page === 'job-application-declined' || $_SERVER['QUERY_STRING'] === 'job-application-declined') { 
     include '../admin/job-application-declined.php'; 
+}  else if ($page === 'job-application-interview' || $_SERVER['QUERY_STRING'] === 'job-application-interview') { 
+    include '../admin/job-application-interview.php'; 
 }
 
 else {    
