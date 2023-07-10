@@ -13,6 +13,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/job-application.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
   <title>TIGER'S MARK CORPORATION</title>
           <link rel="icon"  href="../assets/images/TMC_LOGO.png">
-          
+</head>
+ 
