@@ -84,7 +84,7 @@ if (mysqli_num_rows($result) > 0) {
        
     echo "<td class='text-center'>
     <form method='POST'>
-    
+
       <button type='submit' title='Approved Application' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
       <button type='submit' title='Declined Application' name='archive' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
     </form>
@@ -121,7 +121,7 @@ if (mysqli_num_rows($result) > 0) {
     echo '            <label for="scheduleInput' . $row['id'] . '" class="form-label">Schedule</label>';
     echo '            <input type="datetime-local" class="form-control" id="scheduleInput' . $row['id'] . '" name="schedule" required>';
     echo '          </div>';
-    echo '          <div class="text-center">'; // Add a wrapper div with the "text-center" class
+    echo '          <div cl ass="text-center">'; // Add a wrapper div with the "text-center" class
     echo '            <button type="submit" title="Approved Application" name="interview" value="' . $row['id'] . '" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></button>';
     echo '          </div>'; // Close the wrapper div
     echo '        </form>';
