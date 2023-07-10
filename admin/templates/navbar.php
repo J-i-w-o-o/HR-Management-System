@@ -12,6 +12,7 @@
                 <a href="index.php?job-application-declined"><i class="fa fa-user-times mx-2"> </i>Declined Applicants</a>
                 <a href="index.php?job-application-interview"><i class="fa fa-user mx-2"> </i>For Interview</a>
             </div>  
+            <a class="border-bottom border-black border-2 mx-2" href="index.php?employee" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"><i class="fa fa-list mx-2"> </i>Employees</a>
         </div>
         <div class="sidenav-footer">
             <a class="border-bottom border-black border-2" href="index.php?logout" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>

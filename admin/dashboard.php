@@ -3,7 +3,7 @@
     color: #12294a;
   }
 </style>
-<title>Job Application</title>
+<title>Dashboard</title>
 <?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css'; ?>
 <div id="main">
   <link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
