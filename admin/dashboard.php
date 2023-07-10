@@ -3,12 +3,12 @@
     color: #12294a;
   }
 </style>
-<title>Job Application</title>
+<title>Dashboard</title>
 <?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css'; ?>
 <div id="main">
   <link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
   <div class="container-fluid px-4" id=main>
-    <section id="hero" class="pt-5 mt-8 align-items-center">
+    <section id="hero" class="align-items-center">
       <div class="row">
         <div class="col-xl-3 col-md-6">
           <div class="card border-dark mb-3" style="max-width: 18rem;">

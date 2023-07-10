@@ -90,6 +90,9 @@ color: white;
 .breadcrumb a:hover{
   color: #ec5b33;
 }
+hr.solid {
+  border-top: 3px solid #ec5b33;
+}
 
 
 
