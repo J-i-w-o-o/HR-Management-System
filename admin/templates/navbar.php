@@ -58,22 +58,3 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-declined']) 
 <body>
   <div id="page-container">
   
-  <script>
-  // Function to trigger the Swal dialog box
-  function fireSwal() {
-    Swal.fire({
-      text: 'Are you sure you want to logout?',
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // Perform logout action here
-        console.log('User logged out');
-        window.location.href = 'index.php?logout'; // Redirect to the logout URL
-      }
-    });
-  }
-</script>
