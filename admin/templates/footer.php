@@ -1,12 +1,12 @@
-
+</div>
+</body>
 <footer>
-<div class="container footer-bottom clearfix text-center">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Tiger's Mark Corporation</span></strong>. All Rights Reserved
-      </div>
+    <div class="container footer-bottom clearfix text-center">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Tiger's Mark Corporation</span></strong>. All Rights Reserved
+        </div>
     </div>
 </footer>
-</body>
 <script>
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
@@ -15,7 +15,7 @@
       document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
       document.body.style.boxShadow = "solid";
 
-      
+        
     }
 
   function closeNav() {
