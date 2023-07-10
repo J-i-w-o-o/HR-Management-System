@@ -89,7 +89,34 @@ updateDate();
 function redirectToPage(url) {
   window.location.href = url;
 }
-  
+  // Function to trigger the Swal dialog box
+  function fireSwal1() {
+    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Approved Successfully',
+                        showConfirmButton: false,
+                        timer: 2000
+  }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'index.php?job-application-interview'; 
+      }
+    });
+}
+
+function fireSwal2() {
+    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Applied Schedule',
+                        showConfirmButton: false,
+                        timer: 5000
+  }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'index.php?job-application-interview'; 
+      }
+    });
+}
 </script>
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/css/node_modules/mdb-ui-kit/js/mdb.min.js"></script>

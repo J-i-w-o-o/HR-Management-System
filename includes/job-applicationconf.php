@@ -1,3 +1,4 @@
+
 <?php
 include '../includes/db.php';
 $status = 'pending'; // Default status is 'pending'
@@ -59,17 +60,29 @@ if (mysqli_num_rows($result) > 0) {
         </td>';
         echo "<td class='text-center'>
           <form method='POST'>
-            <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#scheduleModal" . $row['id'] . "'>Set Schedule</button>
+            <button type='button'  class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#scheduleModal" . $row['id'] . "'>Set Schedule</button>
             <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
           </form>
         </td>";
         break;
       case 'declined':
-       
-    echo "<td class='text-center'>
+        echo "<tr>";
+        echo "<td style='padding-top: 10px'>" . $row['position'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['firstname'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['address'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['mobile'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
+        $file_path = $row['file_path'];
+        $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
+        echo '<td style="padding-top: 10px;">
+          <a href="' . $modified_file_path . '" target="_blank">
+          ' . basename($row['file_path']) . '
+          </a>
+        </td>';
+        echo "<td class='text-center'>
     <form method='POST'>
     
-      <button type='submit' title='Approved Application' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+      <button type='submit' title='Approved Application'  name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
       <button type='submit' title='Declined Application' name='archive' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
     </form>
   </td>";
@@ -91,7 +104,7 @@ if (mysqli_num_rows($result) > 0) {
 
         echo "<td class='text-center'>
           <form method='POST'>
-            <button type='submit' data-toggle='modal' data-target='#hiredModal' title='Approved Application' name='hired' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+          <button type='submit' onclick='fireSwal1(); return false;' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
             <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
           </form>
         </td>";
@@ -118,7 +131,7 @@ if (mysqli_num_rows($result) > 0) {
     echo '            <input type="datetime-local" class="form-control" id="scheduleInput' . $row['id'] . '" name="schedule" required>';
     echo '          </div>';
     echo '          <div cl ass="text-center">'; // Add a wrapper div with the "text-center" class
-    echo '            <button type="submit" title="Approved Application" name="interview" value="' . $row['id'] . '" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></button>';
+    echo '            <button type="submit" onclick=fireSwal2(); return false; title="Approved Application" name="interview" value="' . $row['id'] . '" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></button>';
     echo '          </div>'; // Close the wrapper div
     echo '        </form>';
     echo '      </div>';
