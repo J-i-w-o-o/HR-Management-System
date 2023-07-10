@@ -1,4 +1,4 @@
-<title>Job Application</title>
+<title>Job Interview</title>
 <?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css';?>
 
 <div id="main">
