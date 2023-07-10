@@ -24,10 +24,9 @@
   
 
   <?php
-if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) || isset($_GET['job-application-declined']) || isset($_GET['job-application-interview'])) {
+if (isset($_GET['job-application']) || isset($_GET['job-application-declined']) || isset($_GET['job-application-interview'])) {
   $breadcrumbItems = [
     'job-application' => 'Pending Application',
-    'job-application-accepted' => 'Approved Applicants',
     'job-application-interview' => 'For Interview',
     'job-application-declined' => 'Declined Applicants'
   ];
@@ -66,6 +65,7 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) 
   function fireSwal() {
     Swal.fire({
       text: 'Are you sure you want to logout?',
+      icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
