@@ -1,19 +1,3 @@
-<script>
-  // Function to trigger the Swal dialog box
-  function fireSwal1() {
-    Swal.fire({
-      position: 'top-right',
-      icon: 'success',
-      title: 'Approved Successfully',
-      showConfirmButton: false,
-      timer: 1500
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = 'index.php?job-application-accepted';
-      }
-    });
-  }
-</script>
 <?php
 include '../includes/db.php';
 $status = 'pending'; // Default status is 'pending'
@@ -81,24 +65,48 @@ if (mysqli_num_rows($result) > 0) {
         </td>";
         break;
       case 'declined':
-       
-    echo "<td class='text-center'>
-    <form method='POST'>
-    
-      <button type='submit' title='Approved Application' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-      <button type='submit' title='Declined Application' name='archive' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
-    </form>
-  </td>";
+        echo "<tr>";
+        echo "<td style='padding-top: 10px'>" . $row['position'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['firstname'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['address'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['mobile'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
+        $file_path = $row['file_path'];
+        $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
+        echo '<td style="padding-top: 10px;">
+          <a href="' . $modified_file_path . '" target="_blank">
+          ' . basename($row['file_path']) . '
+          </a>
+        </td>';
+
+        echo "<td class='text-center'>
+          <form method='POST'>
+          <button type='submit' name='reassess' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+          <button type='submit' name='archive' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+          </form>
+        </td>";
         break;
       case 'for-interview':
-       
-    echo "<td class='text-center'>
-    <form method='POST'>
-    
-      <button type='submit' data-toggle='modal' data-target='#hiredModal' title='Approved Application' name='hired' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-      <button type='submit' title='Declined Application' name='declined' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
-    </form>
-  </td>";
+        echo "<tr>";
+        echo "<td style='padding-top: 10px'>" . $row['position'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['firstname'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['schedule'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['mobile'] . "</td>";
+        echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
+        $file_path = $row['file_path'];
+        $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
+        echo '<td style="padding-top: 10px;">
+          <a href="' . $modified_file_path . '" target="_blank">
+          ' . basename($row['file_path']) . '
+          </a>
+        </td>';
+
+        echo "<td class='text-center'>
+          <form method='POST'>
+            <button type='submit' data-toggle='modal' data-target='#hiredModal' title='Approved Application' name='hired' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+            <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+          </form>
+        </td>";
         break;
     }
   }
@@ -135,8 +143,3 @@ if (mysqli_num_rows($result) > 0) {
 //asdsada
 // Close the database connection
 mysqli_close($connection);
-
-
-  
-  
- 
