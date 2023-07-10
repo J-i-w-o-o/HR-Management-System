@@ -85,6 +85,10 @@ function updateDate() {
   }
 }
 updateDate();
+
+function redirectToPage(url) {
+  window.location.href = url;
+}
   
 </script>
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
