@@ -29,8 +29,13 @@
           <?php 
           include 'C:\xampp\htdocs\HR-Management-System\includes\job-applicationconf.php';?>
         </table>
+            </div>
+          </div>
+        </table>
       </div>
-      
+    </div>
+  </section>
+</div>
 
 
 
