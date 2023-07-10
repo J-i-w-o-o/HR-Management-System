@@ -20,7 +20,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-xl-3 col-md-6">
           <div class="card border-dark mb-3" style="max-width: 18rem;">
             <div class="card-header bg-#ec5b33 text-white"> No. of Pending Applicants </div>
@@ -31,9 +30,6 @@
             </div>
           </div>
         </div>
-
-
-
         <div class="col-xl-3 col-md-6">
           <div class="container">
             <div class="display-date">
@@ -45,72 +41,6 @@
             <div class="display-time"></div>
           </div>
         </div>
-
-
-
-        <script>
-          const displayTime = document.querySelector(".display-time");
-
-          // Time
-          function showTime() {
-            let time = new Date();
-            let hours = time.getHours();
-            let period = hours >= 12 ? "PM" : "AM";
-            hours = hours % 12 || 12;
-            let minutes = time.getMinutes();
-            let seconds = time.getSeconds();
-            displayTime.innerText = `${hours}:${minutes
-      .toString()
-      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")} ${period}`;
-            setTimeout(showTime, 1000);
-          }
-
-          showTime();
-
-          // Date
-          function updateDate() {
-            let today = new Date();
-
-            // return number
-            let dayName = today.getDay(),
-              dayNum = today.getDate(),
-              month = today.getMonth(),
-              year = today.getFullYear();
-
-            const months = [
-              "January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July",
-              "August",
-              "September",
-              "October",
-              "November",
-              "December",
-            ];
-            const dayWeek = [
-              "Sunday",
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-            ];
-            // value -> ID of the html element
-            const IDCollection = ["day", "daynum", "month", "year"];
-            // return value array with number as a index
-            const val = [dayWeek[dayName], dayNum, months[month], year];
-            for (let i = 0; i < IDCollection.length; i++) {
-              document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
-            }
-          }
-
-          updateDate();
-        </script>
       </div>
     </section>
   </div>

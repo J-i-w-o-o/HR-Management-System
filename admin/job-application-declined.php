@@ -4,8 +4,6 @@
 <div id="main">
   <section id="hero" class="pt-5 mt-8 align-items-center">
     <h2 class="mt-2 ms-3"> DECLINED APPLICATIONS</h2>
-
-
     <div id="table-scroll" class="table-scroll">
       <div class="table-wrap">
         <table class="main-table">
@@ -23,10 +21,15 @@
                     <th>Resume</th>
                     <th>Action</th>
                     <th>Status</th>
-
                   </tr>
                 </div>
                 <?php
                 include 'C:\xampp\htdocs\HR-Management-System\includes\job-applicationconf.php'; ?>
               </table>
             </div>
+          </div>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
