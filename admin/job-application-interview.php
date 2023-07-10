@@ -4,8 +4,6 @@
 <div id="main">
 <section id="hero" class=" align-items-center">
       <h2 class="mt-2 ms-3"> INTERVIEW</h2>
-      
-
       <div id="table-scroll" class="table-scroll">
   <div class="table-wrap">
     <table class="main-table">
@@ -17,13 +15,11 @@
             <tr>
               <th>Position</th>
               <th>Name</th>
-              <th>Address</th>
+              <th>Schedule</th>
               <th>Mobile</th>
               <th>Email</th>
               <th>Resume</th>
               <th>Action</th>
-              <th>Status</th>
-
             </tr>
           </div>
           <?php 
