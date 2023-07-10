@@ -64,8 +64,8 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td class='text-center'>
     <form method='POST'>
     
-      <button type='submit' title='Approve Application' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-      <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+      <button type='submit' title='Approved Application' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+      <button type='submit' title='Declined Application' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
     </form>
   </td>";
         break;
@@ -74,8 +74,8 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td class='text-center'>
     <form method='POST'>
     
-      <button type='submit' name='interview' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-      <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+      <button type='submit' title='Approved Application' name='interview' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+      <button type='submit' title='Declined Application' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
     </form>
   </td>";
         break;
@@ -84,8 +84,8 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td class='text-center'>
     <form method='POST'>
     
-      <button type='submit' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-      <button type='submit' name='archive' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+      <button type='submit' title='Approved Application' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+      <button type='submit' title='Declined Application' name='archive' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
     </form>
   </td>";
         break;
@@ -94,8 +94,8 @@ if (mysqli_num_rows($result) > 0) {
     echo "<td class='text-center'>
     <form method='POST'>
     
-      <button type='submit' name='hired' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-      <button type='submit' name='declined' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+      <button type='submit' title='Approved Application' name='hired' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+      <button type='submit' title='Declined Application' name='declined' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
     </form>
   </td>";
         break;
