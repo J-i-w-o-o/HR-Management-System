@@ -18,6 +18,7 @@
       </a>
     </div>
   </nav>
+  
 
   <?php
 if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) || isset($_GET['job-application-declined']) || isset($_GET['job-application-interview'])) {
@@ -36,7 +37,7 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) 
         $isActive = isset($_GET[$key]);
         $disabledAttr = $isActive ? 'disabled' : '';
       ?>
-        <li class="breadcrumb-item <?php echo $isActive ? 'active' : ''; ?>" aria-current="page">
+        <li class="breadcrumb-item <?php echo $isActive ? 'active' : ''; ?>" style="color: #ec5b33;" aria-current="page">
           <?php if ($isActive) { ?>
             <span><?php echo $value; ?></span>
           <?php } else { ?>
@@ -48,7 +49,7 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) 
       ?>
     </ol>
   </nav>
-  
+  <hr class="solid mx-4">
 <?php
 }
 ?>
