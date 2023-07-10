@@ -23,8 +23,8 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) 
   $breadcrumbItems = [
     'job-application' => 'Pending Application',
     'job-application-accepted' => 'Approved Applicants',
-    'job-application-declined' => 'Declined Applicants',
-    'job-application-interview' => 'For Interview'
+    'job-application-interview' => 'For Interview',
+    'job-application-declined' => 'Declined Applicants'
   ];
   $currentPage = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
 ?>
