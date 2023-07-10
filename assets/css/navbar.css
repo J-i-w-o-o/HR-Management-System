@@ -84,17 +84,14 @@ color: white;
  
  display: flex;
   justify-content: center;
-  padding-left: 100px;
   padding-top: 20px;
   color: #12294a;
 }
 .breadcrumb a:hover{
   color: #ec5b33;
 }
-.breadcrumb-item.active:not(:last-child) a {
-  pointer-events: none;
-  cursor: default;
-}
+
+
 
 
 
