@@ -67,7 +67,7 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) 
     Swal.fire({
       title: 'LOGOUT',
       text: 'Are you sure you want to logout?',
-      icon: 'warning',
+      icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
