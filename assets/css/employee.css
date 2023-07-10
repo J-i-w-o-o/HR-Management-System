@@ -7,13 +7,20 @@ h3{
   margin-left: 10px;
 }
 
-.dot {
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
+.editbtn {
+    height: 30px;
+    width: 30px;
+    text-align: right;
+    background-color:#eaf1fa ;
+    border: none;
+    float: right;
   }
+
+.editbtn:hover {
+    color: #ec5b33;
+    
+  }
+
 
 .center {
     display: block;
@@ -64,4 +71,4 @@ h3{
   padding: 16px;
   text-align: center;
   background-color: #eaf1fa;
- 
+}

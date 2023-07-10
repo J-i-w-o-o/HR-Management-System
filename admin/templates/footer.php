@@ -89,6 +89,22 @@ updateDate();
 function redirectToPage(url) {
   window.location.href = url;
 }
+function fireSwal() {
+    Swal.fire({
+      text: 'Are you sure you want to logout?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform logout action here
+        console.log('User logged out');
+        window.location.href = 'index.php?logout'; // Redirect to the logout URL
+      }
+    });
+  }
   
 </script>
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

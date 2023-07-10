@@ -10,10 +10,9 @@
 <div class="row ms-2 me-2">
   <div class="column">
     <div class="card">
-    <span class="dot"></span>
-    <img src="paris.jpg" class="center">
-
-
+      <div class="float-right">
+      <button class="editbtn no-border"><i class="fa-solid fa-pen-to-square"></i></button>
+      </div>
       <p>Some text</p>
       <p>Some text</p>
     </div>
