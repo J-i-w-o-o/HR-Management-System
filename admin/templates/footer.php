@@ -24,16 +24,8 @@
     document.getElementById("container").style.transform = "translateX(0)";
     document.body.style.backgroundColor = "white";
   }
-  function toggleDropdown() {
-    var dropdownContent = document.querySelector('.dropdown-content');
-    var dropdown = document.querySelector('.dropdown');
-    dropdown.classList.toggle('active');
-    if (dropdown.classList.contains('active')) {
-      dropdownContent.style.display = 'block';
-    } else {
-      dropdownContent.style.display = 'none';
-    }
-  }
+  
+ 
   
 </script>
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
