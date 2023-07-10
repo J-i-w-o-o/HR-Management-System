@@ -29,6 +29,7 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-accepted'])|
     <li class="breadcrumb-item active" aria-current="page"><a href="index.php?job-application-interview">For Interview</a></li>
   </ol>
   </nav>
+  
 <?php
 }
 ?>
