@@ -43,7 +43,6 @@ if (!$stmt) {
 $targetDirectory = "C:/xampp/htdocs/HR-Management-System/uploads/";
 $targetFile = $targetDirectory . basename($_FILES['fileToUpload']['name']);
 $uploadSuccess = false;
-
 $allowedExtensions = array('pdf');
 $uploadedExtension = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 if (in_array($uploadedExtension, $allowedExtensions)) {

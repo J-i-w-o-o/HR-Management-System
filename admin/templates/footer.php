@@ -89,23 +89,34 @@ updateDate();
 function redirectToPage(url) {
   window.location.href = url;
 }
-function fireSwal() {
+  // Function to trigger the Swal dialog box
+  function fireSwal1() {
     Swal.fire({
-      text: 'Are you sure you want to logout?',
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes',
-    }).then((result) => {
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Approved Successfully',
+                        showConfirmButton: false,
+                        timer: 2000
+  }).then((result) => {
       if (result.isConfirmed) {
-        // Perform logout action here
-        console.log('User logged out');
-        window.location.href = 'index.php?logout'; // Redirect to the logout URL
+        window.location.href = 'index.php?job-application-interview'; 
       }
     });
-  }
-  
+}
+
+function fireSwal2() {
+    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Applied Schedule',
+                        showConfirmButton: false,
+                        timer: 5000
+  }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'index.php?job-application-interview'; 
+      }
+    });
+}
 </script>
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/css/node_modules/mdb-ui-kit/js/mdb.min.js"></script>

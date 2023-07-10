@@ -92,17 +92,17 @@ color: #12294a;
   color: #ec5b33;
 }
 hr.solid {
-  border-top: 3px solid #ec5b33;
+  border-top: 1px solid #ec5b33;
 }
 
-h1{
+/* h1{
   text-align:center;
       position:fixed;
       top:60%;
       left:50%;
       transform:translate(-50%,-150%);
   }
-  #yn{ color:red; }
+  #yn{ color:red; } */ 
 
 
 
