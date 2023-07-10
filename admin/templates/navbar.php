@@ -48,7 +48,7 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) 
       ?>
     </ol>
   </nav>
-  <hr class="solid mx-5">
+  <hr class="solid mx-4">
 <?php
 }
 ?>
