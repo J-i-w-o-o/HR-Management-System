@@ -18,7 +18,9 @@
         </div>
     </nav>
    
-
+<?php 
+if (isset($_GET['job-application'])) {
+?>
   <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item active"  aria-current="page"><a href="index.php?job-application">Pending Application</a></li>
@@ -27,6 +29,10 @@
     <li class="breadcrumb-item active" aria-current="page"><a href="index.php?job-application-interview">For Interview</a></li>
   </ol>
   </nav>
+<?php
+}
+?>
+
 </header>
 <body>
 <div id="page-container">
