@@ -19,7 +19,7 @@
     </nav>
    
 <?php 
-if (isset($_GET['job-application'])) {
+if (isset($_GET['job-application']) || isset($_GET['job-application-accepted'])|| isset($_GET['job-application-declined'])|| isset($_GET['job-application-interview'])) {
 ?>
   <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
