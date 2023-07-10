@@ -1,4 +1,5 @@
 <header>
+
   <div id="mySidenav" class="sidenav shadow rounded">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
@@ -6,7 +7,9 @@
     <a class="border-bottom border-black border-2 mx-2" href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"><i class="fa fa-list mx-2"> </i>Job Listing</a>
     <a class="border-bottom border-black border-2 mx-2" href="index.php?job-application" data-toggle="tooltip" data-placement="bottom" title="JOB APPLICATION"><i class="fa fa-file mx-2"> </i>Job Application</a>
     <div class="sidenav-footer">
-      <a class="border-bottom border-black border-2" href="index.php?logout" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
+     
+    <a class="border-bottom border-black border-2" href="index.php?logout" onclick="fireSwal(); return false;" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
+
     </div>
   </div>
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
@@ -48,7 +51,7 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) 
       ?>
     </ol>
   </nav>
-  <hr class="solid mx-4">
+  <hr class="solid mx-4  ">
 <?php
 }
 ?>
@@ -56,3 +59,24 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-accepted']) 
 
 <body>
   <div id="page-container">
+  
+  <script>
+  // Function to trigger the Swal dialog box
+  function fireSwal() {
+    Swal.fire({
+      title: 'LOGOUT',
+      text: 'Are you sure you want to logout?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, logout!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform logout action here
+        console.log('User logged out');
+        window.location.href = 'index.php?logout'; // Redirect to the logout URL
+      }
+    });
+  }
+</script>

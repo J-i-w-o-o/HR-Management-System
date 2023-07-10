@@ -3,6 +3,7 @@
 
 <div id="main">
   <section id="hero" class=" align-items-center">
+    
     <h2 class="mt-2 ms-3"> PENDING APPLICATIONS</h2>
     <div id="table-scroll" class="table-scroll">
       <div class="table-wrap">

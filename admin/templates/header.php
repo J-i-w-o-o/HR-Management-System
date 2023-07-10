@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/job-application.css">
   <link rel="stylesheet" href="../assets/css/navbar.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css" />
   <title>TIGER'S MARK CORPORATION</title>
           <link rel="icon"  href="../assets/images/TMC_LOGO.png">
 </head>
