@@ -61,7 +61,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td class='text-center'>
           <form method='POST'>
             <button type='button'  class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#scheduleModal" . $row['id'] . "'>Set Schedule</button>
-            <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+            <button type='submit' onclick='fireSwal4(); return false;' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
           </form>
         </td>";
         break;
@@ -105,7 +105,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td class='text-center'>
           <form method='POST'>
           <button type='submit' onclick='fireSwal1(); return false;' name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-            <button type='submit' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+            <button type='submit' onclick='fireSwal3(); return false;' name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
           </form>
         </td>";
         break;

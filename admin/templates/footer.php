@@ -117,6 +117,52 @@ function fireSwal2() {
       }
     });
 }
+function fireSwal3() {
+    Swal.fire({
+      title: 'DELETE',
+      text: 'Are you sure you want to Delete?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform logout action here
+        window.location.href = 'index.php?job-application-declined'; 
+      }
+    });
+  }
+  function fireSwal4() {
+    Swal.fire({
+      title: 'DELETE',
+      text: 'Are you sure you want to Delete?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform logout action here
+        window.location.href = 'index.php?job-application-declined'; 
+      }
+    });
+  }
+  function fireSwal6() {
+    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Edited Successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+  }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'index.php?job-listing'; 
+      }
+    });
+}
+
 </script>
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/css/node_modules/mdb-ui-kit/js/mdb.min.js"></script>
