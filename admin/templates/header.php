@@ -18,4 +18,11 @@
   <title>TIGER'S MARK CORPORATION</title>
           <link rel="icon"  href="../assets/images/TMC_LOGO.png">
 </head>
- 
+ <style>
+      .shorten-text {
+        max-width: 100px; /* Adjust the value according to your needs */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+ </style>
