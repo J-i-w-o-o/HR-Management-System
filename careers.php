@@ -113,11 +113,11 @@
         </div>
         <div class="modal-footer">
           <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal">Close</button>
-          <button type="submit"  id="btnappsubmit" class="btn " form="applicationform">Apply</button>
+     <button type="submit" onclick="fireSwal(); return false;" id="btnappsubmit" class="btn" form="applicationform">Apply</button>
+
         </div>
       </div>
     </div>
-  </div>
   </div>
   <script>
     function fireSwal() {
