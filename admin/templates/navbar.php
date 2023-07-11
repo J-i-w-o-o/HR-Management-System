@@ -1,6 +1,6 @@
 <header>
 
-  <div id="mySidenav" class="sidenav shadow rounded">
+  <div id="mySidenav" class="sidenav shadow rounded ">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
     <a class="border-bottom border-black border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-tachometer mx-2"> </i>Dashboard</a>
@@ -12,7 +12,7 @@
     </div>
   </div>
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-    <div class="container-fluid">
+    <div class="container-fluid ">
       <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()">&#9776;</span>
       <a class="navbar-brand" href="index.php?dashboard">
         <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">

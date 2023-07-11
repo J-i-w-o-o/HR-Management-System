@@ -95,14 +95,12 @@ hr.solid {
   border-top: 1px solid #ec5b33;
 }
 
-/* h1{
-  text-align:center;
-      position:fixed;
-      top:60%;
-      left:50%;
-      transform:translate(-50%,-150%);
+@media screen and (max-height: 450px) {
+  #main{
+    display: hi;
+
   }
-  #yn{ color:red; } */ 
+}
 
 
 
