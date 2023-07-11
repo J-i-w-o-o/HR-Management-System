@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css" />
   <link rel="stylesheet" href="./assets/css/header.css">
 </head>
 <header>
@@ -113,15 +114,38 @@
         </div>
         <div class="modal-footer">
           <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal">Close</button>
-          <button type="submit" id="btnappsubmit" class="btn " form="applicationform">Apply</button>
+          <button type="submit" onclick="fireSwal(); return false;" id="btnappsubmit" class="btn " form="applicationform">Apply</button>
         </div>
       </div>
     </div>
   </div>
+  <script>
+  function fireSwal() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Success!',
+      text: 'Applied Successfully',
+      showConfirmButton: false,
+      timer: 1500
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        window.location.href = 'careers.php';
+      }
+    });
+  }
+</script>
   <script src="./includes/joblist-view-careers.js"></script>
 </body>
 <script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./assets/js/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+
+
 
 </html>
