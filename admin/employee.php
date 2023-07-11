@@ -46,7 +46,7 @@
             <div class="border border-dark" id="image-display">
               
             </div>
-            <h3>Position</h3>
+            <h5 class="mt-2">Position</h5>
             <p>Name</p>
             <p>Contact</p>
             <p>Date Hired</p>
