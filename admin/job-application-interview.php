@@ -1,30 +1,40 @@
 <title>Job Interview</title>
-<?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css';?>
 
 <div id="main">
-<section id="hero" class=" align-items-center">
-      <h2 class="mt-2 ms-3"> INTERVIEW</h2>
-      <div id="table-scroll" class="table-scroll">
-  <div class="table-wrap">
-    <table class="main-table">
-  <div id="tableres">
+  <section id="hero" class=" align-items-center">
+    
+    <div class="d-flex justify-content-between align-items-center mx-2">
+      <div>
+        <h2 class="mt-2 ms-3">INTERVIEW</h2>
+      </div>
+      <div class="d-flex">
+        <form class="d-flex forms my-3">
+          <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search Applicant">
+        </form>
+      </div>
+    </div>
 
-      <div id="tableres" style="overflow-x:auto;">
-        <table>
-          <div>
-            <tr>
-              <th>Position</th>
-              <th>Name</th>
-              <th>Schedule</th>
-              <th>Mobile</th>
-              <th>Email</th>
-              <th>Resume</th>
-              <th>Action</th>
-            </tr>
-          </div>
-          <?php 
-          include 'C:\xampp\htdocs\HR-Management-System\includes\job-applicationconf.php';?>
-        </table>
+    <div id="table-scroll" class="table-scroll">
+      <div class="table-wrap">
+        <table class="main-table">
+          <div id="tableres">
+
+            <div id="tableres" style="overflow-x:auto;">
+              <table>
+                <div>
+                  <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Schedule</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Resume</th>
+                    <th>Action</th>
+                  </tr>
+                </div>
+                <?php
+                include 'C:\xampp\htdocs\HR-Management-System\includes\job-applicationconf.php'; ?>
+              </table>
             </div>
           </div>
         </table>
@@ -32,10 +42,3 @@
     </div>
   </section>
 </div>
-
-
-
-
-
-          
-       
