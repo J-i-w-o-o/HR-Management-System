@@ -64,7 +64,7 @@
             <div class="card-body">
             <h5 class="card-header mb-2 text-center">HR ADMIN</h5>
           <h6 class="card-title text-muted">Job type: fulltime</h6>
-          <p class="card-text">sadadadasadadadasadadadasadadadasadadadasadadadasadadadasadadadasadadadasadadadasadadadasadadadasadadada</p>
+          <p class="card-text"></p>
             </div>
             <div class="card-footer text-muted d-flex justify-content-between align-items-center">
             <div>2days</div>
@@ -144,7 +144,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h2>Overview</h2>
+          <h2>Employee</h2>
           <p id="overview"></p>
           <div class="row">
             <div class="col-6">
