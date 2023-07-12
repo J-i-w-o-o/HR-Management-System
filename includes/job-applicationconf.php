@@ -2,6 +2,8 @@
 <?php
 include '../includes/db.php';
 $status = 'pending'; // Default status is 'pending'
+
+
 if (isset($_GET['job-application'])) {
   // If the URL parameter is present, set the status accordingly
   $status = 'pending';
@@ -138,7 +140,6 @@ if (mysqli_num_rows($result) > 0) {
     echo '    </div>';
     echo '  </div>';
     echo '</div>';
-    
   }
 }
 //asdsada

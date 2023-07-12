@@ -1,12 +1,14 @@
 <title>Job Interview</title>
 
 <div id="main">
-<section id="hero" class=" align-items-center">
+  <section id="hero" class=" align-items-center">
+    <div class="d-flex justify-content-between align-items-center mx-2">
       <h2 class="mt-2 ms-3"> INTERVIEW</h2>
-      <div id="table-scroll" class="table-scroll">
-  <div class="table-wrap">
-    <table class="main-table">
-  <div id="tableres">
+    </div>
+    <div id="table-scroll" class="table-scroll">
+      <div class="table-wrap">
+        <table class="main-table">
+          <div id="tableres">
 
             <div id="tableres" style="overflow-x:auto;">
               <table>
