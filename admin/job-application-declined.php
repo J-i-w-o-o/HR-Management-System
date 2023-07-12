@@ -1,6 +1,8 @@
 <title>Job Application</title>
 
 <div id="main">
+
+<!-- title page and searchbar  -->
   <section id="hero" class=" align-items-center">
   <div class="d-flex justify-content-between align-items-center mx-2">
     <h2 class="mt-2 ms-3"> DECLINED APPLICATIONS</h2>
@@ -11,6 +13,7 @@
             </button>
           </form>
 </div>
+
     <div id="table-scroll" class="table-scroll">
       <div class="table-wrap">
         <table class="main-table">
