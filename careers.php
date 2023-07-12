@@ -97,7 +97,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal">Close</button>
-          <button type="button" id="btnappsubmit" class="btn" onclick="submitApplication()">Apply</button>
+          <button type="button" id="btnappsubmit" class="btn">Apply</button>
         </div>
       </div>
     </div>
@@ -105,56 +105,74 @@
   <script src="./includes/joblist-view-careers.js"></script>
   <script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="./assets/js/node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
   <script src="./assets/js/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
   <script>
-  function submitApplication() {
-    // Get form data
+  document.getElementById('btnappsubmit').addEventListener('click', function() {
     const formData = new FormData(document.getElementById('applicationform'));
 
-    // Perform the AJAX request
-    $.ajax({
-      url: './includes/job-applyconf.php', // Replace with the actual URL of your PHP file
+    fetch('./includes/job-applyconf.php', {
       method: 'POST',
-      data: formData,
-      processData: false,
-      contentType: false,
-      success: function(response) {
-        // Parse JSON response
-        const result = JSON.parse(response);
-
-        // Show SweetAlert message based on the response status
-        if (result.status === 'success') {
-          Swal.fire({
-            icon: 'success',
-            title: 'Application Submitted',
-            text: 'Your application has been successfully submitted. We will contact you shortly.',
-          }).then(() => {
-            window.location.href = './careers.php';
-          });
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Application Failed',
-            text: result.message,
-          });
-        }
-
-        // Reset the form
-        document.getElementById('applicationform').reset();
-      },
-      error: function(xhr, status, error) {
-        // Show error message
+      body: formData
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.status === 'success') {
+        Swal.fire({
+          icon: 'success',
+          title: 'Application Submitted',
+          text: 'Your application has been successfully submitted. We will contact you shortly.',
+          showClass: {
+            popup: 'swal2-show',
+            backdrop: 'swal2-backdrop-show',
+            icon: 'swal2-icon-show'
+          },
+          hideClass: {
+            popup: 'swal2-hide',
+            backdrop: 'swal2-backdrop-hide',
+            icon: 'swal2-icon-hide'
+          },
+        }).then(() => {
+          window.location.href = './careers.php';
+        });
+      } else {
         Swal.fire({
           icon: 'error',
           title: 'Application Failed',
-          text: 'There was an error submitting your application. Please try again later.',
+          text: result.message,
+          showClass: {
+            popup: 'swal2-show',
+            backdrop: 'swal2-backdrop-show',
+            icon: 'swal2-icon-show'
+          },
+          hideClass: {
+            popup: 'swal2-hide',
+            backdrop: 'swal2-backdrop-hide',
+            icon: 'swal2-icon-hide'
+          },
         });
       }
+
+      document.getElementById('applicationform').reset();
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Application Failed',
+        text: 'There was an error submitting your application. Please try again later.',
+        showClass: {
+          popup: 'swal2-show',
+          backdrop: 'swal2-backdrop-show',
+          icon: 'swal2-icon-show'
+        },
+        hideClass: {
+          popup: 'swal2-hide',
+          backdrop: 'swal2-backdrop-hide',
+          icon: 'swal2-icon-hide'
+        },
+      });
     });
-  }
+  });
 </script>
 
 </body>
-
 </html>
