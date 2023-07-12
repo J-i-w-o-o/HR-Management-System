@@ -5,7 +5,8 @@
   <!-- title page and search bar  -->
   <div class="d-flex justify-content-between align-items-center mx-2">
     <div>
-      <h4 class="text-center lead ms-3 mt-2 panel-primary"><span id="jobCount"></span>(put here no. of employee)</h4>
+      <p class="text-center lead ms-3 mt-3">
+        <span id="jobCount"></span>(put here no. of employee)</p>
     </div>
     <form class="d-flex forms my-3">
       <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for Employee">
@@ -60,8 +61,8 @@
             </div>
 
             <div class="modal-footer">
-              <button type="button" id="btnclose" class="btn"><i class="fa-solid fa-user-minus"></i></button>
-              <button type="submit" id="btnappsubmit" class="btn " form="applicationform"><i class="fa-solid fa-pen"></i></button>
+              <button type="button" id="btnremove" class="btn btn-danger"><i class="fa-solid fa-user-minus"></i></button>
+              <button type="submit" id="btnupdate" class="btn btn-success" form="applicationform"><i class="fa-solid fa-pen"></i></button>
             </div>
 
           </div>
