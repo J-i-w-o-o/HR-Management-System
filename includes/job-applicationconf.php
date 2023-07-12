@@ -52,7 +52,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td style='padding-top: 10px'>" . $row['mobile'] . "</td>";
         echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
         $file_path = $row['file_path'];
-        $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
+        $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path;);
         echo '<td style="padding-top: 10px;">
           <a href="' . $modified_file_path . '" target="_blank">
           ' . basename($row['file_path']) . '

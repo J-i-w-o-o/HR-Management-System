@@ -43,7 +43,7 @@ fetch('./assets/data/careers.json')
       cardContent.innerHTML = `
           <h5 class="card-header mb-2 text-center" style="background-color:#;">${job.title}</h5>
           <h6 class="card-title text-muted">Job type: ${job.jobType}</h6>
-          <p class="card-text">${job.description}</p>
+          <p class="card-text ">${job.description}</p>
         `;
 
       const cardFooter = document.createElement('div');

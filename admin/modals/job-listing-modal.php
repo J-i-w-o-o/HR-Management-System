@@ -55,7 +55,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-danger" id="deleteButton" name="delete"><i class="fas fa-trash"></i></button>
-            <button type="submit" onclick="fireSwal6(); return false;" class="btn btn-success"  id="editButton" name="apply"><i class="fas fa-edit"></i></button>
+            <button type="submit"  class="btn btn-success"  id="editButton" name="apply"><i class="fas fa-edit"></i></button>
           </div>
         </form>
       </div>
