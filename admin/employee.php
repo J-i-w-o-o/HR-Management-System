@@ -27,10 +27,9 @@
             <p class="card-text">Name:</p>
             <p class="card-text">Contact:</p>
             <p class="card-text">Date Hired:</p>
-            <p class="card-text"></p>
           </div>
 
-          <div class="card-body text-muted d-flex justify-content-between align-items-center">
+          <div class="card-footer">
             <button type="button" class="btn rounded-pill" data-bs-toggle="modal" data-bs-target="#jobModal"><i class="fa-solid fa-user-pen" style="color: #ec5b33;"></i></button>
           </div>
 
@@ -61,7 +60,7 @@
             </div>
 
             <div class="modal-footer">
-              <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal"><i class="fa-solid fa-trash"></i></button>
+              <button type="button" id="btnclose" class="btn"><i class="fa-solid fa-user-minus"></i></button>
               <button type="submit" id="btnappsubmit" class="btn " form="applicationform"><i class="fa-solid fa-pen"></i></button>
             </div>
 

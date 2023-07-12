@@ -1,8 +1,7 @@
-
 </div>
 </body>
 <footer>
-<div class="container footer-bottom clearfix text-center">
+<div class="text-center">
       <div class="copyright">
         &copy; Copyright <strong><span>Tiger's Mark Corporation</span></strong>. All Rights Reserved
       </div>
