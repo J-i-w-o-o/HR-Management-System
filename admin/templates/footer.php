@@ -1,11 +1,8 @@
 </div>
 </body>
 <footer>
-<div class="text-center">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Tiger's Mark Corporation</span></strong>. All Rights Reserved
-      </div>
-    </div>
+&copy; Copyright <strong><span>Tiger's Mark Corporation</span></strong>. All Rights Reserved
+
 </footer> 
 <script>
     function openNav() {
