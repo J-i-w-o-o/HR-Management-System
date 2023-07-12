@@ -1,6 +1,12 @@
 <header>
 
-  <div id="mySidenav" class="sidenav shadow rounded ">
+ 
+  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+    <div class="container-fluid ">
+      <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()">&#9776;</span>
+      <a class="navbar-brand" href="index.php?dashboard">
+        <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
+        <div id="mySidenav" class="sidenav shadow rounded ">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
     <a class="border-bottom border-black border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-tachometer mx-2"> </i>Dashboard</a>
@@ -11,16 +17,13 @@
      <a class="border-bottom border-black border-2" href="index.php?logout" onclick="fireSwal(); return false;" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
     </div>
   </div>
-  <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-    <div class="container-fluid ">
-      <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()">&#9776;</span>
-      <a class="navbar-brand" href="index.php?dashboard">
-        <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
       </a>
     </div>
   </nav>
-  
+</header>
 
+<body>
+  <div id="page-container">
   <?php
 if (isset($_GET['job-application']) || isset($_GET['job-application-declined']) || isset($_GET['job-application-interview'])) {
   $breadcrumbItems = [
@@ -53,10 +56,6 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-declined']) 
 <?php
 }
 ?>
-</header>
-
-<body>
-  <div id="page-container">
   <script>
   // Function to trigger the Swal dialog box
   function fireSwal() {

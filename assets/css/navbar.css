@@ -7,6 +7,7 @@ body {
 
 #page-container {
   flex: 1;
+  padding-top: 70px;
 }
 
 footer {
@@ -28,7 +29,6 @@ footer {
   width: 0;
   overflow-y: auto;
 }
-
 
 
 .sidenav a {
@@ -68,8 +68,10 @@ text-decoration: none;
 .sidenav-footer a:hover {
 color: #12294a;
 }
+
 .navbar {
-  background-color: transparent;
+  background-color: white;
+  z-index: 1;
 
 }
 
