@@ -1,3 +1,5 @@
+<?php include '../includes/db.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +14,7 @@
   <link rel="stylesheet" href="../assets/css/navbar.css">
   <link rel="stylesheet" href="../assets/css/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="../assets/js/node_modules/sweetalert2/dist/sweetalert2.min.css">
+  
   <title>TIGER'S MARK CORPORATION</title>
           <link rel="icon"  href="../assets/images/TMC_LOGO.png">
 </head>
