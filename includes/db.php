@@ -10,7 +10,7 @@ if (isset($_SESSION['username'])) {
 }
 
 // Check if the form is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST')a {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
