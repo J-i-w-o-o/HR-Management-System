@@ -22,15 +22,12 @@
 
     <div id="mySidenav" class="sidenav shadow rounded">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
         <a class="border-bottom border-black border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-tachometer mx-2"> </i>Dashboard</a>
         <a class="border-bottom border-black border-2 mx-2" href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="JOB LISTING"><i class="fa fa-list mx-2"> </i>Job Listing</a>
         <a class="border-bottom border-black border-2 mx-2" href="index.php?job-application" data-toggle="tooltip" data-placement="bottom" title="JOB APPLICATION"><i class="fa fa-file mx-2"> </i>Job Application</a>
         <a class="border-bottom border-black border-2 mx-2" href="index.php?employee" data-toggle="tooltip" data-placement="bottom" title="JOB APPLICATION"><i class="fa fa-file mx-2"> </i>Employees</a>
         <div class="sidenav-footer">
-
             <a class="border-bottom border-black border-2" href="index.php?logout" onclick="fireSwal(); return false;" data-toggle="tooltip" data-placement="bottom" title="LOGOUT"><i class="fa fa-sign-out-alt mx-2"></i>LOGOUT</a>
-
         </div>
     </div>
     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
@@ -77,42 +74,83 @@
     ?>
 </header>
 
+<!-- content start here -->
+
 <body>
+
+
     <div id="page-container">
         <title>Employee</title>
-        <?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css'; ?>
         <link rel="stylesheet" href="../assets/css/employee.css">
+
+        <div id="main">
         <div id="main">
 
+<div class="d-flex justify-content-between align-items-center mx-2">
+  <div>
+    <h4 class="ms-3 my-3"><span id="jobCount"></span> Employees</h4>
+  </div>
+  <div class="d-flex">
+    <form class="d-flex forms my-3">
+      <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search Employee">
+    </form>
+  </div>
+</div>
+
+<div class="row ms-2 me-2">
+  <div class="column">
+    <div class="card">
+      <div class="float-right">
+        <button class="editbtn no-border"><i class="fa-solid fa-pen-to-square"></i></button>
+      <h3>Employee 1</h3>
+      <p class="position-text">Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+</div>
+
+<div class="column">
+  <div class="card">
+    <div class="float-right">
+      <button class="editbtn no-border"><i class="fa-solid fa-pen-to-square"></i></button>
+      <h3>Employee 2</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+</div>
+
+<div class="column">
+  <div class="card">
+    <div class="float-right">
+      <button class="editbtn no-border"><i class="fa-solid fa-pen-to-square"></i></button>
+      <h3>Employee 3</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+</div>
+
+<div class="column">
+  <div class="card">
+    <div class="float-right">
+      <button class="editbtn no-border"><i class="fa-solid fa-pen-to-square"></i></button>
+      <h3>Employee 4</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
 
-            <h3>No. of Employees</h3>
-
-            <div class="row ms-2 me-2">
-                <div class="column">
-                    <div class="card">
-                        <div class="float-right">
-                            <button class="editbtn no-border"><i class="fa-solid fa-pen-to-square"></i></button>
-                        </div>
-                        <div id="image-display"></div>
-                        <input type="file" id="image-upload" accept="uploads/*">
-                        <button id="upload-button" class="btn btn-primary" onclick="uploadImage()" disabled>Upload Image</button>
-
-                        <p>Some text</p>
-                        <p>Some text</p>
-                    </div>
-
-
-                </div>
-
-
-            </div>
+        
         </div>
     </div>
-
-
-    </div>
 </body>
+
+<!-- footer start here -->
 <footer>
     <div class="container footer-bottom clearfix text-center">
         <div class="copyright">
@@ -220,50 +258,49 @@
     }
 
     function toggleEdit() {
-  const fileInput = document.getElementById('image-upload');
-  const uploadButton = document.getElementById('upload-button');
-  
-  // Toggle the disabled state of the file input element and upload button
-  fileInput.disabled = !fileInput.disabled;
-  uploadButton.disabled = !uploadButton.disabled;
-}
+        const fileInput = document.getElementById('image-upload');
+        const uploadButton = document.getElementById('upload-button');
 
-function uploadImage() {
-  // Get the file input element
-  const fileInput = document.getElementById('image-upload');
-  
-  // Check if the file input element is enabled (edit button is clicked)
-  if (!fileInput.disabled && fileInput.files.length > 0) {
-    const file = fileInput.files[0];
-    const reader = new FileReader();
-    
-    // Read the file as data URL
-    reader.readAsDataURL(file);
-    
-    // Handle the file loading
-    reader.onload = function(e) {
-      const imageDisplay = document.getElementById('image-display');
-      
-      // Create an image element
-      const image = document.createElement('img');
-      
-      // Set the source of the image to the data URL
-      image.src = e.target.result;
-      
-      // Apply CSS styles to resize the image
-      image.style.maxWidth = '100%';
-      image.style.maxHeight = '100%';
-      image.style.objectFit = 'contain';
-      
-      // Clear the previous contents of the card
-      imageDisplay.innerHTML = '';
-      
-      // Append the image to the display element
-      imageDisplay.appendChild(image);
+        // Toggle the disabled state of the file input element and upload button
+        fileInput.disabled = !fileInput.disabled;
+        uploadButton.disabled = !uploadButton.disabled;
     }
-  }
-}
 
+    function uploadImage() {
+        // Get the file input element
+        const fileInput = document.getElementById('image-upload');
+
+        // Check if the file input element is enabled (edit button is clicked)
+        if (!fileInput.disabled && fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            // Read the file as data URL
+            reader.readAsDataURL(file);
+
+            // Handle the file loading
+            reader.onload = function(e) {
+                const imageDisplay = document.getElementById('image-display');
+
+                // Create an image element
+                const image = document.createElement('img');
+
+                // Set the source of the image to the data URL
+                image.src = e.target.result;
+
+                // Apply CSS styles to resize the image
+                image.style.maxWidth = '50%';
+                image.style.maxHeight = '50%';
+                image.style.objectFit = 'contain';
+
+                // Clear the previous contents of the card
+                imageDisplay.innerHTML = '';
+
+                // Append the image to the display element
+                imageDisplay.appendChild(image);
+            }
+        }
+    }
 </script>
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/css/node_modules/mdb-ui-kit/js/mdb.min.js"></script>

@@ -7,6 +7,17 @@ h3{
   margin-left: 10px;
 }
 
+p{
+  margin-top: 15px;
+}
+
+#image-display {
+  width: 200px; /* Set your desired width */
+  height: 200px; /* Set your desired height */
+  overflow: hidden;
+}
+
+
 .editbtn {
     height: 30px;
     width: 30px;

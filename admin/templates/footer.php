@@ -117,14 +117,63 @@ function fireSwal2() {
       }
     });
 }
+function fireSwal3() {
+    Swal.fire({
+      title: 'DELETE',
+      text: 'Are you sure you want to Delete?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform logout action here
+        window.location.href = 'index.php?job-application-declined'; 
+      }
+    });
+  }
+  function fireSwal4() {
+    Swal.fire({
+      title: 'DELETE',
+      text: 'Are you sure you want to Delete?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform logout action here
+        window.location.href = 'index.php?job-application-declined'; 
+      }
+    });
+  }
+  function fireSwal6() {
+    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Edited Successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+  }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'index.php?job-listing'; 
+      }
+    });
+}
+
 </script>
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/css/node_modules/mdb-ui-kit/js/mdb.min.js"></script>
 <script src="../assets/js/node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 

@@ -1,5 +1,4 @@
 <title>Job Application</title>
-<?php include 'C:\xampp\htdocs\HR-Management-System\assets\css\job-application.css'; ?>
 
 <div id="main">
   <section id="hero" class=" align-items-center">
