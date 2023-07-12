@@ -9,12 +9,12 @@ h3{
 
 p{
   margin-top: 15px;
+  font-size: 15px;
 }
 
-#image-display {
-  width: 200px; /* Set your desired width */
-  height: 200px; /* Set your desired height */
-  overflow: hidden;
+.card-body img{
+  border: 5px solid #fbdad0;
+
 }
 
 .editbtn {
