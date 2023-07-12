@@ -81,10 +81,6 @@ function updateDate() {
   }
 }
 updateDate();
-
-function redirectToPage(url) {
-  window.location.href = url;
-}
   // Function to trigger the Swal dialog box
   function fireSwal1() {
     Swal.fire({
