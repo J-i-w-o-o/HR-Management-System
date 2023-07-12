@@ -1,3 +1,12 @@
+<style>
+      .card {
+    flex: 1 0 0; /* Prevent shrinking in width */
+    height: auto; /* Prevent shrinking in height */
+  }
+  .card-body{
+    min-height: 250px;
+  }
+</style>
 <?php include '../admin/modals/job-listing-modal.php' ?>
 <section id="hero" class="align-items-center">
   <div id="main">
@@ -29,3 +38,14 @@
   </div>
 </section>
 <script src="../includes/joblist-view-admin.js"></script>
+<?php
+if (isset($_GET['success'])) {
+    $successMessage = $_GET['success'];
+    echo '<script>Swal.fire("Success", "'.$successMessage.'", "success");</script>';
+}
+
+if (isset($_GET['error'])) {
+    $errorMessage = $_GET['error'];
+    echo '<script>Swal.fire("Error", "'.$errorMessage.'", "error");</script>';
+}
+?>

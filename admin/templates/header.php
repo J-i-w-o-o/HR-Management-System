@@ -22,11 +22,5 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-    .card {
-    flex: 1 0 0; /* Prevent shrinking in width */
-    height: auto; /* Prevent shrinking in height */
-  }
-  .card-body{
-    min-height: 250px;
-  }
+
  </style>
