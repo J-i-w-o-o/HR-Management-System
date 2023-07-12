@@ -1,6 +1,6 @@
 <?php
 include '../includes/db.php';
-// Form validation
+
 $position = $_POST['position'];
 $firstname = $_POST['firstname'];
 $address = $_POST['address'];
@@ -8,16 +8,24 @@ $mobile = $_POST['mobile'];
 $email = $_POST['email'];
 
 if (empty($firstname) || empty($address) || empty($mobile) || empty($email) || empty($position)) {
-    die("Please fill in all the required fields.");
+    $response = array(
+        'status' => 'error',
+        'message' => 'Please fill in all the required fields.'
+    );
+    echo json_encode($response);
+    exit();
 }
 
-// Prepare and execute the database query
 $query = "SELECT * FROM job_applications WHERE email = ? AND mobile = ?";
 $stmt = $connection->prepare($query);
 
 if (!$stmt) {
-    
-    die('Error: ' . $connection->error);
+    $response = array(
+        'status' => 'error',
+        'message' => $connection->error
+    );
+    echo json_encode($response);
+    exit();
 }
 
 $stmt->bind_param("ss", $email, $mobile);
@@ -25,21 +33,28 @@ $stmt->execute();
 $stmt->store_result();
 
 if ($stmt->num_rows > 0) {
-    echo '<script>alert(" Email already exists.");</script>';
-    echo '<script>window.location.href = "../careers.php";</script>';
+    $response = array(
+        'status' => 'error',
+        'message' => 'Email Already Exists'
+    );
+    echo json_encode($response);
     exit();
 }
 
 $stmt->close();
 
-$query = "INSERT INTO job_applications (firstname, address, mobile, email, file_path , position) VALUES (?, ?, ?, ?, ?, ?)";
+$query = "INSERT INTO job_applications (firstname, address, mobile, email, file_path, position) VALUES (?, ?, ?, ?, ?, ?)";
 $stmt = $connection->prepare($query);
 
 if (!$stmt) {
-    die('Error: ' . $connection->error);
+    $response = array(
+        'status' => 'error',
+        'message' => $connection->error
+    );
+    echo json_encode($response);
+    exit();
 }
 
-// File upload handling (optional)
 $targetDirectory = "C:/xampp/htdocs/HR-Management-System/uploads/";
 $targetFile = $targetDirectory . basename($_FILES['fileToUpload']['name']);
 $uploadSuccess = false;
@@ -50,26 +65,33 @@ if (in_array($uploadedExtension, $allowedExtensions)) {
 }
 
 if ($uploadSuccess) {
-    // File uploaded successfully, proceed with database operations
-    $stmt->bind_param("ssssss", $firstname, $address, $mobile, $email, $targetFile , $position);
+    $stmt->bind_param("ssssss", $firstname, $address, $mobile, $email, $targetFile, $position);
     $result = $stmt->execute();
 
     if ($result) {
-        
-        echo '<script>alert("Data inserted successfully");</script>';
-        echo '<script>window.location.href = "../careers.php";</script>';
+        $response = array(
+            'status' => 'success',
+            'message' => 'Data Inserted Successfully'
+        );
+        echo json_encode($response);
         exit();
     } else {
-        echo "Error: " . $stmt->error;
+        $response = array(
+            'status' => 'error',
+            'message' => $stmt->error
+        );
+        echo json_encode($response);
+        exit();
     }
 } else {
-    echo '<script>alert("Data inserted successfully");</script>';
-        echo '<script>window.location.href = "../careers.php";</script>';
+    $response = array(
+        'status' => 'error',
+        'message' => 'Upload Error'
+    );
+    echo json_encode($response);
+    exit();
 }
-
-
-
-
 
 $stmt->close();
 $connection->close();
+?>

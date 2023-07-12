@@ -6,35 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css" />
+  <link rel="stylesheet" href="./assets/js/node_modules/sweetalert2/dist/sweetalert2.min.css">
   <link rel="stylesheet" href="./assets/css/header.css">
 </head>
-<header>
-  <nav class="navbar fixed-top shadow p-2 mb-4 bg-body-tertiary rounded">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-      <div>
-        <img src="assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
-      </div>
-      <form class="d-flex forms">
-        <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-        <button type="submit" class="btn btn-sm" id="searchIcon">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
-    </div>
-  </nav>
-</header>
 
 <body style="margin-top: 70px;">
-  <?php
-  // Check if the 'alert' parameter is present in the URL
-  // if (isset($_GET['number'])) {
-  //   // Display the alert message
-  //   $alertMessage = urldecode($_GET['alert']);
-  //   echo '<script>alert("' . $alertMessage . '");</script>';
-  // }
-  ?>
-  <title>Careers</title>
+  <header>
+    <nav class="navbar fixed-top shadow p-2 mb-4 bg-body-tertiary rounded">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div>
+          <img src="assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
+        </div>
+        <form class="d-flex forms">
+          <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
+          <button type="submit" class="btn btn-sm" id="searchIcon">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </nav>
+  </header>
   <div class="text-center">
     <h1 class="mb-3">Careers</h1>
   </div>
@@ -45,7 +36,6 @@
       <ul id="pagination" class="pagination justify-content-center"></ul>
     </nav>
   </div>
-  <!-- Modal -->
   <div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="jobLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content custom-scrollbar">
@@ -82,70 +72,89 @@
             <div class="col-12">
               <h4>Additional Information</h4>
               <span id="additionalInfo" class="form-control" rows="3" disabled></span>
-              <!-- Forms for application -->
-              <form action="./includes/job-applyconf.php" method="post" enctype="multipart/form-data" id="applicationform">
+              <form method="post" enctype="multipart/form-data" id="applicationform">
                 <h5>Fill Up:</h5>
                 <div class="form-group my-2 mt-3">
                   <input type="text" id="titleInput" name="position" class="form-control" required hidden>
                   <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter Full Name" required>
                 </div>
-
                 <div class="form-group mb-2">
                   <input type="text" id="address" name="address" class="form-control" placeholder="Enter Address" required>
                 </div>
-
                 <div class="form-group mb-2">
                   <input type="num" id="mobile" name="mobile" maxlength="11" pattern="[0-9]*" title="Please enter only numeric digits." inputmode="numeric" class="form-control" placeholder="Enter Mobile Number" required>
                 </div>
-
                 <div class="form-group mb-2">
                   <input type="email" id="email" name="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Invalid email address" class="form-control" placeholder="Enter Email" required>
                 </div>
-
                 <div class="form-group mt-3">
                   <h5>Attach resume/cv:</h5>
                   <input type="file" name="fileToUpload" id="fileToUpload" required>
                 </div>
-
               </form>
             </div>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" id="btnclose" class="btn" data-bs-dismiss="modal">Close</button>
-     <button type="submit" onclick="fireSwal(); return false;" id="btnappsubmit" class="btn" form="applicationform">Apply</button>
-
+          <button type="button" id="btnappsubmit" class="btn" onclick="submitApplication()">Apply</button>
         </div>
       </div>
     </div>
   </div>
-  <script>
-    function fireSwal() {
-      Swal.fire({
-        icon: 'success',
-        title: 'Success!',
-        text: 'Applied Successfully',
-        showConfirmButton: false,
-        timer: 1500
-      }).then((result) => {
-        if (result.dismiss === Swal.DismissReason.timer) {
-          window.location.href = 'careers.php';
-        }
-      });
-    }
-  </script>
   <script src="./includes/joblist-view-careers.js"></script>
+  <script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./assets/js/node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+  <script src="./assets/js/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <script>
+  function submitApplication() {
+    // Get form data
+    const formData = new FormData(document.getElementById('applicationform'));
+
+    // Perform the AJAX request
+    $.ajax({
+      url: './includes/job-applyconf.php', // Replace with the actual URL of your PHP file
+      method: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function(response) {
+        // Parse JSON response
+        const result = JSON.parse(response);
+
+        // Show SweetAlert message based on the response status
+        if (result.status === 'success') {
+          Swal.fire({
+            icon: 'success',
+            title: 'Application Submitted',
+            text: 'Your application has been successfully submitted. We will contact you shortly.',
+          }).then(() => {
+            window.location.href = './careers.php';
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Application Failed',
+            text: result.message,
+          });
+        }
+
+        // Reset the form
+        document.getElementById('applicationform').reset();
+      },
+      error: function(xhr, status, error) {
+        // Show error message
+        Swal.fire({
+          icon: 'error',
+          title: 'Application Failed',
+          text: 'There was an error submitting your application. Please try again later.',
+        });
+      }
+    });
+  }
+</script>
+
 </body>
-<script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./assets/js/node_modules/jquery/dist/jquery.min.js"></script>
-<script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/css/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-
-
-
 
 </html>
