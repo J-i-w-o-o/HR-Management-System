@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="../assets/css/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/css/node_modules/mdb-ui-kit/css/mdb.min.css">
   <link rel="stylesheet" href="../assets/css/header.css">
-  
   <link rel="stylesheet" href="../assets/css/job-application.css">
   <link rel="stylesheet" href="../assets/css/navbar.css">
   <link rel="stylesheet" href="../assets/css/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
@@ -23,5 +22,4 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-
  </style>
