@@ -2,52 +2,49 @@
   box-sizing: border-box;
 }
 
-h3{
+h3 {
   margin-top: 25px;
   margin-left: 10px;
 }
 
-p{
+p {
   margin-top: 15px;
   font-size: 15px;
 }
 
-.card-body img{
-  border: 5px solid #fbdad0;
+/* .card-body img {
+
+} */
+
+.editbtn {
+  height: 30px;
+  width: 30px;
+  text-align: right;
+  background-color: #eaf1fa;
+  float: right;
+}
+
+.editbtn:hover {
+  color: #ec5b33;
 
 }
 
-.editbtn {
-    height: 30px;
-    width: 30px;
-    text-align: right;
-    background-color:#eaf1fa ;
-    border: none;
-    float: right;
-  }
-
-.editbtn:hover {
-    color: #ec5b33;
-    
-  }
-
-
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 .card {
   text-align: center;
-  background-color:  #eaf1fa;
+  background-color: #eaf1fa;
 
 }
 
-.card:hover{
-     transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
 
 

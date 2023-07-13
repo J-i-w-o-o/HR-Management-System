@@ -6,7 +6,8 @@
     <div class="d-flex justify-content-between align-items-center mx-2">
       <div>
         <p class="text-center lead ms-3 mt-3">
-       <h4 class="mx-2"><span id="jobCount"></span> Employees</p>
+          <span id="jobCount"></span>(put here no. of employee)
+        </p>
       </div>
       <form class="d-flex forms my-3">
         <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#addJobModal"><i class="fa-solid fa-user-plus"></i></button>
@@ -27,13 +28,6 @@
           // Retrieve data from the table
           $query = "SELECT * FROM employees";
           $result = mysqli_query($connection, $query);
-          $employeeCount = mysqli_num_rows($result);
-          // Assuming you have established a database connection
-
-          // Retrieve data from the table
-          $query = "SELECT * FROM employees";
-          $result = mysqli_query($connection, $query); 
-          $employeeCount = mysqli_num_rows($result);
 
           // Check if there are any rows in the table
           if (mysqli_num_rows($result) > 0) {
@@ -41,7 +35,6 @@
             while ($row = mysqli_fetch_assoc($result)) {
               $id = $row['id'];
               $name = $row['name'];
-              $department = $row['department'];
               $contact = $row['contact'];
               $dateHired = $row['date_hired'];
 
@@ -50,7 +43,7 @@
                 <div class="card mx-2">
                   <div class="card-body">
                     <img src="../assets/images/sample.jpg" class="mb-3" width="150" height="150">
-                    <h5 class="card-title text-muted">'.$department.'</h5>
+                    <h5 class="card-title text-muted">Position/Department</h5>
                     <p class="card-text" data-id="' . $id . '"></p>
                     <p class="card-text">Name: ' . $name . '</p>
                     <p class="card-text">Contact: ' . $contact . '</p>
@@ -71,7 +64,6 @@
         </div>
 
       </div>
-      
       <!-- modal for content start here -->
       <div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="jobLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -146,10 +138,6 @@
   </div>
 
   <script>
-  // Update the job count
-var jobCount = document.getElementById('jobCount');
-jobCount.textContent = '<?php echo $employeeCount; ?>';
-
     // Get the modal element
     var jobModal = document.getElementById('jobModal');
 
