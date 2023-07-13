@@ -1,6 +1,12 @@
 <header>
 
-  <div id="mySidenav" class="sidenav shadow rounded ">
+ 
+  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+    <div class="container-fluid ">
+      <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()">&#9776;</span>
+      <a class="navbar-brand" href="index.php?dashboard">
+        <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
+        <div id="mySidenav" class="sidenav shadow rounded ">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
     <a class="border-bottom border-black border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-tachometer mx-2"> </i>Dashboard</a>
@@ -12,18 +18,13 @@
     </div>
   </div>
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-  <div class="container-fluid ">
-    <a class="navbar-brand" href="index.php?dashboard">
-      <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
-    </a>
-    <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()"> &#9776;</span>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <!-- Your navigation items go here -->
-      </ul>
+    <div class="container-fluid ">
+      <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()">&#9776;</span>
+      <a class="navbar-brand" href="index.php?dashboard">
+        <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
+      </a>
     </div>
-  </div>
-</nav>
+  </nav>
   
 
   <?php
@@ -58,10 +59,6 @@ if (isset($_GET['job-application']) || isset($_GET['job-application-declined']) 
 <?php
 }
 ?>
-</header>
-
-<body>
-  <div id="page-container">
   <script>
   // Function to trigger the Swal dialog box
   function fireSwal() {

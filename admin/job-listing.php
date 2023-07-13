@@ -38,14 +38,3 @@
   </div>
 </section>
 <script src="../includes/joblist-view-admin.js"></script>
-<?php
-if (isset($_GET['success'])) {
-    $successMessage = $_GET['success'];
-    echo '<script>Swal.fire("Success", "'.$successMessage.'", "success");</script>';
-}
-
-if (isset($_GET['error'])) {
-    $errorMessage = $_GET['error'];
-    echo '<script>Swal.fire("Error", "'.$errorMessage.'", "error");</script>';
-}
-?>

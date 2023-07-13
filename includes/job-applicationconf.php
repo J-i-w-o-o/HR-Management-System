@@ -2,6 +2,8 @@
 <?php
 include '../includes/db.php';
 $status = 'pending'; // Default status is 'pending'
+
+
 if (isset($_GET['job-application'])) {
   // If the URL parameter is present, set the status accordingly
   $status = 'pending';
@@ -36,6 +38,23 @@ if (isset($_POST['reassess'])) {
   mysqli_query($connection, $approveSql);
 }
 
+if (isset($_POST['hired'])) {
+  $id = $_POST['hired'];
+
+  $jobApplicationSql = "SELECT `position`, `mobile`, `firstname`, NOW() AS `timenow` FROM `job_applications` WHERE `id` = $id";
+  $result = mysqli_query($connection, $jobApplicationSql);
+  $row = mysqli_fetch_assoc($result);
+
+  $position = $row['position'];
+  $mobile = $row['mobile'];
+  $firstname = $row['firstname'];
+  $timenow = $row['timenow'];
+
+  $hiredSql = "INSERT INTO `employees`(`id`, `name`, `department`, `contact`, `date_hired`) VALUES ('$id', '$firstname', '$position', '$mobile', '$timenow')";
+  mysqli_query($connection, $hiredSql);
+}
+
+
 // Update the SQL query to use the $status variable
 $sql = "SELECT * FROM job_applications WHERE status = '$status'";
 $result = mysqli_query($connection, $sql);
@@ -53,7 +72,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
         $file_path = $row['file_path'];
         $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
-        echo '<td style="padding-top: 10px;">
+        echo '<td  class="shorten-text" style="padding-top: 10px;">
           <a href="' . $modified_file_path . '" target="_blank">
           ' . basename($row['file_path']) . '
           </a>
@@ -74,7 +93,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
         $file_path = $row['file_path'];
         $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
-        echo '<td class="shorten-text" style="padding-top: 10px;">
+        echo '<td  class="shorten-text" style="padding-top: 10px;">
           <a href="' . $modified_file_path . '" target="_blank">
           ' . basename($row['file_path']) . '
           </a>
@@ -83,7 +102,7 @@ if (mysqli_num_rows($result) > 0) {
     <form method='POST'>
     
       <button type='submit' title='Approved Application'  name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-      <button type='submit' title='Declined Application' name='archive' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+      <button type='submit' title='Declined Application' name='reassess' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
     </form>
   </td>";
         break;
@@ -104,7 +123,7 @@ if (mysqli_num_rows($result) > 0) {
 
         echo "<td class='text-center'>
           <form method='POST'>
-          <button type='submit'  name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
+          <button type='submit'  name='hired' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
             <button type='submit'  name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
           </form>
         </td>";
@@ -138,7 +157,6 @@ if (mysqli_num_rows($result) > 0) {
     echo '    </div>';
     echo '  </div>';
     echo '</div>';
-    
   }
 }
 //asdsada

@@ -7,6 +7,7 @@ body {
 
 #page-container {
   flex: 1;
+  padding-top: 70px;
 }
 
 footer {
@@ -26,7 +27,6 @@ footer {
   padding-top: 20px;
   overflow-y: auto;
 }
-
 
 
 .sidenav a {
@@ -66,10 +66,10 @@ text-decoration: none;
 .sidenav-footer a:hover {
 color: #12294a;
 }
+
 .navbar {
   background-color: transparent;
-  position: fixed;
-  z-index: 1;
+
 }
 
 .navbar-toggler-icon {
