@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-between align-items-center mx-2">
       <div>
         <p class="text-center lead ms-3 mt-3">
-       <h4 class="mx-2">  # of Employees:  <span id="jobCount"></span></p>
+       <h4 class="mx-2"><span id="jobCount"></span> Employees</p>
       </div>
       <form class="d-flex forms my-3">
         <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#addJobModal"><i class="fa-solid fa-user-plus"></i></button>
