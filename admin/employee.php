@@ -71,6 +71,7 @@
         </div>
 
       </div>
+      
       <!-- modal for content start here -->
       <div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="jobLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
