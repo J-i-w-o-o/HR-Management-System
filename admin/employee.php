@@ -67,7 +67,7 @@
           } else {
             // Handle case when there are no rows in the table
             echo '<p>No data available.</p>';
-          }0
+          }
 
           // Close the database connection
           mysqli_close($connection);
@@ -75,11 +75,6 @@
         </div>
 
       </div>
-
-
-
-
-  
 
   <?php
   // Check if the update button is clicked
