@@ -23,9 +23,7 @@ footer {
   height: 100%;
   z-index: 1;
   overflow-x: hidden;
-  padding-top: 60px;
-  transition: 0.5s;
-  width: 0;
+  padding-top: 20px;
   overflow-y: auto;
 }
 
@@ -50,7 +48,7 @@ footer {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  transition: 0.3s;
+  
 }
 .sidenav-footer {
 position: absolute;
@@ -70,7 +68,8 @@ color: #12294a;
 }
 .navbar {
   background-color: transparent;
-
+  position: fixed;
+  z-index: 1;
 }
 
 .navbar-toggler-icon {
@@ -81,6 +80,7 @@ color: #12294a;
   color: #12294a;
   padding: 8px 16px;
 }
+
 .breadcrumb{
  
  display: flex;
@@ -97,7 +97,7 @@ hr.solid {
 
 @media screen and (max-height: 450px) {
   #main{
-    display: hi;
+    display: none;
 
   }
 }

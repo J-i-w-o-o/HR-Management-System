@@ -12,13 +12,18 @@
     </div>
   </div>
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-    <div class="container-fluid ">
-      <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()">&#9776;</span>
-      <a class="navbar-brand" href="index.php?dashboard">
-        <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
-      </a>
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="index.php?dashboard">
+      <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
+    </a>
+    <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()"> &#9776;</span>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <!-- Your navigation items go here -->
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
   
 
   <?php
