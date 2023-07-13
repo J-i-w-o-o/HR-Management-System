@@ -15,6 +15,7 @@ footer {
   padding: 20px;
   text-align: center;
 }
+
 .sidenav {
   width: 250px;
   background-color: white;
@@ -29,8 +30,6 @@ footer {
   width: 0;
   overflow-y: auto;
 }
-
-
 
 .sidenav a {
   padding: 8px 8px 8px 16px;
