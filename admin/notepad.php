@@ -19,9 +19,7 @@
                 </div>
             </div>
         </div>
-        <hr>
-        <h2 class="text-center">Notes List</h2>
-        <hr>
+        
         <div id="notes" class="row container-fluid m-2">
         </div>
     </div>
