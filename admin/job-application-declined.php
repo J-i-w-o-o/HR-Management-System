@@ -7,7 +7,6 @@
     <div class="d-flex justify-content-between align-items-center mx-2">
       <h2 class="mt-2 ms-3"> DECLINED APPLICATIONS</h2>
       <form class="d-flex forms my-3">
-        <button type="button" class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#addEmployee"><i class="fa-solid fa-trash"></i></button>
         <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for Applicant">
       </form>
     </div>

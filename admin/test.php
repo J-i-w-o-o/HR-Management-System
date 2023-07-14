@@ -91,109 +91,52 @@ date_default_timezone_set('Asia/Manila');
                     ?>
                 </ol>
             </nav>
-            <hr class="solid mx-4  ">
+            <hr class="solid mx-4">
         <?php
         }
         ?>
-
-        <title>Employee</title>
+        <title>Dashboard</title>
         <div id="main">
-        <link rel="stylesheet" href="../assets/css/employee.css">
-            <!-- title page and search bar  -->
-            <div class="d-flex justify-content-between align-items-center mx-2">
-                <div>
-                    <p class="text-center lead ms-3 mt-3">
-                    <h3 class="mx-2"><span id="jobCount"></span> Employees</h3>
-                </div>
-                <form class="d-flex forms my-3">
-                    <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#addEmployee"><i class="fa-solid fa-user-plus"></i></button>
-                    <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for Employee">
-                </form>
-            </div>
+            <link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
+            <div class="container-fluid px-4" id=main>
+                <section id="hero" class="align-items-center">
 
-            <!-- main content -->
-
-            <div class="container-fluid">
-                <div id="jobsContainer" class="row justify-content-center align-items-center">
-                    <!-- card content -->
-                    <div class="col-md-auto d-flex">
-                        <?php
-                        // Assuming you have established a database connection
-
-                        // Retrieve data from the table
-                        $query = "SELECT * FROM employees";
-                        $result = mysqli_query($connection, $query);
-                        $employeeCount = mysqli_num_rows($result);
-
-                        // Check if there are any rows in the table
-                        if (mysqli_num_rows($result) > 0) {
-                            // Iterate over each row and generate the card dynamically
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $id = $row['id'];
-                                $name = $row['name'];
-                                $department = $row['department'];
-                                $contact = $row['contact'];
-                                $dateHired = date('m/dY', strtotime($row['date_hired'])); // Format date as 'YYYY-MM-DD'
-
-                                // Generate the HTML for each card dynamically
-                                echo '
-              <div class="card mx-2">
-                <div class="col-md-auto d-flex justify-content-end mb-4">
-                  <button type="button" class="btn rounded-pill edit-button justify-content-end" data-bs-toggle="modal" data-bs-target="#employeeModal" data-id="' . $id . '" data-name="' . $name . '" data-contact="' . $contact . '" data-date-hired="' . $dateHired . '"><i class="fa-solid fa-ellipsis fa-xl" style="color: #ec5b33;"></i></button>
-                </div>
-                <div class="card-container">
-                  <h5 class="card-title text-muted">' . $department . '</h5>
-                  <p class="card-text" data-id="' . $id . '"></p>
-                  <p class="card-text">Name: ' . $name . '</p>
-                  <p class="card-text">Contact: ' . $contact . '</p>
-                  <p class="card-text">Date Hired: ' . $dateHired . '</p>
-                </div>
-              </div>
-            ';
-                            }
-                        } else {
-                            // Handle case when there are no rows in the table
-                            echo '<p>No data available.</p>';
-                        }
-
-                        // Close the database connection
-                        mysqli_close($connection);
-                        ?>
+                    <div class="row">
+                        <div class="container">
+                            <div class="display-date">
+                                <span class="display-time"></span>
+                                <span id="day">day</span>,
+                                <span id="daynum">00</span>
+                                <span id="month">month</span>
+                                <span id="year">0000</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header text-white"> Job Listing </div>
+                                <div class="card-body bg-#ec5b33 text-dark" style="font-size: 2rem;"> 1million</div>
+                                <div class="card-footer border-dark d-flex align-items-center justify-content-between">
+                                    <a class="small text-dark stretched-link" href="index.php?job-listing">View Details</a>
+                                    <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header bg-#ec5b33 text-white"> No. of Pending Applicants </div>
+                                <div class="card-body text-dark" style="font-size: 2rem;"> 10000 </div>
+                                <div class="card-footer border-dark d-flex align-items-center justify-content-between">
+                                    <a class="small text-dark stretched-link" href="index.php?job-application">View Details</a>
+                                    <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-
-
-            <?php
-            // Check if the update button is clicked
-            if (isset($_POST['updateEmployee'])) {
-                // Get the employee ID from the form input
-                $id = $_POST['employeeId'];
-
-                // Get the updated values from the form inputs
-                $name = $_POST['nameInput'];
-                $contact = $_POST['contactInput'];
-                $dateHired = $_POST['dateHiredInput'];
-
-                // Assuming you have established a database connection
-
-                // Update the employee record in the database
-                $query = "UPDATE employees SET name='$name', contact='$contact', date_hired='$dateHired' WHERE id=$id";
-                $result = mysqli_query($connection, $query);
-
-                if ($result) {
-                    // Update successful
-                    echo '<script>alert("Employee record updated successfully.");</script>';
-                } else {
-                    // Update failed
-                    echo '<script>alert("Error updating employee record: ' . mysqli_error($connection) . '");</script>';
-                }
-
-                // Close the database connection
-                mysqli_close($connection);
-            }
-            ?>
-                <?php include '../admin/modals/employee-modal.php' ?>
         </div>
     </div>
 </body>
@@ -209,7 +152,6 @@ date_default_timezone_set('Asia/Manila');
         const body = document.body;
 
         sidenav.style.width = "250px";
-        a
         main.style.transition = "margin-left 0.5s"; // Add transition property
         main.style.marginLeft = "250px";
         container.style.transform = "translateX(-250px)";
@@ -261,15 +203,6 @@ date_default_timezone_set('Asia/Manila');
         document.getElementById("year").textContent = year;
     }
     updateDate();
-
-    // function redirectToPage(url) {
-    //   window.location.href = url; 
-    // }
-</script>
-
-
-
-<script>
     // Update the job count
     var jobCount = document.getElementById('jobCount');
     jobCount.textContent = '<?php echo $employeeCount; ?>';
@@ -317,6 +250,24 @@ date_default_timezone_set('Asia/Manila');
     btnUpdateModal.addEventListener('click', function() {
         document.getElementById('updateForm').submit();
     });
+
+    function fireSwal() {
+        Swal.fire({
+            title: 'LOGOUT',
+            text: 'Are you sure you want to logout?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Perform logout action here
+                console.log('User logged out');
+                window.location.href = 'index.php?logout'; // Redirect to the logout URL
+            }
+        });
+    }
 </script>
 
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

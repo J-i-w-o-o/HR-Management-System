@@ -59,17 +59,8 @@ function closeNav() {
     document.getElementById("year").textContent = year;
   }
   updateDate();
-
-  // function redirectToPage(url) {
-  //   window.location.href = url; 
-  // }
-</script>
-
-    
-
-<script>
   // Update the job count
-var jobCount = document.getElementById('jobCount');
+  var jobCount = document.getElementById('jobCount');
 jobCount.textContent = '<?php echo $employeeCount; ?>';
 
     // Get the modal element
@@ -115,7 +106,25 @@ jobCount.textContent = '<?php echo $employeeCount; ?>';
     btnUpdateModal.addEventListener('click', function() {
       document.getElementById('updateForm').submit();
     });
-  </script>
+
+    function fireSwal() {
+        Swal.fire({
+          title: 'LOGOUT',
+          text: 'Are you sure you want to logout?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Perform logout action here
+            console.log('User logged out');
+            window.location.href = 'index.php?logout'; // Redirect to the logout URL
+          }
+        });
+      }
+</script>
 
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/css/node_modules/mdb-ui-kit/js/mdb.min.js"></script>
