@@ -2,14 +2,13 @@
   box-sizing: border-box;
 }
 
-h3 {
+h5 {
   font-size: x-large;
-  margin-top: 25px;
-  margin-left: 10px;
+  margin-top: 20px;
+  color: #12294a;
 }
 
 p {
-  margin-top: 15px;
   font-size: 15px;
 }
 

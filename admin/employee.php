@@ -35,7 +35,7 @@
             $name = $row['name'];
             $department = $row['department'];
             $contact = $row['contact'];
-            $dateHired = date('m/dY', strtotime($row['date_hired'])); // Format date as 'YYYY-MM-DD'
+            $dateHired = date('m / d / Y', strtotime($row['date_hired'])); // Format date as 'YYYY-MM-DD'
 
             // Generate the HTML for each card dynamically
             echo '
@@ -44,6 +44,7 @@
                   <button type="button" class="btn rounded-pill edit-button justify-content-end" data-bs-toggle="modal" data-bs-target="#employeeModal" data-id="' . $id . '" data-name="' . $name . '" data-contact="' . $contact . '" data-date-hired="' . $dateHired . '"><i class="fa-solid fa-ellipsis fa-xl" style="color: #ec5b33;"></i></button>
                 </div>
                 <div class="card-container">
+                <img src="../assets/images/addicon.png" class="mb-3" width="150" height="150">
                   <h5 class="card-title text-muted">' . $department . '</h5>
                   <p class="card-text" data-id="' . $id . '"></p>
                   <p class="card-text">Name: ' . $name . '</p>
