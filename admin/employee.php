@@ -1,7 +1,6 @@
 <title>Employee</title>
 <div id="main">
 <link rel="stylesheet" href="../assets/css/employee.css">
-<?php include '../admin/modals/employee-modal.php' ?>
   <!-- title page and search bar  -->
   <div class="d-flex justify-content-between align-items-center mx-2">
     <div>
@@ -96,4 +95,6 @@
     mysqli_close($connection);
   }
   ?>
+<?php include '../admin/modals/employee-modal.php' ?>
+
 </div>
