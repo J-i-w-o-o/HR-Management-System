@@ -134,9 +134,8 @@
                 <button type="button" id="btnremove" class="btn btn-danger"><i class="fa-solid fa-user-minus"></i></button>
                 <button type="submit" id="btnupdateAdd" class="btn btn-success" form="applicationform"><i class="fa-solid fa-pen"></i></button>
             </div>
-
         </div>
-    </div>
+    </div>  
 </div>
 
 

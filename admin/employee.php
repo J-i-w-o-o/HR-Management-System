@@ -64,37 +64,5 @@
       </div>
     </div>
   </div>
-
-
-  <?php
-  // Check if the update button is clicked
-  if (isset($_POST['updateEmployee'])) {
-    // Get the employee ID from the form input
-    $id = $_POST['employeeId'];
-
-    // Get the updated values from the form inputs
-    $name = $_POST['nameInput'];
-    $contact = $_POST['contactInput'];
-    $dateHired = $_POST['dateHiredInput'];
-
-    // Assuming you have established a database connection
-
-    // Update the employee record in the database
-    $query = "UPDATE employees SET name='$name', contact='$contact', date_hired='$dateHired' WHERE id=$id";
-    $result = mysqli_query($connection, $query);
-
-    if ($result) {
-      // Update successful
-      echo '<script>alert("Employee record updated successfully.");</script>';
-    } else {
-      // Update failed
-      echo '<script>alert("Error updating employee record: ' . mysqli_error($connection) . '");</script>';
-    }
-
-    // Close the database connection
-    mysqli_close($connection);
-  }
-  ?>
 <?php include '../admin/modals/employee-modal.php' ?>
-
 </div>
