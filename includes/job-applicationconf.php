@@ -65,69 +65,71 @@ if (mysqli_num_rows($result) > 0) {
     switch ($row['status']) {
       case 'pending':
         echo "<tr>";
-        echo "<td style='padding-top: 10px'>" . $row['position'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['firstname'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['address'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['mobile'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
-        $file_path = $row['file_path'];
-        $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
-        echo '<td  class="shorten-text" style="padding-top: 10px;">
-          <a href="' . $modified_file_path . '" target="_blank">
-          ' . basename($row['file_path']) . '
-          </a>
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['position'] . "</td>";
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['firstname'] . "</td>";
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['address'] . "</td>";
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['mobile'] . "</td>";
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['email'] . "</td>";
+        $modified_file_path = getModifiedFilePath($row['file_path']);
+        echo '<td class="shorten-text text-center " style="padding-top: 10px;">
+            <a href="' . $modified_file_path . '" target="_blank">
+            ' . basename($row['file_path']) . '
+            </a>
         </td>';
         echo "<td class='text-center'>
           <form method='POST'>
-            <button type='button'  class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#scheduleModal" . $row['id'] . "'>Set Schedule</button>
+            <button type='button'  class='btn btn-warning  ' data-bs-toggle='modal' data-bs-target='#scheduleModal" . $row['id'] . "'><i class='fas fa-clock' aria-hidden='true'></i></button>
             <button type='submit'  name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
           </form>
         </td>";
         break;
       case 'declined':
         echo "<tr>";
-        echo "<td style='padding-top: 10px'>" . $row['position'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['firstname'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['address'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['mobile'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
-        $file_path = $row['file_path'];
-        $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
-        echo '<td  class="shorten-text" style="padding-top: 10px;">
-          <a href="' . $modified_file_path . '" target="_blank">
-          ' . basename($row['file_path']) . '
-          </a>
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['position'] . "</td>";
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['firstname'] . "</td>";
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['address'] . "</td>";
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['mobile'] . "</td>";
+        echo "<td class='text-center' style='padding-top: 10px'>" . $row['email'] . "</td>";
+        $modified_file_path = getModifiedFilePath($row['file_path']);
+        echo '<td class="shorten-text text-center" style="padding-top: 10px;">
+            <a href="' . $modified_file_path . '" target="_blank">
+            ' . basename($row['file_path']) . '
+            </a>
         </td>';
         echo "<td class='text-center'>
     <form method='POST'>
     
-      <button type='submit' title='Approved Application'  name='approve' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-      <button type='submit' title='Declined Application' name='reassess' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
+      <button type='submit' title='Approved Application'  name='reassess' value='" . $row['id'] . "' class='btn btn-success'><i class='fas fa-redo' aria-hidden='true'></i></button>
+      <button type='submit' title='Declined Application' name='trashbin' value='" . $row['id'] . "' class='btn btn-danger'><i class='fas fa-trash' aria-hidden='true'></i></button>
     </form>
   </td>";
         break;
-      case 'for-interview':
-        echo "<tr>";
-        echo "<td style='padding-top: 10px'>" . $row['position'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['firstname'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['schedule'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['mobile'] . "</td>";
-        echo "<td style='padding-top: 10px'>" . $row['email'] . "</td>";
-        $file_path = $row['file_path'];
-        $modified_file_path = str_replace('C:/xampp/htdocs', '', $file_path);
-        echo '<td  class="shorten-text" style="padding-top: 10px;">
-          <a href="' . $modified_file_path . '" target="_blank">
-          ' . basename($row['file_path']) . '
-          </a>
-        </td>';
-
-        echo "<td class='text-center'>
-          <form method='POST'>
-          <button type='submit'  name='hired' value='" . $row['id'] . "' class='btn btn-success'><i class='fa fa-check' aria-hidden='true'></i></button>
-            <button type='submit'  name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
-          </form>
-        </td>";
-        break;
+        case 'for-interview':
+          echo "<tr>";
+          echo "<td class='text-center' style='padding-top: 10px '>" . $row['position'] . "</td>";
+          echo "<td class='text-center' style='padding-top: 10px'>" . $row['firstname'] . "</td>";
+      
+          // Convert schedule to the desired format
+          $formattedDate = convertDateTimeFormat($row['schedule']);
+          echo "<td class='text-center' style='padding-top: 10px'>" . $formattedDate . "</td>";
+      
+          echo "<td class='text-center' style='padding-top: 10px'>" . $row['mobile'] . "</td>";
+          echo "<td class='text-center' style='padding-top: 10px'>" . $row['email'] . "</td>";
+      
+          $modified_file_path = getModifiedFilePath($row['file_path']);
+          echo '<td  class="shorten-text text-center" style="padding-top: 10px;">
+              <a href="' . $modified_file_path . '" target="_blank">
+              ' . basename($row['file_path']) . '
+              </a>
+          </td>';
+      
+          echo "<td class='text-center'>
+              <form method='POST'>
+              <button type='submit'  name='hired' value='" . $row['id'] . "' class='btn btn-success'><i class='fa-regular fa-thumbs-up' aria-hidden='true'></i></button>
+              <button type='submit'  name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa-regular fa-thumbs-down' aria-hidden='true'></i></button>
+              </form>
+          </td>";
+          break;     
     }
   }
 } else {
@@ -149,8 +151,8 @@ if (mysqli_num_rows($result) > 0) {
     echo '            <label for="scheduleInput' . $row['id'] . '" class="form-label">Schedule</label>';
     echo '            <input type="datetime-local" class="form-control" id="scheduleInput' . $row['id'] . '" name="schedule" required>';
     echo '          </div>';
-    echo '          <div cl ass="text-center">'; // Add a wrapper div with the "text-center" class
-    echo '            <button type="submit" title="Approved Application" name="interview" value="' . $row['id'] . '" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></button>';
+    echo '          <div class="text-center">'; // Add a wrapper div with the "text-center" class
+    echo '            <button type="submit" title="Approved Application" name="interview" value="' . $row['id'] . '" class="btn btn-primary">Set Schedule</button>';
     echo '          </div>'; // Close the wrapper div
     echo '        </form>';
     echo '      </div>';
@@ -158,6 +160,14 @@ if (mysqli_num_rows($result) > 0) {
     echo '  </div>';
     echo '</div>';
   }
+}
+function getModifiedFilePath($file_path) {
+  return str_replace('C:/xampp/htdocs', '', $file_path);
+}
+
+function convertDateTimeFormat($datetime) {
+  $scheduleDateTime = new DateTime($datetime);
+  return $scheduleDateTime->format('F j, Y | h:i A');
 }
 //asdsada
 // Close the database connection

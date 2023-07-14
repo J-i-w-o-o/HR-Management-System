@@ -5,30 +5,32 @@
 
 </footer>
 <script>
-  function openNav() {
-    const sidenav = document.getElementById("mySidenav");
-    const main = document.getElementById("main");
-    const container = document.getElementById("container");
-    const body = document.body;
+function openNav() {
+  const sidenav = document.getElementById("mySidenav");
+  const main = document.getElementById("main");
+  const container = document.getElementById("container");
+  const body = document.body;
 
-    sidenav.style.width = "250px";
-    main.style.marginLeft = "250px";
-    container.style.transform = "translateX(-250px)";
-    body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-    body.style.boxShadow = "solid";
-  }
+  sidenav.style.width = "250px";
+  main.style.transition = "margin-left 0.5s"; // Add transition property
+  main.style.marginLeft = "250px";
+  container.style.transform = "translateX(-250px)";
+  body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+  body.style.boxShadow = "solid";
+}
 
-  function closeNav() {
-    const sidenav = document.getElementById("mySidenav");
-    const main = document.getElementById("main");
-    const container = document.getElementById("container");
-    const body = document.body;
+function closeNav() {
+  const sidenav = document.getElementById("mySidenav");
+  const main = document.getElementById("main");
+  const container = document.getElementById("container");
+  const body = document.body;
 
-    sidenav.style.width = "0";
-    main.style.marginLeft = "0";
-    container.style.transform = "translateX(0)";
-    body.style.backgroundColor = "white";
-  }
+  sidenav.style.width = "0";
+  main.style.transition = "margin-left 0.5s"; // Add transition property
+  main.style.marginLeft = "0";
+  container.style.transform = "translateX(0)";
+  body.style.backgroundColor = "white";
+}
 
   const displayTime = document.querySelector(".display-time");
 

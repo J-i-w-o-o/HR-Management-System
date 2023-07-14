@@ -1,4 +1,6 @@
-<?php include '../includes/db.php'; ?>
+<?php include '../includes/db.php';
+date_default_timezone_set('Asia/Manila');
+?>
 
 <!DOCTYPE html>
 <html lang="en">

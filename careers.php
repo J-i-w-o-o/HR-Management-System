@@ -46,6 +46,7 @@
         <div class="modal-body">
           <h2>Overview</h2>
           <p id="overview"></p>
+          <hr>
           <div class="row">
             <div class="col-6">
               <h4>Job type</h4>
@@ -66,12 +67,14 @@
               <p class="fs-6 px-1" id="jobLevel"></p>
             </div>
           </div>
+          <hr>
           <h4>Location</h4>
           <p class="fs-6 px-1" id="location"></p>
           <div class="row">
             <div class="col-12">
               <h4>Additional Information</h4>
-              <span id="additionalInfo" class="form-control" rows="3" disabled></span>
+              <span id="additionalInfo" class="form-control" rows="3"></span>
+              <hr>
               <form method="post" enctype="multipart/form-data" id="applicationform">
                 <h5>Fill Up:</h5>
                 <div class="form-group my-2 mt-3">
@@ -82,15 +85,22 @@
                   <input type="text" id="address" name="address" class="form-control" placeholder="Enter Address" required>
                 </div>
                 <div class="form-group mb-2">
-                  <input type="num" id="mobile" name="mobile" maxlength="11" pattern="[0-9]*" title="Please enter only numeric digits." inputmode="numeric" class="form-control" placeholder="Enter Mobile Number" required>
+                  <input type="text" id="mobile" name="mobile" maxlength="11" pattern="^(09[0-9]{9})$" title="Please enter a valid mobile number starting with 09" inputmode="numeric" class="form-control" placeholder="Enter Mobile Number" required>
                 </div>
                 <div class="form-group mb-2">
                   <input type="email" id="email" name="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Invalid email address" class="form-control" placeholder="Enter Email" required>
                 </div>
                 <div class="form-group mt-3">
-                  <h5>Attach resume/cv:</h5>
-                  <input type="file" name="fileToUpload" id="fileToUpload" required>
+                  <div class="row align-items-center">
+                    <div class="col-sm-4 col-md-3">
+                      <label for="fileToUpload" class="form-label text-center">Attachment : resume/cv</label>
+                    </div>
+                    <div class="col-sm-8 col-md-9">
+                      <input type="file" name="fileToUpload" id="fileToUpload" required class="form-control">
+                    </div>
+                  </div>
                 </div>
+
               </form>
             </div>
           </div>
@@ -107,72 +117,106 @@
   <script src="./assets/js/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./assets/js/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
   <script>
-  document.getElementById('btnappsubmit').addEventListener('click', function() {
-    const formData = new FormData(document.getElementById('applicationform'));
+    document.getElementById('btnappsubmit').addEventListener('click', function() {
+      const form = document.getElementById('applicationform');
 
-    fetch('./includes/job-applyconf.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(result => {
-      if (result.status === 'success') {
-        Swal.fire({
-          icon: 'success',
-          title: 'Application Submitted',
-          text: 'Your application has been successfully submitted. We will contact you shortly.',
-          showClass: {
-            popup: 'swal2-show',
-            backdrop: 'swal2-backdrop-show',
-            icon: 'swal2-icon-show'
-          },
-          hideClass: {
-            popup: 'swal2-hide',
-            backdrop: 'swal2-backdrop-hide',
-            icon: 'swal2-icon-hide'
-          },
-        }).then(() => {
-          window.location.href = './careers.php';
-        });
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Application Failed',
-          text: result.message,
-          showClass: {
-            popup: 'swal2-show',
-            backdrop: 'swal2-backdrop-show',
-            icon: 'swal2-icon-show'
-          },
-          hideClass: {
-            popup: 'swal2-hide',
-            backdrop: 'swal2-backdrop-hide',
-            icon: 'swal2-icon-hide'
-          },
-        });
+      // Check if any required fields are empty
+      if (!form.checkValidity()) {
+        // Display validation error messages
+        form.reportValidity();
+        return; // Stop execution if there are validation errors
       }
 
-      document.getElementById('applicationform').reset();
-    })
-    .catch(error => {
-      Swal.fire({
-        icon: 'error',
-        title: 'Application Failed',
-        text: 'There was an error submitting your application. Please try again later.',
-        showClass: {
-          popup: 'swal2-show',
-          backdrop: 'swal2-backdrop-show',
-          icon: 'swal2-icon-show'
-        },
-        hideClass: {
-          popup: 'swal2-hide',
-          backdrop: 'swal2-backdrop-hide',
-          icon: 'swal2-icon-hide'
-        },
-      });
+      const formData = new FormData(form);
+
+      fetch('./includes/job-applyconf.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(result => {
+          if (result.status === 'success') {
+            Swal.fire({
+              icon: 'success',
+              title: 'Application Submitted',
+              text: 'Your application has been successfully submitted. We will contact you shortly.',
+              showClass: {
+                popup: 'swal2-show',
+                backdrop: 'swal2-backdrop-show',
+                icon: 'swal2-icon-show'
+              },
+              hideClass: {
+                popup: 'swal2-hide',
+                backdrop: 'swal2-backdrop-hide',
+                icon: 'swal2-icon-hide'
+              },
+            }).then(() => {
+              window.location.href = './careers.php';
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Application Failed',
+              text: result.message,
+              showClass: {
+                popup: 'swal2-show',
+                backdrop: 'swal2-backdrop-show',
+                icon: 'swal2-icon-show'
+              },
+              hideClass: {
+                popup: 'swal2-hide',
+                backdrop: 'swal2-backdrop-hide',
+                icon: 'swal2-icon-hide'
+              },
+            });
+          }
+
+          form.reset();
+        })
+        .catch(error => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Application Failed',
+            text: 'There was an error submitting your application. Please try again later.',
+            showClass: {
+              popup: 'swal2-show',
+              backdrop: 'swal2-backdrop-show',
+              icon: 'swal2-icon-show'
+            },
+            hideClass: {
+              popup: 'swal2-hide',
+              backdrop: 'swal2-backdrop-hide',
+              icon: 'swal2-icon-hide'
+            },
+          });
+        });
     });
-  });
-</script>
+
+    // Function to check if a value is null or empty
+    function isNullOrEmpty(value) {
+      return value === null || value.trim() === '';
+    }
+
+    // Get references to the elements
+    const overviewElement = document.getElementById('overview');
+    const jobTypeElement = document.getElementById('jobType');
+    const vacanciesElement = document.getElementById('vacancies');
+    const experienceElement = document.getElementById('experience');
+    const jobLevelElement = document.getElementById('jobLevel');
+    const locationElement = document.getElementById('location');
+    const additionalInfoElement = document.getElementById('additionalInfo');
+
+    // Update the element values or display "No information provided"
+    overviewElement.textContent = isNullOrEmpty(overview) ? 'No information provided' : overview;
+    jobTypeElement.textContent = isNullOrEmpty(jobType) ? 'No information provided' : jobType;
+    vacanciesElement.textContent = isNullOrEmpty(vacancies) ? 'No information provided' : vacancies;
+    experienceElement.textContent = isNullOrEmpty(experience) ? 'No information provided' : experience;
+    jobLevelElement.textContent = isNullOrEmpty(jobLevel) ? 'No information provided' : jobLevel;
+    locationElement.textContent = isNullOrEmpty(location) ? 'No information provided' : location;
+    additionalInfoElement.textContent = isNullOrEmpty(additionalInfo) ? 'No information provided' : additionalInfo;
+  </script>
+
 
 </body>
+
 </html>
