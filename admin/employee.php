@@ -1,10 +1,7 @@
 <title>Employee</title>
-<link rel="stylesheet" href="../assets/css/employee.css">
-<?php include '../admin/modals/job-listing-modal.php' ?>
-
-
 <div id="main">
-
+<link rel="stylesheet" href="../assets/css/employee.css">
+<?php include '../admin/modals/employee-modal.php' ?>
   <!-- title page and search bar  -->
   <div class="d-flex justify-content-between align-items-center mx-2">
     <div>
@@ -19,7 +16,7 @@
 
   <!-- main content -->
 
-  <div class="container-fluid">
+  <div   class="container-fluid">
     <div id="jobsContainer" class="row justify-content-center align-items-center">
       <!-- card content -->
       <div class="col-md-auto d-flex">
