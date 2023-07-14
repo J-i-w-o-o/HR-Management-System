@@ -11,7 +11,7 @@ function openNav() {
   const container = document.getElementById("container");
   const body = document.body;
 
-  sidenav.style.width = "250px";
+  sidenav.style.width = "250px";a
   main.style.transition = "margin-left 0.5s"; // Add transition property
   main.style.marginLeft = "250px";
   container.style.transform = "translateX(-250px)";
