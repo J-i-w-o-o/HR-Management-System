@@ -3,6 +3,7 @@
 }
 
 h3 {
+  font-size: x-large;
   margin-top: 25px;
   margin-left: 10px;
 }
@@ -22,23 +23,15 @@ p {
   text-align: right;
   background-color: #eaf1fa;
   float: right;
+  border: none;
 }
 
-.editbtn:hover {
-  color: #ec5b33;
-
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 
 .card {
   text-align: center;
-  background-color: #eaf1fa;
+  background-color:  #f2f2f2;
+  width: 50vh;
+  height: auto;
 
 }
 
@@ -50,8 +43,8 @@ p {
 
 /* Float four columns side by side */
 .column {
-  float: left;
-  width: 25%;
+  float: center;
+
 }
 
 
@@ -66,7 +59,7 @@ p {
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
-    display: block;
+    display: center;
     margin-bottom: 20px;
   }
 }
@@ -77,5 +70,5 @@ p {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
-  background-color: #eaf1fa;
+  position: relative;
 }

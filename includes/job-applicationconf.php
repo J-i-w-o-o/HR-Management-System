@@ -162,3 +162,12 @@ if (mysqli_num_rows($result) > 0) {
 //asdsada
 // Close the database connection
 mysqli_close($connection);
+
+if (isset($_POST['delete_all'])) {
+  // Add code here to delete all items from your database or any other storage mechanism
+  // ...
+
+  // Redirect or refresh the page to show an updated table
+  header('Location: job-application.php');
+  exit();
+}
