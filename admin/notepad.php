@@ -5,11 +5,7 @@
 <body>
 <div id="main">
 
-    
-        <hr>
-        <h2 class="text-center">Notes List</h2>
-        <hr>
-        <div class="container ">
+    <div class="container">
         <div class="card shadow-sm rounded-0">
             <div class="card-body">
                 <h5 class="card-title">Add New Note</h5>
@@ -23,6 +19,9 @@
                 </div>
             </div>
         </div>
+        <hr>
+        <h2 class="text-center">Notes List</h2>
+        <hr>
         <div id="notes" class="row container-fluid m-2">
         </div>
     </div>
