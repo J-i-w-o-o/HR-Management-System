@@ -50,9 +50,17 @@ if (isset($_POST['hired'])) {
   $firstname = $row['firstname'];
   $timenow = $row['timenow'];
 
-  $hiredSql = "INSERT INTO `employees`(`id`, `name`, `department`, `contact`, `date_hired`) VALUES ('$id', '$firstname', '$position', '$mobile', '$timenow')";
+  $hiredSql = "INSERT INTO `employees`(`name`, `department`, `contact`, `date_hired`) VALUES ('$firstname', '$position', '$mobile', '$timenow')";
   mysqli_query($connection, $hiredSql);
+
+  // Check if the record was successfully inserted into the `employees` table
+  if (mysqli_affected_rows($connection) > 0) {
+    // Delete the row from `job_applications` where id matches and status is "for-interview"
+    $deleteSql = "DELETE FROM `job_applications` WHERE `id` = $id AND `status` = 'for-interview'";
+    mysqli_query($connection, $deleteSql);
+  }
 }
+
 
 
 // Update the SQL query to use the $status variable

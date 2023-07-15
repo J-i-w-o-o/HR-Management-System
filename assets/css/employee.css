@@ -1,6 +1,20 @@
 * {
   box-sizing: border-box;
 }
+.card {
+  flex: 1 0 0;  
+  height: 460px;
+  min-width: auto;
+  text-align: center;
+  background-color: #f2f2f2;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+}
+
+.card-body {
+  min-height: 250px;
+}
 
 h5 {
   font-size: x-large;
@@ -26,14 +40,6 @@ p {
 }
 
 
-.card {
-  text-align: center;
-  background-color:  #f2f2f2;
-  width: 50vh;
-  height: auto;
-
-}
-
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
@@ -52,22 +58,4 @@ p {
   content: "";
   display: table;
   clear: both;
-}
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: center;
-    margin-bottom: 20px;
-  }
-}
-
-/* Style the counter cards */
-.card {
-  margin-top: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  text-align: center;
-  position: relative;
 }
