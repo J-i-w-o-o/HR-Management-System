@@ -12,10 +12,13 @@
                 <div class="form-group">
                     <input type="hidden" name="key" value="">
                     <textarea id="addTxt" class="form-control rounded-0" rows="3"></textarea>
+                     <button id="addBtn" class="btn btn-primary rounded-0">Add Note</button>
+                    <button id="cancelBtn" class="btn btn-secindary rounded-0 border">Cancel</button>
+                    
                 </div>
                 <div class="text-center">
                     <button id="addBtn" class="btn btn-primary rounded-0">Add Note</button>
-                    <button id="cancelBtn" class="btn btn-secindary rounded-0 border">Cancel</button>
+                    <button id="cancelBtn" class="btn btn-secondary rounded-0 border">Cancel</button>
                 </div>
             </div>
         </div>

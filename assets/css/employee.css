@@ -12,9 +12,6 @@ p {
   font-size: 15px;
 }
 
-/* .card-body img {
-
-} */
 
 .editbtn {
   height: 30px;
@@ -29,8 +26,6 @@ p {
 .card {
   text-align: center;
   background-color:  #f2f2f2;
-  width: 50vh;
-  height: auto;
 
 }
 
@@ -41,15 +36,11 @@ p {
 
 
 /* Float four columns side by side */
-.column {
-  float: center;
 
-}
 
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
   display: table;
   clear: both;
 }
