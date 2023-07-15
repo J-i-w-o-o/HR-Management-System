@@ -42,7 +42,7 @@ if (!$stmt) {
     $response = ['status' => 'error', 'message' => $connection->error];
     echo json_encode($response);
     exit();
-}
+}   
 
 $targetDirectory = "C:/xampp/htdocs/HR-Management-System/uploads/";
 $targetFile = $targetDirectory . basename($_FILES['fileToUpload']['name']);
