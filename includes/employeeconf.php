@@ -28,7 +28,7 @@
           <div class="col-md-auto d-flex justify-content-end mb-4 width="150" height="150"">
             <button type="button" class="btn rounded-pill edit-button justify-content-end" data-bs-toggle="modal" data-bs-target="#employeeModal" data-id="' . $id . '" data-name="' . $name . '" data-contact="' . $contact . '" data-date-hired="' . $dateHired . '"><i class="fa-solid fa-ellipsis fa-xl" style="color: #ec5b33;"></i></button>
           </div>
-          <img src="../assets/images/addicon.png" class="mb-3" width="auto" height="auto">
+          <img src="" id="uploadedimg"class="mb-3" width="auto" height="auto">
             <h5 class="card-title text-muted">' . $department . '</h5>
             <p class="card-text" data-id="' . $id . '"></p>
             <p class="card-text">Name: ' . $name . '</p>
