@@ -11,12 +11,18 @@ body{
 }
 .noteCard{
     width: 30%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color:  #fdece8;
+
+
 }
 
-.card-body{
-    background-color: #ec5b33 ;
-    opacity: 90%;
+#addTxt{
+    width: 30%;
+    height: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
 
 
 @media (min-width:769px) and (max-width:1024px){
