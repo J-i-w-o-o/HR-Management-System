@@ -79,7 +79,9 @@
 
         </nav>
       </div>
+      
       <a class="navbar-brand" href="index.php?dashboard">
+        
         <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
       </a>
       <span style="font-size: 30px; cursor: pointer; color: #ec5b33; " onclick="openNav()">&#9776;</span>

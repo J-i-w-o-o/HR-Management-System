@@ -44,7 +44,7 @@ footer {
   font-size: 18px;
   color: #ec5b33;
   display: block;
-  transition: 0.3s;
+ 
 }
 
 .sidenav a:hover {
@@ -57,7 +57,7 @@ footer {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  transition: 0.3s;
+  
 }
 
 .sidenav-footer {
