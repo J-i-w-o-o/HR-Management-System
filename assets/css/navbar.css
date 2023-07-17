@@ -94,10 +94,13 @@ footer {
 
 .breadcrumb a:hover {
   color: #ec5b33;
+  top: -5px;
+  
 }
 
 hr.solid {
   border-top: 1px solid #ec5b33;
+  
 }
 
 @media screen and (max-height: 450px) {

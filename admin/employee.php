@@ -45,14 +45,14 @@
               <div class="col mb-4">
                 <div class="card mx-2">
                   <div class="col-md-auto d-flex justify-content-end mb-4">
-                    <button type="button" class="btn rounded-pill edit-button justify-content-end" data-bs-toggle="modal" data-bs-target="#employeeModal" data-id="' . $id . '" data-name="' . $name . '" data-contact="' . $contact . '" data-date-hired="' . $dateHired . '">
-                      <i class="fa-solid fa-ellipsis fa-xl" style="color: #ec5b33;"></i>
+                    <button type="button" class="edit-button justify-content-end" data-bs-toggle="modal" data-bs-target="#employeeModal" data-id="' . $id . '" data-name="' . $name . '" data-contact="' . $contact . '" data-date-hired="' . $dateHired . '">
+                      <i class="fa-solid fa-ellipsis fa-xl" style="color: #12294a;"></i>
                     </button>
                   </div>
                   <div class="card-container">
-                    <img src="' . $trimmed_path . '" class="mb-3" width="150" height="150">
-                    <h5 class="card-title text-muted">' . $department . '</h5>
-                    <p class="card-text" data-id="' . $id . '"></p>
+                   <h5 class="card-header" style="margin-bottom: 20px; backgroud-color: #d6e3f5;">' . $department . '</h5>
+                   <img src="' . $trimmed_path . '" class="mb-3 rounded-image" width="150" height="150">
+                   <p class="card-text" data-id="' . $id . '"></p>
                     <p class="card-text">Name: ' . $name . '</p>
                     <p class="card-text">Contact: ' . $contact . '</p>
                     <p class="card-text">Date Hired: ' . $dateHired . '</p>
