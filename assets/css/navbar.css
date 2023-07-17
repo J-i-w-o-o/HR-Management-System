@@ -15,7 +15,14 @@ footer {
   padding: 20px;
   text-align: center;
 }
+.nav-text {
+  font-size: 20px; /* Adjust the font size as needed */
+}
 
+.icon {
+  font-size: 20px; /* Adjust the icon size as needed */
+  color:#12294a;
+}
 .sidenav {
   width: auto;
   background-color: white;
