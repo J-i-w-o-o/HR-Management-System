@@ -1,7 +1,7 @@
 
 .card {
   flex: 1 0 0;  
-  height: 430px;
+  height: 25rem;
   min-width: auto;
   text-align: center;
   margin-top: 10px;
@@ -14,13 +14,11 @@
   background-color: #eaf1fa ;
   margin-bottom: 5px;
 }
+
 .image-container {
   position: relative;
 }
 
-.clickable-image {
-  cursor: pointer;
-}
 
 .expanded-container {
   position: fixed;
@@ -40,8 +38,6 @@
   max-height: 90%;
 }
 
-
-
 .rounded-image {
   border-radius: 80%;
   box-shadow: #98bae7 0px 5px 15px;
@@ -59,11 +55,8 @@ button{
 }
 
 
-
-
-p {
+h6 {
   font-size: medium;
-
 }
 
 input{

@@ -52,12 +52,12 @@
                   <div class="card-container">
                    <h5 class="card-header" style="margin-bottom: 20px; backgroud-color: #d6e3f5;">' . $department . '</h5>
                    <div class="image-container">
-                   <img src="' . $trimmed_path . '" class="mb-3 rounded-image clickable-image" width="150" height="150" onclick="expandImage(this)">
+                   <img src="' . $trimmed_path . '" class="mb-3 rounded-image " width="150" height="150" onclick="expandImage(this)">
                  </div>
-                   <p class="card-text" data-id="' . $id . '"></p>
-                   <p class="card-text">Name: ' . $name . '</p>
-                   <p class="card-text">Contact: ' . $contact . '</p>
-                   <p class="card-text">Date Hired: ' . $dateHired . '</p>
+                   <h6 class="card-text " data-id="' . $id . '"></h6>
+                   <h6 class="card-text">Name: ' . $name . '</h6>
+                   <h6 class="card-text">Contact: ' . $contact . '</h6>
+                   <h6 class="card-text">Date Hired: ' . $dateHired . '</h6>
                   </div>
                 </div>
               </div>

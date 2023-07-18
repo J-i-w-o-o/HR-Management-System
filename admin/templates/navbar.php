@@ -1,9 +1,9 @@
 <header>
 
-  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg fixed-top " data-bs-theme="dark">
     <div class="container-fluid ">
       <div id="mySidenav" class="sidenav shadow rounded">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(10)" class="closebtn" onclick="closeNav()">&times;</a>
         <!-- <a class="border-bottom border-black border-2 mx-2" href="index.php?dashboard" data-toggle="tooltip" data-placement="bottom" title="DASHBOARD"><i class="fa fa-tachometer mx-2"> </i>Dashboard</a>
     <a class="border-bottom border-black border-2 mx-2" href="index.php?job-listing" data-toggle="tooltip" data-placement="bottom" title="Job Listing"><i class="fa fa-list mx-2"> </i>Job Listing</a>
     <a class="border-bottom border-black border-2 mx-2" href="index.php?job-application" data-toggle="tooltip" data-placement="bottom" title="JOB APPLICATION"><i class="fa fa-file mx-2"> </i>Job Application</a>
@@ -83,7 +83,7 @@
         </nav>
       </div>
       
-      <a class="navbar-brand" href="index.php?dashboard">
+      <a class="navbar-brand ms-3 " href="index.php?dashboard">
         
         <img src="../assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
       </a>
