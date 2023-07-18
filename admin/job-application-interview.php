@@ -1,5 +1,4 @@
 <title>Job Interview</title>
-
 <div id="main">
   <section id="hero" class=" align-items-center">
     <div class="d-flex justify-content-between align-items-center mx-2">

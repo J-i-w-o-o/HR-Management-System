@@ -1,13 +1,15 @@
-<style>
-      .card {
-    flex: 1 0 0; /* Prevent shrinking in width */
-    height: auto; /* Prevent shrinking in height */
-  }
-  .card-body{
-    min-height: 250px;
-  }
-</style>
+
 <?php include '../admin/modals/job-listing-modal.php' ?>
+
+
+<style>
+    .card {
+      border: 1px solid #6f9ddc ;
+      border-radius: 25px;
+    }
+
+  </style>
+
 <section id="hero" class="align-items-center">
   <div id="main">
     <div class="container-fluid" id="main">

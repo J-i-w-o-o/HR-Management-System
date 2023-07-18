@@ -26,5 +26,8 @@ date_default_timezone_set('Asia/Manila');
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
     }
+
+    
  </style>
