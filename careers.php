@@ -33,7 +33,7 @@
   font-size: 18px;
   margin-left:-50px;
   border:none;
-  color: #6c6c6c;
+  color: #12294a;
   transition: all .2s;
   z-index: 10;
 }
@@ -41,12 +41,13 @@
 .btn:hover {
   transform: scale(1.5);
   cursor: pointer;
-  color: black;
+  color: #ec5b33;
 }
+
 
 .btn:focus {
   outline:none;
-  color:black;
+  color:#12294a;
 }
 </style>
 

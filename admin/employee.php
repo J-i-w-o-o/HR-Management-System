@@ -54,8 +54,6 @@
                    <div class="image-container">
                    <img src="' . $trimmed_path . '" class="mb-3 rounded-image clickable-image" width="150" height="150" onclick="expandImage(this)">
                  </div>
-                 
-                 
                    <p class="card-text" data-id="' . $id . '"></p>
                    <p class="card-text">Name: ' . $name . '</p>
                    <p class="card-text">Contact: ' . $contact . '</p>

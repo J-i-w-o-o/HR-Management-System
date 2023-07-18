@@ -78,12 +78,8 @@
                   <span class="text nav-text">Logout</span>
                 </a>
               </li>
-
-
-
             </div>
           </div>
-
         </nav>
       </div>
       
