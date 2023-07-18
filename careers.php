@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>TIGER'S MARK CORPORATION</title>
-  <link rel="icon" href="../assets/images/TMC_LOGO.png">
+<title>TIGER'S MARK CORPORATION</title>
+          <link rel="icon"  href="./assets/images/TMC_LOGO.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/node_modules/@fortawesome/fontawesome-free/css/all.min.css">

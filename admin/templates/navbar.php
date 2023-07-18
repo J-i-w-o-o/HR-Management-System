@@ -38,7 +38,7 @@
                     <span class="text nav-text">Dashboard</span>
                   </a>
                 </li>
-
+                
                 <li class="nav-link">
                   <a href="index.php?job-listing">
                     <i class='bx bx-list-ul icon'></i>
@@ -62,7 +62,7 @@
 
                 <li class="nav-link">
                   <a href="index.php?attendance">
-                    <i class='bx bx-calendar icon'></i>
+                    <i class='bx bx-calendar-check icon'></i>
                     <span class="text nav-text">Attendance</span>
                   </a>
                 </li>

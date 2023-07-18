@@ -50,8 +50,12 @@
                     </button>
                   </div>
                   <div class="card-container">
-                   <h5 class="card-header">' . $department . '</h5>
-                   <img src="' . $trimmed_path . '" class="mb-3 rounded-image" width="150" height="150">
+                   <h5 class="card-header" style="margin-bottom: 20px; backgroud-color: #d6e3f5;">' . $department . '</h5>
+                   <div class="image-container">
+                   <img src="' . $trimmed_path . '" class="mb-3 rounded-image clickable-image" width="150" height="150" onclick="expandImage(this)">
+                 </div>
+                 
+                 
                    <p class="card-text" data-id="' . $id . '"></p>
                    <p class="card-text">Name: ' . $name . '</p>
                    <p class="card-text">Contact: ' . $contact . '</p>
@@ -75,3 +79,38 @@
 <?php include '../admin/modals/employee-modal.php' ?>
 
 </div>
+<script>
+function expandImage(image) {
+  // Create the expanded view container
+  var expandedContainer = document.createElement('div');
+  expandedContainer.className = 'expanded-container';
+  expandedContainer.onclick = function() {
+    closeExpandedView(); // Close the expanded view when clicked
+  };
+
+  // Create the expanded image element
+  var expandedImage = document.createElement('img');
+  expandedImage.src = image.src;
+  expandedImage.className = 'expanded-image';
+
+  // Append the expanded image to the container
+  expandedContainer.appendChild(expandedImage);
+
+  // Append the expanded container to the body
+  document.body.appendChild(expandedContainer);
+
+  // Add event listener for the Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeExpandedView(); // Close the expanded view on Escape key press
+    }
+  });
+
+  // Function to close the expanded view
+  function closeExpandedView() {
+    expandedContainer.remove(); // Remove the expanded view
+    document.removeEventListener('keydown', closeExpandedView); // Remove the event listener
+  }
+}
+
+</script>
