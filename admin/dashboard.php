@@ -37,7 +37,7 @@ $totalEmployees = $row['totalEmployees'];
       </div>
 
       <div class="row">
-        <div class="col-xl-3 col-md-6">
+        <div class="col-xl-3 col-md-6 bordered-box">
           <div class="card border-dark mb-3" style="max-width: 18rem;">
             <div class="card-header text-white"> No. of Job Listing </div>
             <div class="card-body bg-#ec5b33 text-dark" style="font-size: 2rem;"><?php echo $noOfJobs; ?></div>
