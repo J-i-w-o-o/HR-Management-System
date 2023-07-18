@@ -85,7 +85,7 @@ function expandImage(image) {
   var expandedContainer = document.createElement('div');
   expandedContainer.className = 'expanded-container';
   expandedContainer.onclick = function() {
-    this.remove(); // Remove the expanded view when clicked
+    closeExpandedView(); // Close the expanded view when clicked
   };
 
   // Create the expanded image element
@@ -98,5 +98,19 @@ function expandImage(image) {
 
   // Append the expanded container to the body
   document.body.appendChild(expandedContainer);
+
+  // Add event listener for the Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeExpandedView(); // Close the expanded view on Escape key press
+    }
+  });
+
+  // Function to close the expanded view
+  function closeExpandedView() {
+    expandedContainer.remove(); // Remove the expanded view
+    document.removeEventListener('keydown', closeExpandedView); // Remove the event listener
+  }
 }
+
 </script>
