@@ -38,10 +38,10 @@ fetch('./assets/data/careers.json')
         card.className = 'card';
 
         const cardContent = document.createElement('div');
-        cardContent.className = 'card-body';
+        cardContent.className = 'card-body mx-2';
 
         cardContent.innerHTML = `
-          <h5 class="card-header mb-2 text-center" style="background-color:#;">${job.title}</h5>
+          <h5 class="card-header mb-2 text-center" style="background-color: #fbdad0;">${job.title}</h5>
           <h6 class="card-title text-muted">Job type: ${job.jobType}</h6>
           <p class="card-text ">${job.description}</p>
         `;
@@ -53,7 +53,7 @@ fetch('./assets/data/careers.json')
 
         cardFooter.innerHTML = `
     <div>${postedAgoFormatted}</div>
-    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#jobModal" onclick="showJobDetails('${job.title}', '${job.overview}', '${job.jobType}', '${job.vacancies}', '${job.experience}', '${job.jobLevel}', '${job.location}', '${job.additionalInfo}')">Apply now</button>
+    <button type="button" class="btn btn rounded-pill" style="background-color: #ee6944; color:white; font-size:15px;" data-bs-toggle="modal" data-bs-target="#jobModal" onclick="showJobDetails('${job.title}', '${job.overview}', '${job.jobType}', '${job.vacancies}', '${job.experience}', '${job.jobLevel}', '${job.location}', '${job.additionalInfo}')">APPLY NOW</button>
 `;
         card.appendChild(cardContent);
         card.appendChild(cardFooter);
@@ -124,7 +124,6 @@ function formatPostedAgo(postedAgo) {
   const postedDate = new Date(postedAgo);
   const currentTimestamp = new Date();
   const elapsedMilliseconds = currentTimestamp - postedDate;
-
   const elapsedSeconds = Math.floor(elapsedMilliseconds / 1000);
   const elapsedMinutes = Math.floor(elapsedMilliseconds / 60000);
   const elapsedHours = Math.floor(elapsedMilliseconds / 3600000);

@@ -6,42 +6,44 @@
   height: 460px;
   min-width: auto;
   text-align: center;
-  background-color: #f2f2f2;
   margin-top: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
 }
 
+.rounded-image {
+  border-radius: 50%;
+  border: 3px solid #000; /* Adjust the border size and color as needed */
+}
+
+.card-header{
+
+}
+
+button{
+  border: none;
+  background-color: transparent;
+}
+
+
 .card-body {
-  min-height: 250px;
+  min-height: 200px;
 }
 
 h5 {
-  font-size: x-large;
-  margin-top: 20px;
-  color: #12294a;
+  font-size: larger;
+  color: white;
+  margin-bottom: 20px; 
 }
 
 p {
-  font-size: 15px;
-  margin-bottom: 5px;
+  font-size: medium;
 
 }
 
 input{
   margin-bottom: 10px;
 }
-
-
-.editbtn {
-  height: 30px;
-  width: 30px;
-  text-align: right;
-  background-color: #eaf1fa;
-  float: right;
-  border: none;
-}
-
 
 .card:hover {
   transform: scale(1.05);
