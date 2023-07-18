@@ -60,6 +60,13 @@
                   </a>
                 </li>
 
+                <li class="nav-link">
+                  <a href="index.php?attendance">
+                    <i class='bx bx-clock icon'></i>
+                    <span class="text nav-text">Attendance</span>
+                  </a>
+                </li>
+
 
               </ul>
             </div>
