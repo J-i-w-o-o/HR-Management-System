@@ -38,7 +38,7 @@
                     <span class="text nav-text">Dashboard</span>
                   </a>
                 </li>
-
+                
                 <li class="nav-link">
                   <a href="index.php?job-listing">
                     <i class='bx bx-list-ul icon'></i>
