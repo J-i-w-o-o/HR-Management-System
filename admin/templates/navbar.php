@@ -62,7 +62,7 @@
 
                 <li class="nav-link">
                   <a href="index.php?attendance">
-                    <i class='bx bx-clock icon'></i>
+                    <i class='bx bx-calendar icon'></i>
                     <span class="text nav-text">Attendance</span>
                   </a>
                 </li>
