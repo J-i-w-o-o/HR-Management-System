@@ -137,7 +137,7 @@
                       <label for="fileToUpload" class="form-label text-center">Attachment : resume/cv</label>
                     </div>
                     <div class="col-sm-8 col-md-9">
-                      <input type="file" name="fileToUpload" id="fileToUpload" required accept=".pdf" required class="form-control">
+                      <input type="file" name="fileToUpload" id="fileToUpload" required accept=".pdf, .docx" required class="form-control">
                     </div>
                   </div>
                 </div>
