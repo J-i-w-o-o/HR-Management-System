@@ -18,9 +18,9 @@
 .table-wrap {
 	width: auto;
 	overflow:auto;
-	
-
 }
+
+
 .table-scroll table {
 	width:100%;
 	margin:auto;
@@ -30,8 +30,8 @@
 }
 .table-scroll th {
 	padding:5px 10px;
-	border:1px solid #12294a;
-	background:  #12294a;
+	border:1px solid #ec5b33;
+	background:  #ec5b33;
 	color: white;
 	white-space:nowrap;
 	vertical-align:top;

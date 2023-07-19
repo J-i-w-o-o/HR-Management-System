@@ -1,3 +1,4 @@
+  
   fetch('../assets/data/careers.json')
     .then(response => response.json())
     .then(jobsData => {
@@ -41,9 +42,9 @@
           cardContent.className = 'card-body';
 
           cardContent.innerHTML = `
-              <h5 class="card-header mb-2 text-center" style="background-color:#;">${job.title}</h5>
-              <h6 class="card-title text-muted">Job type: ${job.jobType}</h6>
-              <p class="card-text">${job.description}</p>
+              <h5 class="card-header mb-2 text-center" style="background-color:#d6e3f5;">${job.title}</h5>
+              <h6 class="card-title text-muted mx-2">Job type: ${job.jobType}</h6>
+              <p class="card-text mx-2">${job.description}</p>
             `;
 
           const cardFooter = document.createElement('div');

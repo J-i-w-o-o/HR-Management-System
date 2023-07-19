@@ -19,8 +19,8 @@ if ($page === 'dashboard' || $_SERVER['QUERY_STRING'] === 'dashboard') {
     include '../admin/job-application-interview.php'; 
 }  else if ($page === 'employee' || $_SERVER['QUERY_STRING'] === 'employee') { 
     include '../admin/employee.php'; 
-}  else if ($page === 'notepad' || $_SERVER['QUERY_STRING'] === 'notepad') { 
-    include '../admin/notepad.php'; 
+}  else if ($page === 'attendance' || $_SERVER['QUERY_STRING'] === 'attendance') { 
+    include '../admin/attendance.php'; 
 }
 
 else {    

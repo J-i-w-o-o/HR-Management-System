@@ -15,9 +15,17 @@ footer {
   padding: 20px;
   text-align: center;
 }
+.nav-text {
+  font-size: 20px; /* Adjust the font size as needed */
+}
+
+.icon {
+  font-size: 20px; /* Adjust the icon size as needed */
+  color:#12294a;
+}
 
 .sidenav {
-  width: auto;
+  width: auto;                                                                                                                                 
   background-color: white;
   position: fixed;
   top: 0;
@@ -37,7 +45,7 @@ footer {
   font-size: 18px;
   color: #ec5b33;
   display: block;
-  transition: 0.3s;
+ 
 }
 
 .sidenav a:hover {
@@ -50,7 +58,7 @@ footer {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  transition: 0.3s;
+  
 }
 
 .sidenav-footer {
@@ -94,10 +102,13 @@ footer {
 
 .breadcrumb a:hover {
   color: #ec5b33;
+  top: -5px;
+  
 }
 
 hr.solid {
   border-top: 1px solid #ec5b33;
+  
 }
 
 @media screen and (max-height: 450px) {

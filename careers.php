@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+<title>TIGER'S MARK CORPORATION</title>
+          <link rel="icon"  href="./assets/images/TMC_LOGO.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
@@ -10,9 +12,48 @@
   <link rel="stylesheet" href="./assets/css/header.css">
 </head>
 
-<body style="margin-top: 70px;">
+<style>
+ 
+  .card {
+    border: 1px solid #f6b4a2;
+    border-radius: 20px;
+  }
+
+  input[type=text] {
+    border: 1px solid #f07c5c;
+    border-radius: 50px;
+    width: 300px;
+    height: 40px;
+    font-family:Georgia;
+    font-size: medium;
+  }
+
+  .btn {
+  background-color: transparent;
+  font-size: 18px;
+  margin-left:-50px;
+  border:none;
+  color: #12294a;
+  transition: all .2s;
+  z-index: 10;
+}
+
+.btn:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+  color: #ec5b33;
+}
+
+
+.btn:focus {
+  outline:none;
+  color:#12294a;
+}
+</style>
+
+<body style="margin-top: 90px;">
   <header>
-    <nav class="navbar fixed-top shadow p-2 mb-4 bg-body-tertiary rounded">
+    <nav class="navbar fixed-top shadow p-3 mb-4" style="background-color: white;">
       <div class="container-fluid d-flex justify-content-between align-items-center">
         <div>
           <img src="assets/images/TMC_LOGO.png" alt="Logo" width="120" height="40">
@@ -30,7 +71,7 @@
     <h1 class="mb-3">Careers</h1>
   </div>
   <div class="container-fluid">
-    <h4 class="text-center lead"><span id="jobCount"></span> Jobs Found</h4>
+    <h4 class="text-center lead"><span id="jobCount"></span> Open Jobs</h4>
     <div id="jobsContainer" class="row"></div>
     <nav aria-label="Jobs Pagination">
       <ul id="pagination" class="pagination justify-content-center"></ul>
@@ -96,7 +137,7 @@
                       <label for="fileToUpload" class="form-label text-center">Attachment : resume/cv</label>
                     </div>
                     <div class="col-sm-8 col-md-9">
-                      <input type="file" name="fileToUpload" id="fileToUpload"  required accept=".pdf" required class="form-control">
+                      <input type="file" name="fileToUpload" id="fileToUpload" required accept=".pdf" required class="form-control">
                     </div>
                   </div>
                 </div>

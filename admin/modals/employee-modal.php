@@ -15,7 +15,7 @@
                             <input type="text" id="nameInput" name="nameInput" class="form-control" value="">
 
                             <label for="contactInput">Contact:</label>
-                            <input type="text" id="contactInput" name="contactInput" class="form-control" value="">
+                            <input type="text" id="contactInput" name="contactInput" maxlength="11" pattern="^(09[0-9]{9})$"  class="form-control" value="">
                         </div>
                         <div class="">
                             <label for="imageUpload">Select an image file (png, jpg, jpeg):</label>
@@ -63,7 +63,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="contact" class="form-label">Contact</label>
-                                <input typ e="text" name="contact" class="form-control" id="contact" required>
+                                <input typ e="text" name="contact" id="contact" maxlength="11" pattern="^(09[0-9]{9})$" class="form-control" placeholder="Enter Mobile Number" required>
                             </div>
                             <div class="mb-3">
                                 <label for="dateHired" class="form-label">Date Hired</label>

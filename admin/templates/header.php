@@ -16,7 +16,7 @@ date_default_timezone_set('Asia/Manila');
   <link rel="stylesheet" href="../assets/css/navbar.css">
   <link rel="stylesheet" href="../assets/css/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="../assets/js/node_modules/sweetalert2/dist/sweetalert2.min.css">
-  
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <title>TIGER'S MARK CORPORATION</title>
           <link rel="icon"  href="../assets/images/TMC_LOGO.png">
 </head>
@@ -26,5 +26,8 @@ date_default_timezone_set('Asia/Manila');
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
     }
+
+    
  </style>
