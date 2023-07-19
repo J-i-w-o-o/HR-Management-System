@@ -56,7 +56,7 @@ if ($token === null) {
   $curl = curl_init();
 
   curl_setopt_array($curl, [
-    CURLOPT_URL => 'https://time-attendance.prod.jibble.io/v1/Timesheets?$count=true&$expand=person&$orderby=person/fullName%20asc&$skip=0&$top=50&date=2023-06-01&period=Month&$filter=total%20ne%20duration\'PT0H\'',
+    CURLOPT_URL => 'https://time-attendance.prod.jibble.io/v1/Timesheets?$count=true&$expand=person&$orderby=person/fullName%20asc&$skip=0&$top=30&date=2023-July&period=Month&$filter=total%20ne%20duration\'PT0H\'',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
