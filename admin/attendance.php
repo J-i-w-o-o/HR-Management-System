@@ -48,7 +48,6 @@
                 <div>
                   <tr>
                     <th>Name</th>
-                    <th>Email</th>
                     <th>Total Attendance </th>
                   </tr>
                 </div>
