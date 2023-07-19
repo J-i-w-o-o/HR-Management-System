@@ -5,6 +5,11 @@
         "total_attendance": "279:57 hours"
     },
     {
+        "person_id": "5aebd026-8346-43a7-92f2-35738692c815",
+        "full_name": "Alexis Lanuza",
+        "total_attendance": "00:00 hours"
+    },
+    {
         "person_id": "69f44451-a104-476f-acbb-9ce5040fe8bb",
         "full_name": "Amante Cajucom",
         "total_attendance": "637:20 hours"
@@ -13,6 +18,11 @@
         "person_id": "08904c4c-b1b0-41c6-b121-be4b6e8fd247",
         "full_name": "Andriel Geomer V. Gabriel",
         "total_attendance": "93:20 hours"
+    },
+    {
+        "person_id": "cfdd8811-85a3-427e-bb0b-6379bb91b31b",
+        "full_name": "Andy",
+        "total_attendance": "00:00 hours"
     },
     {
         "person_id": "6a58dae2-82d6-4d0c-9689-09fafd430ad2",
@@ -67,6 +77,11 @@
     {
         "person_id": "6bde220b-4bb5-4cb5-b15f-d7d58e9106d9",
         "full_name": "Jannah Mae Gabaldon",
+        "total_attendance": "00:00 hours"
+    },
+    {
+        "person_id": "2f9bdf2b-a834-4097-86ba-5d9ae0a4ae37",
+        "full_name": "Jean Patrice Molina",
         "total_attendance": "00:00 hours"
     },
     {
@@ -138,6 +153,11 @@
         "person_id": "4ace1877-1e0d-48e4-a6a1-9fab4243ccf3",
         "full_name": "teresita remular",
         "total_attendance": "466:36 hours"
+    },
+    {
+        "person_id": "62f3e10b-487c-422b-8426-842f38c6de86",
+        "full_name": "Tiger's Mark Corporation",
+        "total_attendance": "00:00 hours"
     },
     {
         "person_id": "5ab5fbeb-06fd-4932-9b9c-29c0e9665643",
