@@ -10,6 +10,10 @@
     <div class="d-flex justify-content-between align-items-center mx-2">
       <h2 class="mt-2 ms-3"> EMPLOYEES ATTENDANCE</h2>
       <div class="d-flex">
+        <div id="preloader">
+          <div id="loader"></div>
+        </div>
+        <button class="btn mx-2 my-3" id="refreshButton">Refresh</button>
         <div class="mx-2 my-3">
           <div class="container">
             <button class="btn" id="btn">
@@ -26,7 +30,6 @@
                 <i class="bx bx-user-check "></i>
                 OJT
               </a>
-
             </div>
           </div>
         </div>
@@ -63,6 +66,8 @@
     </div>
   </section>
 </div>
+<!-- ... (HTML code remains unchanged) ... -->
+
 <script>
   const dropdownBtn = document.getElementById("btn");
   const dropdownMenu = document.getElementById("dropdown");
@@ -86,79 +91,66 @@
       toggleDropdown();
     }
   });
+  function showPreloader() {
+  const preloader = document.getElementById('preloader');
+  preloader.style.display = 'flex';
+}
 
+// Function to hide the preloader
+function hidePreloader() {
+  const preloader = document.getElementById('preloader');
+  preloader.style.display = 'none';
+}
 
-  function saveDataToLocalStorage(data) {
-    localStorage.setItem('attendanceData', JSON.stringify(data));
-    localStorage.setItem('lastRefreshTime', new Date().getTime());
-  }
+  async function fetchAttendanceData() {
+    try {
+      const response = await fetch('../assets/js/attendance_data.json');
+      const data = await response.json();
+      console.log('Attendance Data:', data);
 
-  // Function to get data from local storage
-  function getDataFromLocalStorage() {
-    const data = localStorage.getItem('attendanceData');
-    return data ? JSON.parse(data) : null;
-  }
+      const attendanceData = document.getElementById('attendanceData');
+      attendanceData.innerHTML = ''; // Clear the table data
 
-  // Function to check if the data in local storage is still valid (not older than 5 minutes)
-  function isDataValid() {
-    const lastRefreshTime = localStorage.getItem('lastRefreshTime');
-    if (lastRefreshTime) {
-      const currentTime = new Date().getTime();
-      const timeDiff = currentTime - parseInt(lastRefreshTime, 10);
-      const fiveMinutesInMillis = 5 * 60 * 1000;
-      return timeDiff < fiveMinutesInMillis;
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        const personIdCell = document.createElement('td');
+        const fullNameCell = document.createElement('td');
+        const totalAttendanceCell = document.createElement('td');
+
+        personIdCell.textContent = item.person_id;
+        fullNameCell.textContent = item.full_name;
+        totalAttendanceCell.textContent = item.total_attendance;
+
+        row.appendChild(personIdCell);
+        row.appendChild(fullNameCell);
+        row.appendChild(totalAttendanceCell);
+        attendanceData.appendChild(row);
+      });
+    } catch (error) {
+      console.error('Error fetching attendance data:', error);
     }
-    return false;
   }
 
-  // Function to fetch data from the server and update the table
-  async function fetchAndUpdateAttendanceData() {
-    const preloader = document.getElementById('preloader');
-    let data;
-
-    if (isDataValid()) {
-      // If data is still valid in local storage, use it directly
-      data = getDataFromLocalStorage();
-    } else {
-      // Otherwise, fetch new data from the server
-      try {
-        const response = await fetch('../includes/attendanceconf.php');
-        data = await response.json();
-        saveDataToLocalStorage(data); // Save the fetched data to local storage
-      } catch (error) {
-        console.error('Error fetching attendance data:', error);
-      } finally {
-        // Hide the preloader
-        preloader.style.display = 'none';
-      }
+  // Function to refresh attendance data
+  async function refreshAttendanceData() {
+    try {
+      const response = await fetch('../includes/attendanceconf.php', {
+        method: 'GET'
+      });
+      const data = await response.json();
+      console.log('Refreshed Data:', data);
+      // Call the fetchAttendanceData function to update the table
+      fetchAttendanceData();
+    } catch (error) {
+      console.error('Error refreshing attendance data:', error);
     }
-
-    // Use the data to populate the table
-    const attendanceData = document.getElementById('attendanceData');
-
-    // Clear existing table rows before updating
-    attendanceData.innerHTML = '';
-
-    data.forEach(item => {
-      const row = document.createElement('tr');
-      const personIdCell = document.createElement('td');
-      const fullNameCell = document.createElement('td');
-      const totalAttendanceCell = document.createElement('td');
-
-      personIdCell.textContent = item.person_id;
-      fullNameCell.textContent = item.full_name;
-      totalAttendanceCell.textContent = item.total_attendance;
-
-      row.appendChild(personIdCell);
-      row.appendChild(fullNameCell);
-      row.appendChild(totalAttendanceCell);
-      attendanceData.appendChild(row);
-    });
   }
 
-  // Fetch and update the attendance data initially
-  fetchAndUpdateAttendanceData();
+  // Attach the refreshAttendanceData function to the "Refresh" button click event
+  document.getElementById('refreshButton').addEventListener('click', function() {
+    refreshAttendanceData();
+  });
 
-  // Refresh data every 5 minutes (300,000 milliseconds)
-  setInterval(fetchAndUpdateAttendanceData, 300000);
+  // Call the fetchAttendanceData function on page load to initially populate the table
+  fetchAttendanceData();
 </script>

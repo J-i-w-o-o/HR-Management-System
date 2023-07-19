@@ -96,7 +96,24 @@ if ($token === null) {
   }
 }
 
-// Return the data or error message as JSON
-header('Content-Type: application/json');
-echo isset($data) ? json_encode($data) : json_encode(['error' => $output]);
+// Save the data into a JSON file if it exists
+if (isset($data)) {
+  // Save the data into a JSON file named "attendance_data.json"
+  $jsonFilePath = '../assets/js/attendance_data.json  ';
+  $jsonData = json_encode($data, JSON_PRETTY_PRINT);
+
+  if (file_put_contents($jsonFilePath, $jsonData)) {
+    // Return the updated attendance data as JSON
+    header('Content-Type: application/json');
+    echo json_encode($data);
+  } else {
+    // Return an error message as JSON
+    header('Content-Type: application/json');
+    echo json_encode(['error' => 'Error saving attendance data into "attendance_data.json".']);
+  }
+} else {
+  // Return an error message as JSON
+  header('Content-Type: application/json');
+  echo json_encode(['error' => $output]);
+}
 ?>
