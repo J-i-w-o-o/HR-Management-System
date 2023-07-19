@@ -27,29 +27,35 @@
     font-size: medium;
   }
 
-  .btncareer {
-    color: white;
-    font-size: 18px;
-    margin-left: -50px;
-    border: none;
-    transition: background-color 0.4s;
-    z-index: 10;
-  }
+ .btn {
+  background-color: transparent;
+  font-size: 18px;
+  margin-left:-50px;
+  border:none;
+  color: #12294a;
+  transition: all .2s;
+  z-index: 10;
+}
 
-  .btncareer:hover {
-    animation: colorChange 2s infinite alternate;
-    cursor: pointer;
-    background-color: #ee6944;
-  }
+.btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  color: #ec5b33;
+}
 
-  @keyframes colorChange {
-    0%, 100% {
-      background-color: #ee6944;
-    }
-    50% {
-      background-color: #fbdad0;
-    }
-  }
+
+.btnsearch:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+  color: #ec5b33;
+}
+
+
+
+.btn:focus {
+  outline:none;
+  color:#12294a;
+}
 </style>
 
 <body style="margin-top: 90px;">
@@ -61,7 +67,7 @@
         </div>
         <form class="d-flex forms">
           <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-          <div type="submit" class="btn btn-md  " id="searchIcon">
+          <div type="submit" class="btn btnsearch button btn-md  " id="searchIcon">
             <i class="fas fa-search"></i>
           </button>
         </form>
@@ -69,7 +75,7 @@
     </nav>
   </header>
   <div class="text-center">
-    <h1 class="mb-3">Careers</h1>
+    <h1 class="mb-2">Careers</h1>
   </div>
   <div class="container-fluid">
     <h4 class="text-center lead"><span id="jobCount"></span> Open Jobs</h4>
