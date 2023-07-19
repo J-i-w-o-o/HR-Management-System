@@ -78,7 +78,6 @@
   background:white;
 z-index: 1;
   visibility: hidden;
-  opacity: 96%;
   transform: translateY(0.5rem);
   transition: all 0.1s cubic-bezier(0.16, 1, 0.5, 1);
 }
