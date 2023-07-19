@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-<title>TIGER'S MARK CORPORATION</title>
-          <link rel="icon"  href="./assets/images/TMC_LOGO.png">
+  <title>TIGER'S MARK CORPORATION</title>
+  <link rel="icon" href="./assets/images/TMC_LOGO.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
@@ -13,7 +13,6 @@
 </head>
 
 <style>
- 
   .card {
     border: 1px solid #f6b4a2;
     border-radius: 20px;
@@ -24,31 +23,33 @@
     border-radius: 50px;
     width: 300px;
     height: 40px;
-    font-family:Georgia;
+    font-family: Georgia;
     font-size: medium;
   }
 
-  .btn {
-  background-color: transparent;
-  font-size: 18px;
-  margin-left:-50px;
-  border:none;
-  color: #12294a;
-  transition: all .2s;
-  z-index: 10;
-}
+  .btncareer {
+    color: white;
+    font-size: 18px;
+    margin-left: -50px;
+    border: none;
+    transition: background-color 0.4s;
+    z-index: 10;
+  }
 
-.btn:hover {
-  transform: scale(1.5);
-  cursor: pointer;
-  color: #ec5b33;
-}
+  .btncareer:hover {
+    animation: colorChange 2s infinite alternate;
+    cursor: pointer;
+    background-color: #ee6944;
+  }
 
-
-.btn:focus {
-  outline:none;
-  color:#12294a;
-}
+  @keyframes colorChange {
+    0%, 100% {
+      background-color: #ee6944;
+    }
+    50% {
+      background-color: #fbdad0;
+    }
+  }
 </style>
 
 <body style="margin-top: 90px;">
@@ -60,7 +61,7 @@
         </div>
         <form class="d-flex forms">
           <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-          <button type="submit" class="btn btn-sm" id="searchIcon">
+          <div type="submit" class="btn btn-md  " id="searchIcon">
             <i class="fas fa-search"></i>
           </button>
         </form>
@@ -158,80 +159,87 @@
   <script src="./assets/js/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./assets/js/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
   <script>
-    document.getElementById('btnappsubmit').addEventListener('click', function() {
-      const form = document.getElementById('applicationform');
+  document.getElementById('btnappsubmit').addEventListener('click', function() {
+  const form = document.getElementById('applicationform');
 
-      // Check if any required fields are empty
-      if (!form.checkValidity()) {
-        // Display validation error messages
-        form.reportValidity();
-        return; // Stop execution if there are validation errors
+  // Check if any required fields are empty
+  if (!form.checkValidity()) {
+    // Display validation error messages
+    form.reportValidity();
+    return; // Stop execution if there are validation errors
+  }
+
+  const formData = new FormData(form);
+
+  fetch('./includes/job-applyconf.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.status === 'success') {
+        Swal.fire({
+          icon: 'success',
+          title: 'Application Submitted',
+          text: 'Your application has been successfully submitted. We will contact you shortly.',
+          showClass: {
+            popup: 'swal2-show',
+            backdrop: 'swal2-backdrop-show',
+            icon: 'swal2-icon-show'
+          },
+          hideClass: {
+            popup: 'swal2-hide',
+            backdrop: 'swal2-backdrop-hide',
+            icon: 'swal2-icon-hide'
+          },
+        }).then(() => {
+          // Perform a hard refresh of the page without any delay
+          location.reload(true);
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Application Failed',
+          text: result.message,
+          showClass: {
+            popup: 'swal2-show',
+            backdrop: 'swal2-backdrop-show',
+            icon: 'swal2-icon-show'
+          },
+          hideClass: {
+            popup: 'swal2-hide',
+            backdrop: 'swal2-backdrop-hide',
+            icon: 'swal2-icon-hide'
+          },
+        }).then(() => {
+          // Perform a hard refresh of the page without any delay
+          location.reload(true);
+        });
       }
 
-      const formData = new FormData(form);
-
-      fetch('./includes/job-applyconf.php', {
-          method: 'POST',
-          body: formData
-        })
-        .then(response => response.json())
-        .then(result => {
-          if (result.status === 'success') {
-            Swal.fire({
-              icon: 'success',
-              title: 'Application Submitted',
-              text: 'Your application has been successfully submitted. We will contact you shortly.',
-              showClass: {
-                popup: 'swal2-show',
-                backdrop: 'swal2-backdrop-show',
-                icon: 'swal2-icon-show'
-              },
-              hideClass: {
-                popup: 'swal2-hide',
-                backdrop: 'swal2-backdrop-hide',
-                icon: 'swal2-icon-hide'
-              },
-            }).then(() => {
-              window.location.href = './careers.php';
-            });
-          } else {
-            Swal.fire({
-              icon: 'error',
-              title: 'Application Failed',
-              text: result.message,
-              showClass: {
-                popup: 'swal2-show',
-                backdrop: 'swal2-backdrop-show',
-                icon: 'swal2-icon-show'
-              },
-              hideClass: {
-                popup: 'swal2-hide',
-                backdrop: 'swal2-backdrop-hide',
-                icon: 'swal2-icon-hide'
-              },
-            });
-          }
-
-          form.reset();
-        })
-        .catch(error => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Application Failed',
-            text: 'There was an error submitting your application. Please try again later.',
-            showClass: {
-              popup: 'swal2-show',
-              backdrop: 'swal2-backdrop-show',
-              icon: 'swal2-icon-show'
-            },
-            hideClass: {
-              popup: 'swal2-hide',
-              backdrop: 'swal2-backdrop-hide',
-              icon: 'swal2-icon-hide'
-            },
-          });
-        });
+      form.reset();
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Application Failed',
+        text: 'There was an error submitting your application. Please try again later.',
+        showClass: {
+          popup: 'swal2-show',
+          backdrop: 'swal2-backdrop-show',
+          icon: 'swal2-icon-show'
+        },
+        hideClass: {
+          popup: 'swal2-hide',
+          backdrop: 'swal2-backdrop-hide',
+          icon: 'swal2-icon-hide'
+        },
+      }).then(() => {
+        // Perform a hard refresh of the page without any delay
+        location.reload(true);
+      });
     });
+}); 
 
     // Function to check if a value is null or empty
     function isNullOrEmpty(value) {

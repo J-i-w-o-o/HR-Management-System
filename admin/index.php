@@ -21,7 +21,10 @@ if ($page === 'dashboard' || $_SERVER['QUERY_STRING'] === 'dashboard') {
     include '../admin/employee.php'; 
 }  else if ($page === 'attendance' || $_SERVER['QUERY_STRING'] === 'attendance') { 
     include '../admin/attendance.php'; 
+}  else if ($page === 'ojt-attendance' || $_SERVER['QUERY_STRING'] === 'ojt-attendance') { 
+    include '../admin/ojt-attendance.php'; 
 }
+
 
 else {    
     include '../admin/dashboard.php';  
