@@ -99,7 +99,7 @@ if ($token === null) {
 // Save the data into a JSON file if it exists
 if (isset($data)) {
   // Save the data into a JSON file named "attendance_data.json"
-  $jsonFilePath = '../assets/js/attendance_data.json  ';
+  $jsonFilePath = '../assets/js/attendance_data.json';
   $jsonData = json_encode($data, JSON_PRETTY_PRINT);
 
   if (file_put_contents($jsonFilePath, $jsonData)) {
