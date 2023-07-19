@@ -1,12 +1,5 @@
 <title>Attendance</title>
 
-<style>
-  #btn {
-    background-color: transparent;
-    border: none;
-  }
-</style>
-
 
 <link rel="stylesheet" href="../assets/css/attendance.css">
 <div id="main">
@@ -19,31 +12,31 @@
       <div class="d-flex">
         <div class="mx-2 my-3">
           <div class="container">
-  <button class="btn" id="btn">
-    ATTENDANCE
-    <i class="bx bx-chevron-down" id="arrow"></i>
-  </button>
-
-  <div class="dropdown" id="dropdown">
-    <a href="index.php?attendance">
-      <i class="bx bx-user-check "></i>
-       EMPLOYEES
-    </a>
-    <a href="index.php?ojt-attendance">
-    <i class="bx bx-user-check "></i>
-       OJT
-    </a>
-    
-  </div>
-</div>
-          </div>
-          <form class="d-flex forms my-3">
-            <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-            <button type="submit" class="btn btn-sm" id="searchIcon">
-              <i class="fas fa-search"></i>
+            <button class="btn" id="btn">
+              ATTENDANCE
+              <i class="bx bx-chevron-down" id="arrow"></i>
             </button>
-          </form>
+
+            <div class="dropdown" id="dropdown">
+              <a href="index.php?attendance">
+                <i class="bx bx-user-check "></i>
+                EMPLOYEES
+              </a>
+              <a href="index.php?ojt-attendance">
+                <i class="bx bx-user-check "></i>
+                OJT
+              </a>
+
+            </div>
+          </div>
         </div>
+        <form class="d-flex forms my-3">
+          <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
+          <button type="submit" class="btn btn-sm" id="searchIcon">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
     </div>
     <div id="table-scroll" class="table-scroll">
       <div class="table-wrap">
@@ -58,8 +51,10 @@
                     <th>Full Name</th>
                     <th>Total Attendance</th>
                   </tr>
-                </div>
-              
+                </thead>
+                <tbody id="attendanceData">
+                  <!-- Data will be populated dynamically -->
+                </tbody>
               </table>
             </div>
           </div>
@@ -85,10 +80,85 @@
     toggleDropdown();
   });
 
-// Close dropdown when dom element is clicked
-document.documentElement.addEventListener("click", function () {
-  if (dropdownMenu.classList.contains("show")) {
-    toggleDropdown();
+  // Close dropdown when dom element is clicked
+  document.documentElement.addEventListener("click", function() {
+    if (dropdownMenu.classList.contains("show")) {
+      toggleDropdown();
+    }
+  });
+
+
+  function saveDataToLocalStorage(data) {
+    localStorage.setItem('attendanceData', JSON.stringify(data));
+    localStorage.setItem('lastRefreshTime', new Date().getTime());
   }
-});
+
+  // Function to get data from local storage
+  function getDataFromLocalStorage() {
+    const data = localStorage.getItem('attendanceData');
+    return data ? JSON.parse(data) : null;
+  }
+
+  // Function to check if the data in local storage is still valid (not older than 5 minutes)
+  function isDataValid() {
+    const lastRefreshTime = localStorage.getItem('lastRefreshTime');
+    if (lastRefreshTime) {
+      const currentTime = new Date().getTime();
+      const timeDiff = currentTime - parseInt(lastRefreshTime, 10);
+      const fiveMinutesInMillis = 5 * 60 * 1000;
+      return timeDiff < fiveMinutesInMillis;
+    }
+    return false;
+  }
+
+  // Function to fetch data from the server and update the table
+  async function fetchAndUpdateAttendanceData() {
+    const preloader = document.getElementById('preloader');
+    let data;
+
+    if (isDataValid()) {
+      // If data is still valid in local storage, use it directly
+      data = getDataFromLocalStorage();
+    } else {
+      // Otherwise, fetch new data from the server
+      try {
+        const response = await fetch('../includes/attendanceconf.php');
+        data = await response.json();
+        saveDataToLocalStorage(data); // Save the fetched data to local storage
+      } catch (error) {
+        console.error('Error fetching attendance data:', error);
+      } finally {
+        // Hide the preloader
+        preloader.style.display = 'none';
+      }
+    }
+
+    // Use the data to populate the table
+    const attendanceData = document.getElementById('attendanceData');
+
+    // Clear existing table rows before updating
+    attendanceData.innerHTML = '';
+
+    data.forEach(item => {
+      const row = document.createElement('tr');
+      const personIdCell = document.createElement('td');
+      const fullNameCell = document.createElement('td');
+      const totalAttendanceCell = document.createElement('td');
+
+      personIdCell.textContent = item.person_id;
+      fullNameCell.textContent = item.full_name;
+      totalAttendanceCell.textContent = item.total_attendance;
+
+      row.appendChild(personIdCell);
+      row.appendChild(fullNameCell);
+      row.appendChild(totalAttendanceCell);
+      attendanceData.appendChild(row);
+    });
+  }
+
+  // Fetch and update the attendance data initially
+  fetchAndUpdateAttendanceData();
+
+  // Refresh data every 5 minutes (300,000 milliseconds)
+  setInterval(fetchAndUpdateAttendanceData, 300000);
 </script>
