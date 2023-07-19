@@ -37,6 +37,12 @@ if (isset($_POST['reassess'])) {
   $approveSql = "UPDATE `job_applications` SET `status`='pending' WHERE id = $id";
   mysqli_query($connection, $approveSql);
 }
+if (isset($_POST['trashbin'])) {
+  $id = $_POST['trashbin'];
+
+  $approveSql = "UPDATE `job_applications` SET `status`='archived' WHERE id = $id";
+  mysqli_query($connection, $approveSql);
+}
 
 if (isset($_POST['hired'])) {
   $id = $_POST['hired'];

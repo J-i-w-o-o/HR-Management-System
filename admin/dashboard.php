@@ -72,7 +72,7 @@ $totalEmployees = $row['totalEmployees'];
             <div class="card-header text-white" style="background: #12294a;" > Attendance </div>
             <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $totalEmployees; ?></div>
             <div class="card-footer border-dark d-flex align-items-center justify-content-between">
-              <a class="small text-dark stretched-link" href="index.php?employee">View Details</a>
+              <a class="small text-dark stretched-link" href="index.php?attendance">View Details</a>
               <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
             </div>
           </div>
