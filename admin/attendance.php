@@ -52,7 +52,6 @@
               <table id="attendanceTable">
                 <thead>
                   <tr>
-                    <th>Person ID</th>
                     <th>Full Name</th>
                     <th>Total Attendance</th>
                   </tr>
@@ -115,15 +114,12 @@ function hidePreloader() {
 
       data.forEach(item => {
         const row = document.createElement('tr');
-        const personIdCell = document.createElement('td');
         const fullNameCell = document.createElement('td');
         const totalAttendanceCell = document.createElement('td');
 
-        personIdCell.textContent = item.person_id;
         fullNameCell.textContent = item.full_name;
         totalAttendanceCell.textContent = item.total_attendance;
 
-        row.appendChild(personIdCell);
         row.appendChild(fullNameCell);
         row.appendChild(totalAttendanceCell);
         attendanceData.appendChild(row);
