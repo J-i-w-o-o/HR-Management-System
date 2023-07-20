@@ -25,7 +25,6 @@ if ($page === 'dashboard' || $_SERVER['QUERY_STRING'] === 'dashboard') {
     include '../admin/ojt-attendance.php'; 
 }
 
-
 else {    
     include '../admin/dashboard.php';  
 }
