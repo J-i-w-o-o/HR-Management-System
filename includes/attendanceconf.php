@@ -1,5 +1,6 @@
 <?php
-
+$currentDate = date('Y-m-d');
+$monthText = date('F', strtotime($currentDate));
 function convertDuration($duration) {
   // Extracting the numeric values from the duration string
   preg_match('/P(\d+)DT(\d+)H(\d+)M/', $duration, $matches);
@@ -52,11 +53,11 @@ if ($token === null) {
   $output = "Error decoding JSON response: " . json_last_error_msg();
 } else {
   $access_token = $token['access_token'];
-
+  $apiUrl = 'https://time-attendance.prod.jibble.io/v1/Timesheets?$count=true&$expand=person&$orderby=person/fullName%20asc&date=2023-'.$monthText.'&period=Month';
   $curl = curl_init();
 
   curl_setopt_array($curl, [
-    CURLOPT_URL => 'https://time-attendance.prod.jibble.io/v1/Timesheets?$count=true&$expand=person&$orderby=person/fullName%20asc&date=2023-July&period=Month',
+    CURLOPT_URL => $apiUrl,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
