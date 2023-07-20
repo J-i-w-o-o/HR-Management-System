@@ -13,7 +13,7 @@
         <div id="preloader">
           <div id="loader"></div>
         </div>
-        
+
         <button class="btn mx-2 my-3" id="refreshButton"><i class="fa-solid fa-arrows-rotate"></i></button>
         <div class="mx-2 my-3">
           <div class="container">
@@ -91,16 +91,17 @@
       toggleDropdown();
     }
   });
-  function showPreloader() {
-  const preloader = document.getElementById('preloader');
-  preloader.style.display = 'flex';
-}
 
-// Function to hide the preloader
-function hidePreloader() {
-  const preloader = document.getElementById('preloader');
-  preloader.style.display = 'none';
-}
+  function showPreloader() {
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'flex';
+  }
+
+  // Function to hide the preloader
+  function hidePreloader() {
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+  }
 
   async function fetchAttendanceData() {
     try {
