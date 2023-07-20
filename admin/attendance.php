@@ -6,8 +6,10 @@
   </div>
   <section id="hero" class=" align-items-center">
     <div class="d-flex justify-content-between align-items-center mx-2">
-      <h2 class="mt-2 ms-3"> EMPLOYEES ATTENDANCE</h2>
+      <h2 class="mt-2 ms-3">Monthly Attendance Report</h2>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;MONTH OF JULY</span>
       <div class="d-flex">
+
         <div id="preloader">
           <div id="loader"></div>
         </div>
@@ -33,9 +35,10 @@
           </div>
         </div>
         <form class="d-flex forms my-3">
-          <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-          <button type="submit" class="btn btn-sm" id="searchIcon"><i class="fas fa-search"></i></button>
-          
+          <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search User">
+          <button type="submit" class="btn btn-sm" id="searchIcon">
+            <i class="fas fa-search"></i>
+          </button>
         </form>
       </div>
     </div>
