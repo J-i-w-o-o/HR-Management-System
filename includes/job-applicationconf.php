@@ -92,7 +92,7 @@ if (mysqli_num_rows($result) > 0) {
         </td>';
         echo "<td class='text-center'>
           <form method='POST'>
-            <button type='button'  class='btn btn-warning  ' data-bs-toggle='modal' data-bs-target='#scheduleModal" . $row['id'] . "'><i class='fas fa-clock' aria-hidden='true'></i></button>
+            <button type='button'  class='btn btn-warning  ' data-bs-toggle='modal' data-bs-target='#scheduleModal" . $row['id'] . "'><i class='fas fa-clock' aria-hidden='true' ></i></button>
             <button type='submit'  name='delete' value='" . $row['id'] . "' class='btn btn-danger'><i class='fa fa-times' aria-hidden='true'></i></button>
           </form>
         </td>";
@@ -166,7 +166,7 @@ if (mysqli_num_rows($result) > 0) {
     echo '            <input type="datetime-local" class="form-control" id="scheduleInput' . $row['id'] . '" name="schedule" required>';
     echo '          </div>';
     echo '          <div class="text-center">'; // Add a wrapper div with the "text-center" class
-    echo '            <button type="submit" title="Approved Application" name="interview" value="' . $row['id'] . '" class="btn btn-primary">Set Schedule</button>';
+    echo '            <button type="submit" title="Approved Application" onclick="fireSwal1(); return false;" name="interview" value="' . $row['id'] . '" class="btn btn-primary">Set Schedule</button>';
     echo '          </div>'; // Close the wrapper div
     echo '        </form>';
     echo '      </div>';
