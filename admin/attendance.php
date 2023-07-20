@@ -1,6 +1,4 @@
 <title>Attendance</title>
-
-
 <link rel="stylesheet" href="../assets/css/attendance.css">
 <div id="main">
   <div class="d-flex justify-content-center mt-3">
@@ -15,7 +13,8 @@
         <div id="preloader">
           <div id="loader"></div>
         </div>
-        <button class="btn mx-2 my-3" id="refreshButton">Refresh</button>
+        
+        <button class="btn mx-2 my-3" id="refreshButton"><i class="fa-solid fa-arrows-rotate"></i></button>
         <div class="mx-2 my-3">
           <div class="container">
             <button class="btn" id="btn">
