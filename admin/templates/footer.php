@@ -129,27 +129,27 @@
     document.getElementById('updateForm').submit();
   });
   const dropdownBtn = document.getElementById("btn");
-const dropdownMenu = document.getElementById("dropdown");
-const toggleArrow = document.getElementById("arrow");
+  const dropdownMenu = document.getElementById("dropdown");
+  const toggleArrow = document.getElementById("arrow");
 
-// Toggle dropdown function
-const toggleDropdown = function () {
-  dropdownMenu.classList.toggle("show");
-  toggleArrow.classList.toggle("arrow");
-};
+  // Toggle dropdown function
+  const toggleDropdown = function() {
+    dropdownMenu.classList.toggle("show");
+    toggleArrow.classList.toggle("arrow");
+  };
 
-// Toggle dropdown open/close when dropdown button is clicked
-dropdownBtn.addEventListener("click", function (e) {
-  e.stopPropagation();
-  toggleDropdown();
-});
-
-// Close dropdown when dom element is clicked
-document.documentElement.addEventListener("click", function () {
-  if (dropdownMenu.classList.contains("show")) {
+  // Toggle dropdown open/close when dropdown button is clicked
+  dropdownBtn.addEventListener("click", function(e) {
+    e.stopPropagation();
     toggleDropdown();
-  }
-});
+  });
+
+  // Close dropdown when dom element is clicked
+  document.documentElement.addEventListener("click", function() {
+    if (dropdownMenu.classList.contains("show")) {
+      toggleDropdown();
+    }
+  });
 </script>
 
 <script src="../assets/css/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -159,7 +159,6 @@ document.documentElement.addEventListener("click", function () {
 <script src="../assets/js/node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="../assets/css/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
 <script src="../assets/js/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-
 
 
 </html>
