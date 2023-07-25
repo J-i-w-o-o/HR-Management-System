@@ -22,7 +22,7 @@ $totalEmployees = $row['totalEmployees'];
 <div id="main">
   <link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
   <div class="container-fluid px-4">
-    <section id="hero" class="align-items-center ">
+    <section id="hero" class="align-items-center">
 
       <div class="row">
         <div class="container">
@@ -37,7 +37,7 @@ $totalEmployees = $row['totalEmployees'];
       </div>
 
       <div class="row">
-        <div class="col-xl-3 col-md-6">
+        <div class="col-xl-3">
           <div class="card mb-3">
             <div class="card-header text-white" style="  background: #ec5b33;"> No. of Job Listing </div>
             <div class="card-body bg-#ec5b33 text-dark" style="font-size: 2rem;"><?php echo $noOfJobs; ?></div>
@@ -47,7 +47,7 @@ $totalEmployees = $row['totalEmployees'];
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-6">
+        <div class="col-xl-3">
           <div class="card mb-3">
             <div class="card-header text-white" style="background: #12294a;"> No. of Pending Applicants </div>
             <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $pendingApplicants; ?></div>
@@ -57,7 +57,7 @@ $totalEmployees = $row['totalEmployees'];
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-6">
+        <div class="col-xl-3">
           <div class="card mb-3">
             <div class="card-header text-white" style="background: #ec5b33;" > No. of Employees </div>
             <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $totalEmployees; ?></div>
