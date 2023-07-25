@@ -12,52 +12,6 @@
   <link rel="stylesheet" href="./assets/css/header.css">
 </head>
 
-<style>
-  .card {
-    border: 1px solid #f6b4a2;
-    border-radius: 20px;
-  }
-
-  input[type=text] {
-    border: 1px solid #f07c5c;
-    border-radius: 50px;
-    width: 300px;
-    height: 40px;
-    font-family: Georgia;
-    font-size: medium;
-  }
-
- .btn {
-  background-color: transparent;
-  font-size: 18px;
-  margin-left:-50px;
-  border:none;
-  color: #12294a;
-  transition: all .2s;
-  z-index: 10;
-}
-
-.btn:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-  color: #ec5b33;
-}
-
-
-.btnsearch:hover {
-  transform: scale(1.5);
-  cursor: pointer;
-  color: #ec5b33;
-}
-
-
-
-.btn:focus {
-  outline:none;
-  color:#12294a;
-}
-</style>
-
 <body style="margin-top: 90px;">
   <header>
     <nav class="navbar fixed-top shadow p-3 mb-4" style="background-color: white;">
@@ -67,7 +21,7 @@
         </div>
         <form class="d-flex forms">
           <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-          <div type="submit" class="btn btnsearch button btn-md  " id="searchIcon">
+          <div type="submit" class="btn button btn-md  " id="searchIcon">
             <i class="fas fa-search"></i>
           </button>
         </form>

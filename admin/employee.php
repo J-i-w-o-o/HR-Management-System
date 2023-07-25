@@ -14,6 +14,7 @@
       <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for Employee">
     </form>
   </div>
+  
 
   <!-- main content -->
   <div class="container-fluid">
@@ -61,6 +62,7 @@
                   </div>
                 </div>
               </div>
+              
               ';
         }
       } else {
