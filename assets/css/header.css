@@ -26,8 +26,8 @@
 #searchInput[type=text] {
   border: 1px solid #f07c5c;
   border-radius: 50px;
-  width: 300px;
-  height: 40px;
+  /* width: 200px;
+  height: 40px; */
   font-family: Georgia;
   font-size: medium;
 }
@@ -72,12 +72,12 @@ color:#12294a;
   ::-webkit-scrollbar-thumb:hover {
     background: transparent;
   }
-  @media only screen and (max-width: 350px) {
-    #searchInput {
+  @media (max-width: 400px) {
+    #searchInput  {
       display: none;
     }
   } 
-  @media only screen and (max-width: 400px) {
+  @media (max-width: 400px) {
     #searchIcon {
       display: none;
     }
