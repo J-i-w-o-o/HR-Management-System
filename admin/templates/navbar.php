@@ -60,12 +60,7 @@
                   </a>
                 </li>
 
-                <li class="nav-link">
-                  <a href="index.php?attendance">
-                    <i class='bx bx-calendar-check icon'></i>
-                    <span class="text nav-text">Attendance</span>
-                  </a>
-                </li>
+               
 
 
               </ul>

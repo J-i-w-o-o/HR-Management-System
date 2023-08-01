@@ -22,62 +22,51 @@ $totalEmployees = $row['totalEmployees'];
 <div id="main">
   <link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
   <div class="container-fluid px-4">
-    <section id="hero" class="align-items-center">
 
-      <div class="row">
-        <div class="container">
-          <div class="display-date">
-            <span class="display-time"></span>
-            <span id="day">day</span>,
-            <span id="daynum">00</span>
-            <span id="month">month</span>
-            <span id="year">0000</span>
+    <div class="row">
+      <div class="container">
+        <div class="display-date">
+          <span class="display-time"></span>
+          <span id="day">day</span>,
+          <span id="daynum">00</span>
+          <span id="month">month</span>
+          <span id="year">0000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-3">
+        <div class="card mb-3">
+          <div class="card-header text-white" style="  background: #ec5b33;"> No. of Job Listing </div>
+          <div class="card-body bg-#ec5b33 text-dark" style="font-size: 2rem;"><?php echo $noOfJobs; ?></div>
+          <div class="card-footer border-dark d-flex align-items-center justify-content-between">
+            <a class="small text-dark stretched-link" href="index.php?job-listing">View Details</a>
+            <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card mb-3">
+          <div class="card-header text-white" style="background: #12294a;"> No. of Pending Applicants </div>
+          <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $pendingApplicants; ?></div>
+          <div class="card-footer border-dark d-flex align-items-center justify-content-between">
+            <a class="small text-dark stretched-link" href="index.php?job-application">View Details</a>
+            <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card mb-3">
+          <div class="card-header text-white" style="background: #ec5b33;"> No. of Employees </div>
+          <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $totalEmployees; ?></div>
+          <div class="card-footer border-dark d-flex align-items-center justify-content-between">
+            <a class="small text-dark stretched-link" href="index.php?employee">View Details</a>
+            <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xl-3">
-          <div class="card mb-3">
-            <div class="card-header text-white" style="  background: #ec5b33;"> No. of Job Listing </div>
-            <div class="card-body bg-#ec5b33 text-dark" style="font-size: 2rem;"><?php echo $noOfJobs; ?></div>
-            <div class="card-footer border-dark d-flex align-items-center justify-content-between">
-              <a class="small text-dark stretched-link" href="index.php?job-listing">View Details</a>
-              <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3">
-          <div class="card mb-3">
-            <div class="card-header text-white" style="background: #12294a;"> No. of Pending Applicants </div>
-            <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $pendingApplicants; ?></div>
-            <div class="card-footer border-dark d-flex align-items-center justify-content-between">
-              <a class="small text-dark stretched-link" href="index.php?job-application">View Details</a>
-              <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3">
-          <div class="card mb-3">
-            <div class="card-header text-white" style="background: #ec5b33;" > No. of Employees </div>
-            <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $totalEmployees; ?></div>
-            <div class="card-footer border-dark d-flex align-items-center justify-content-between">
-              <a class="small text-dark stretched-link" href="index.php?employee">View Details</a>
-              <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="card mb-3">
-            <div class="card-header text-white" style="background: #12294a;" > Attendance </div>
-            <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $totalEmployees; ?></div>
-            <div class="card-footer border-dark d-flex align-items-center justify-content-between">
-              <a class="small text-dark stretched-link" href="index.php?attendance">View Details</a>
-              <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </div>
 </div>
