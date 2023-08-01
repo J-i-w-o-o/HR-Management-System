@@ -7,7 +7,7 @@ fetch('./assets/data/careers.json')
     const paginationContainer = document.getElementById('pagination');
     const searchInput = document.getElementById('searchInput');
     const cardsPerRow = 3;
-    const cardsPerPage = 9;
+    const cardsPerPage = 6;
     const totalPages = Math.ceil(jobsData.length / cardsPerPage);
     let currentPage = 1;
 
