@@ -58,12 +58,12 @@
 	font-family: Georgia;
 	font-size: medium;
   }
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     #searchInput  {
       display: none;
     }
   } 
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
     #searchIcon {
       display: none;
     }
