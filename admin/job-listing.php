@@ -18,10 +18,7 @@
             </button>
           </div>
           <form class="d-flex forms my-3">
-            <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-            <button type="submit" class="button btn-sm" id="searchIcon">
-              <i class="fas fa-search"></i>
-            </button>
+            <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search">
           </form>
         </div>
       </div>
