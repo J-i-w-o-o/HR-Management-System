@@ -113,13 +113,4 @@ function expandImage(image) {
   }
 }
 
-  document.getElementById("searchIcon").addEventListener("click", performSearch);
-  document.getElementById("searchInput").addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-      performSearch();
-    }
-  });
-
-  
 </script>
-

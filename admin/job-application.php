@@ -5,9 +5,6 @@
       <h2 class="mt-2 ms-3"> PENDING APPLICATIONS</h2>
       <form class="d-flex forms my-2 mx-3">
         <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search">
-        <button type="submit" class="button btn-sm" id="searchIcon">
-              <i class="fas fa-search"></i>
-            </button>
       </form>
     </div>
     <div id="table-scroll" class="table-scroll">
