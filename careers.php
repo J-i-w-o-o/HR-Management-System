@@ -21,9 +21,9 @@
         </div>
         <form class="d-flex forms">
           <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-          <div type="submit" class="btn button btn-md  " id="searchIcon">
+          <div type="submit" class="btn button btn-md" id="searchIcon">
             <i class="fas fa-search"></i>
-          </button>There was an error submitting your application. Please try again later.
+          </button>
         </form>
       </div>
     </nav>
@@ -178,7 +178,6 @@
       }
 
       form.reset();
-      document.getElementById('btnclose').click();
     })
     .catch(error => {
       Swal.fire({
@@ -199,7 +198,6 @@
         // Perform a hard refresh of the page without any delay
         location.reload(true);
       });
-      
     });
 }); 
 
