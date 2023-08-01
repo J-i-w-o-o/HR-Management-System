@@ -21,7 +21,7 @@ $totalEmployees = $row['totalEmployees'];
 <title>Dashboard</title>
 <div id="main">
   <link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
-  <div class="container-fluid px-4" id=main>
+  <div class="container-fluid px-4">
     <section id="hero" class="align-items-center">
 
       <div class="row">
@@ -37,8 +37,8 @@ $totalEmployees = $row['totalEmployees'];
       </div>
 
       <div class="row">
-        <div class="col-xl-3 col-md-6 bordered-box">
-          <div class="card mb-3" style="max-width: 18rem;">
+        <div class="col-xl-3">
+          <div class="card mb-3">
             <div class="card-header text-white" style="  background: #ec5b33;"> No. of Job Listing </div>
             <div class="card-body bg-#ec5b33 text-dark" style="font-size: 2rem;"><?php echo $noOfJobs; ?></div>
             <div class="card-footer border-dark d-flex align-items-center justify-content-between">
@@ -47,8 +47,8 @@ $totalEmployees = $row['totalEmployees'];
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="card mb-3" style="max-width: 18rem;">
+        <div class="col-xl-3">
+          <div class="card mb-3">
             <div class="card-header text-white" style="background: #12294a;"> No. of Pending Applicants </div>
             <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $pendingApplicants; ?></div>
             <div class="card-footer border-dark d-flex align-items-center justify-content-between">
@@ -57,8 +57,8 @@ $totalEmployees = $row['totalEmployees'];
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-6">
-          <div class="card mb-3" style="max-width: 18rem;">
+        <div class="col-xl-3">
+          <div class="card mb-3">
             <div class="card-header text-white" style="background: #ec5b33;" > No. of Employees </div>
             <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $totalEmployees; ?></div>
             <div class="card-footer border-dark d-flex align-items-center justify-content-between">
@@ -68,7 +68,7 @@ $totalEmployees = $row['totalEmployees'];
           </div>
         </div>
         <div class="col-xl-3 col-md-6">
-          <div class="card mb-3" style="max-width: 18rem;">
+          <div class="card mb-3">
             <div class="card-header text-white" style="background: #12294a;" > Attendance </div>
             <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $totalEmployees; ?></div>
             <div class="card-footer border-dark d-flex align-items-center justify-content-between">

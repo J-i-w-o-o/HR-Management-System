@@ -2,13 +2,6 @@
 <?php include '../admin/modals/job-listing-modal.php' ?>
 
 
-<style>
-    .card {
-      border: 1px solid #6f9ddc ;
-      border-radius: 25px;
-    }
-
-  </style>
 
 <section id="hero" class="align-items-center">
   <div id="main">
@@ -25,10 +18,7 @@
             </button>
           </div>
           <form class="d-flex forms my-3">
-            <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-            <button type="submit" class="btn btn-sm" id="searchIcon">
-              <i class="fas fa-search"></i>
-            </button>
+            <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search">
           </form>
         </div>
       </div>

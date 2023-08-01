@@ -11,9 +11,10 @@
       <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#addEmployee">
         <i class="fa-solid fa-user-plus"></i>
       </button>
-      <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for Employee">
+      <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search">
     </form>
   </div>
+  
 
   <!-- main content -->
   <div class="container-fluid">
@@ -61,6 +62,7 @@
                   </div>
                 </div>
               </div>
+              
               ';
         }
       } else {
