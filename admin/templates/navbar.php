@@ -30,17 +30,20 @@
 
           <div class="menu-bar">
             <div class="menu">
-
+            <h6 class="hr-sect">CORE</h6>
               <ul class="menu-links">
+              
                 <li class="nav-link">
                   <a href="index.php?dashboard">
                     <i class='bx bx-home-alt icon'></i>
                     <span class="text nav-text">Dashboard</span>
                   </a>
                 </li>
-                
+              </ul>
+              <h6 class="hr-sect">MAIN</h6>
+              <ul class="menu-links">
                 <li class="nav-link">
-                  <a href="index.php?job-listing">
+                <a href="index.php?job-listing">
                     <i class='bx bx-list-ul icon'></i>
                     <span class="text nav-text">Job Listing</span>
                   </a>
@@ -60,20 +63,32 @@
                   </a>
                 </li>
 
-               
+                <li class="nav-link">
+                  <a href="index.php?attendance">
+                    <i class='bx bx-calendar-check icon'></i>
+                    <span class="text nav-text">Attendance</span>
+                  </a>
+                </li>
 
 
               </ul>
             </div>
 
             <div class="sidenav-footer">
+            
               <li class="nav-link">
                 <a href="index.php?logout" onclick="fireSwal(); return false;">
                   <i class='bx bx-log-out icon'></i>
                   <span class="text nav-text">Logout</span>
+                  
                 </a>
               </li>
+              <div class="logged">
+              <h6 class="mt-2 ms-3" > Logged in as:</h6>
+                 <h6 class="mt-1 ms-2">Admin</h6>
             </div>
+            </div>
+            
           </div>
         </nav>
       </div>
