@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   
   fetch('../assets/data/careers.json')
     .then(response => response.json())
@@ -10,6 +11,19 @@
       const cardsPerPage = 9;
       const totalPages = Math.ceil(jobsData.length / cardsPerPage);
       let currentPage = 1;
+=======
+fetch('../assets/data/careers.json')
+.then(response => response.json())
+.then(jobsData => {
+  const jobsContainer = document.getElementById('jobsContainer');
+  const jobCountElement = document.getElementById('jobCount');
+  const paginationContainer = document.getElementById('pagination');
+  const searchInput = document.getElementById('searchInput');
+  const cardsPerRow = 3;
+  const cardsPerPage = 6;
+  const totalPages = Math.ceil(jobsData.length / cardsPerPage);
+  let currentPage = 1;
+>>>>>>> f9815582badb429858ba88c5b67aeecbfec2124a
 
       function showJobs() {
         jobsContainer.innerHTML = '';
