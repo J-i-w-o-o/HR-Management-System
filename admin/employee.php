@@ -1,5 +1,5 @@
 <title>Employee</title>
-<div id="main">
+
   <link rel="stylesheet" href="../assets/css/employee.css">
   <!-- title page and search bar  -->
   <div class="d-flex justify-content-between align-items-center mx-2">
@@ -11,7 +11,7 @@
       <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#addEmployee">
         <i class="fa-solid fa-user-plus"></i>
       </button>
-      <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for Employee">
+      <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search  ">
     </form>
   </div>
   

@@ -72,13 +72,18 @@ color:#12294a;
   ::-webkit-scrollbar-thumb:hover {
     background: transparent;
   }
-  @media only screen and (max-width: 350px) {
-    #searchInput {
-      display: none;
+  
+  @media (max-width: 470px) {
+    #searchInput  {
+      display: block;
+      position: relative;
+      margin-top: 10px;
     }
   } 
-  @media only screen and (max-width: 400px) {
+  @media (max-width: 470px) {
     #searchIcon {
-      display: none;
+      display: block;
+    position: relative;
+    margin-top: 10px;
     }
   } 
