@@ -19,7 +19,7 @@ $totalEmployees = $row['totalEmployees'];
 ?>
 
 <title>Dashboard</title>
-<div id="main">
+
   <link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
   <div class="container-fluid px-4">
     <section id="hero" class="align-items-center">

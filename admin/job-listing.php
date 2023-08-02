@@ -4,8 +4,8 @@
 
 
 <section id="hero" class="align-items-center">
-  <div id="main">
-    <div class="container-fluid" id="main">
+  
+    <div class="container-fluid" >
       <div class="text-center"></div>
       <div class="d-flex justify-content-between align-items-center mx-2">
         <div>

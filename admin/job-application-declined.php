@@ -1,6 +1,6 @@
 <title>Job Application</title>
 
-<div id="main">
+
 
   <!-- title page and searchbar  -->
   <section id="hero" class=" align-items-center">

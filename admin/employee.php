@@ -1,5 +1,5 @@
 <title>Employee</title>
-<div id="main">
+
   <link rel="stylesheet" href="../assets/css/employee.css">
   <!-- title page and search bar  -->
   <div class="d-flex justify-content-between align-items-center mx-2">
