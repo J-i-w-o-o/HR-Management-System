@@ -23,7 +23,7 @@ $totalEmployees = $row['totalEmployees'];
   <link rel="stylesheet" href="../assets/css/node_modules/dashboard.css">
   <div class="container-fluid px-4">
     <section id="hero" class="align-items-center">
-
+    
       <div class="row">
         <div class="container">
           <div class="display-date">
@@ -35,7 +35,7 @@ $totalEmployees = $row['totalEmployees'];
           </div>
         </div>
       </div>
-
+      <h2 class="mt-2 ms-3"> DASHBOARD</h2>
       <div class="row">
         <div class="col-xl-3">
           <div class="card mb-3">
