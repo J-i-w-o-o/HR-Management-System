@@ -78,7 +78,7 @@ $totalEmployees = $row['totalEmployees'];
 var aText = new Array(
   "WELCOME TO DASHBOARD, ADMIN!"
 );
-var iSpeed = 200; // Increase the time delay for a slower typewriter effect
+var iSpeed = 100; // Increase the time delay for a slower typewriter effect
 var iIndex = 0;
 var iArrLength = aText[0].length;
 var iScrollAt = 20;
