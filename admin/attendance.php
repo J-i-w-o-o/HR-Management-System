@@ -1,6 +1,6 @@
 <title>Attendance</title>
 <link rel="stylesheet" href="../assets/css/attendance.css">
-<div id="main">
+
   <div class="d-flex justify-content-center mt-3">
     <img src="../assets/images/jibble.png" alt="Logo" width="120" height="40">
   </div>

@@ -2,7 +2,7 @@
 
 
 <link rel="stylesheet" href="../assets/css/attendance.css">
-<div id="main">
+
     <div class="d-flex justify-content-center mt-3">
     <img src="../assets/images/jibble.png" alt="Logo" width="130" height="40">
     </div>
@@ -31,7 +31,7 @@
 </div>
           </div>
           <form class="d-flex forms my-3">
-            <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
+            <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search">
             <button type="submit" class="btn btn-sm" id="searchIcon">
               <i class="fas fa-search"></i>
             </button>

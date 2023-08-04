@@ -7,7 +7,7 @@ fetch('./assets/data/careers.json')
     const paginationContainer = document.getElementById('pagination');
     const searchInput = document.getElementById('searchInput');
     const cardsPerRow = 3;
-    const cardsPerPage = 6;
+    const cardsPerPage = 9;
     const totalPages = Math.ceil(jobsData.length / cardsPerPage);
     let currentPage = 1;
 
@@ -53,7 +53,7 @@ fetch('./assets/data/careers.json')
 
         cardFooter.innerHTML = `
     <div>${postedAgoFormatted}</div>
-    <button type="button" class="btncareer btn  btn rounded-pill" style="background-color: #ee6944; color:white; font-size:15px;" data-bs-toggle="modal" data-bs-target="#jobModal" onclick="showJobDetails('${job.title}', '${job.overview}', '${job.jobType}', '${job.vacancies}', '${job.experience}', '${job.jobLevel}', '${job.location}', '${job.additionalInfo}')">APPLY NOW</button>
+    <button type="button" class="btn btn rounded-pill" style="background-color: #ee6944; color:white; font-size:15px;" data-bs-toggle="modal" data-bs-target="#jobModal" onclick="showJobDetails('${job.title}', '${job.overview}', '${job.jobType}', '${job.vacancies}', '${job.experience}', '${job.jobLevel}', '${job.location}', '${job.additionalInfo}')">APPLY NOW</button>
 `;
         card.appendChild(cardContent);
         card.appendChild(cardFooter);

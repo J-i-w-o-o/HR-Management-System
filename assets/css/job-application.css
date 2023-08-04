@@ -53,17 +53,17 @@
 #searchInput[type=text] {
 	border: 1px solid #f07c5c;
 	border-radius: 50px;
-	/* width: 200px;
-	height: 40px; */
+	width: 200px;
+	height: 40px;
 	font-family: Georgia;
 	font-size: medium;
   }
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     #searchInput  {
       display: none;
     }
   } 
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
     #searchIcon {
       display: none;
     }

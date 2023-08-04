@@ -4,8 +4,8 @@
 
 
 <section id="hero" class="align-items-center">
-  <div id="main">
-    <div class="container-fluid" id="main">
+ 
+    <div class="container-fluid" >
       <div class="text-center"></div>
       <div class="d-flex justify-content-between align-items-center mx-2">
         <div>
@@ -19,6 +19,7 @@
           </div>
           <form class="d-flex forms my-3">
             <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search">
+            
           </form>
         </div>
       </div>

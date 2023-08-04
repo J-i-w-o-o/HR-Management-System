@@ -21,14 +21,14 @@
         </div>
         <form class="d-flex forms">
           <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search for a job">
-          <div type="submit" class="btn button btn-md" id="searchIcon">
+          <div type="submit" class="btn button btn-md  " id="searchIcon">
             <i class="fas fa-search"></i>
           </button>
         </form>
       </div>
     </nav>
   </header>
-  <div class="text-center">
+  <div class="text-center" id="careers">
     <h1 class="mb-2">Careers</h1>
   </div>
   <div class="container-fluid">

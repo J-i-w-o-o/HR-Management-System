@@ -1,13 +1,14 @@
 <title>Job Application</title>
 
-<div id="main">
+
 
   <!-- title page and searchbar  -->
   <section id="hero" class=" align-items-center">
     <div class="d-flex justify-content-between align-items-center mx-2">
       <h2 class="mt-2 ms-3"> DECLINED APPLICATIONS</h2>
-      <form class="d-flex forms my-2 mx-3">
+      <form class="d-flex forms my-3">
         <input type="text" id="searchInput" class="form-control form-control-sm me-2" placeholder="Search">
+        
       </form>
     </div>
 
