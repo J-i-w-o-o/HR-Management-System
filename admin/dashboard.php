@@ -36,16 +36,17 @@ $totalEmployees = $row['totalEmployees'];
         </div>
       </div>
       
-      <div id="typedtext"></div>
+      <div id="typedtext" class="typewriter-text">WELCOME TO DASHBOARD, ADMIN!</div>
+
       
       <div class="row">
         <div class="col-xl-3">
-          <div class="card mb-3">
-            <div class="card-header text-white" style="  background: #ec5b33;"> No. of Job Listing </div>
-            <div class="card-body bg-#ec5b33 text-dark" style="font-size: 2rem;"><?php echo $noOfJobs; ?></div>
+          <div class="card mb-3" >
+            <div class="card-header text-white" style="  background: #12294a;"> No. of Job Listing </div>
+            <div class="card-body bg-#ec5b33 text-dark"  style="font-size: 2rem;"><?php echo $noOfJobs; ?></div>
             <div class="card-footer border-dark d-flex align-items-center justify-content-between">
-              <a class="small text-dark stretched-link" href="index.php?job-listing">View Details</a>
-              <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+              <a class="small text-dark stretched-link " href="index.php?job-listing">View Details</a>
+              <div class="small text-dark" ><i class="fas fa-angle-right"></i></div>
             </div>
           </div>
         </div>
@@ -61,7 +62,27 @@ $totalEmployees = $row['totalEmployees'];
         </div>
         <div class="col-xl-3">
           <div class="card mb-3">
-            <div class="card-header text-white" style="background: #ec5b33;" > No. of Employees </div>
+            <div class="card-header text-white" style="background: #12294a;"> No. of Applicants Interview </div>
+            <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $pendingApplicants; ?></div>
+            <div class="card-footer border-dark d-flex align-items-center justify-content-between">
+              <a class="small text-dark stretched-link" href="index.php?job-application-interview">View Details</a>
+              <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-xl-3">
+          <div class="card mb-3">
+            <div class="card-header text-white" style="background: #12294a;"> No. of Declined Applicants </div>
+            <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $pendingApplicants; ?></div>
+            <div class="card-footer border-dark d-flex align-items-center justify-content-between">
+              <a class="small text-dark stretched-link" href="index.php?job-application-declined">View Details</a>
+              <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
+            </div>
+          </div>
+        </div> -->
+        <div class="col-xl-3">
+          <div class="card mb-3">
+            <div class="card-header text-white" style="background: #12294a;" > No. of Employees </div>
             <div class="card-body text-dark" style="font-size: 2rem;"><?php echo $totalEmployees; ?></div>
             <div class="card-footer border-dark d-flex align-items-center justify-content-between">
               <a class="small text-dark stretched-link" href="index.php?employee">View Details</a>
