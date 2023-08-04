@@ -11,7 +11,7 @@ include './templates/header.php';
             <?php echo $alertMessage; ?>
             <div class="text-center mb-2">
                 <img src="../assets/images/TMC_LOGO.png" alt="Logo" height="80" width="200">
-            </div>
+            </div>  
 
             <!-- Sign-in form -->
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
