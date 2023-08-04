@@ -72,12 +72,12 @@ color:#12294a;
   ::-webkit-scrollbar-thumb:hover {
     background: transparent;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 300px) {
     #searchInput  {
       display: none;
     }
   } 
-  @media (max-width: 400px) {
+  @media (max-width: 350px) {
     #searchIcon {
       display: none;
     }
